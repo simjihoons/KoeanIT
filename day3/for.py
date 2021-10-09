@@ -22,3 +22,29 @@ list = [3,-20,5,0,-10]
 for num in list:
     if num >0:
         print(num)
+
+
+
+# %%
+#리스트에서 20보다 작은 3의 배수르 출력해라
+
+list = [2,3,5,7,11,12,20,25,32,40]
+
+
+for i in list:
+    if (i<20) and (i % 3 ==0):
+        print(i)
+
+#%% 대소문자를 구분하는 isupper()를 이용해 리스트에서 대문자만 출력
+list = ['A','b','c','D']
+
+for i in list:
+    if i.isupper() == True:
+        print(i)
+# %%
+#저장된 문자열의 길이를 다음과 같이 출력하라.
+list = ["SK하이닉스" , "삼성전자","LG전자"]
+
+for i in list:
+    print(len(i))
+    
