@@ -7,5 +7,5 @@ def get_average(marks):
     return print(f"평균은 {avg}입니다.")
     
 
-marks = {"국어":90 , "영어":80 , "수학":85}
+marks = {"국어":100 , "영어":100 , "수학":100}
 get_average(marks)
