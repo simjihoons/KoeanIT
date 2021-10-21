@@ -1,10 +1,10 @@
-package ch_1_class;
+package ch1;
 
 public class StudentMainTest2 {
     public static void main(String[] args) {
         Student sudent1 = new Student();
 
-        sudent1.name = "È«±æµ¿";
+        sudent1.name = "È«ï¿½æµ¿";
         sudent1.height = 180;
         sudent1.weight = 60;
         sudent1.grade = 4;
@@ -18,7 +18,7 @@ public class StudentMainTest2 {
 
         Student sudent2 = new Student();
 
-        sudent2.name = "ÀÌ¼ø½Å";
+        sudent2.name = "ï¿½Ì¼ï¿½ï¿½ï¿½";
         sudent2.height = 170;
         sudent2.weight = 80;
         sudent2.grade = 2;

@@ -1,4 +1,4 @@
-package ch_1_class;
+package ch1;
 
 public class Order {
     int orderId;

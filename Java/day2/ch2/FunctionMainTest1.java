@@ -1,3 +1,5 @@
+package ch2;
+
 public class FunctionMainTest1 {
     public static void main(String[] args) {
         int addResult = add(10, 77);

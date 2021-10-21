@@ -1,14 +1,14 @@
-package ch_1_class;
+package ch1;
 
 public class WarriorMainTest1 {
     public static void main(String[] args) {
-        // int height; -->Áö¿ªº¯¼ö , stack
+        // int height; -->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ , stack
 
         Warrior w1 = new Warrior();
         w1.height = 200;
         w1.power = 100;
-        w1.name = "Àü»ç1";
-        w1.color = "ÃÊ·Ï»ö";
+        w1.name = "ï¿½ï¿½ï¿½ï¿½1";
+        w1.color = "ï¿½Ê·Ï»ï¿½";
 
         System.out.println(w1.height);
         System.out.println(w1.power);
@@ -18,8 +18,8 @@ public class WarriorMainTest1 {
         Warrior w2 = new Warrior();
         w2.height = 100;
         w2.power = 50;
-        w2.name = "ÀÛÀºÀü»ç1";
-        w2.color = "»¡°£»ö";
+        w2.name = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1";
+        w2.color = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 
         System.out.println(w2.height);
         System.out.println(w2.power);
