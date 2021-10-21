@@ -7,7 +7,7 @@ class IfMainTest2 {
 	public static void main(String[] args) {
 		// 점수 입력 받아서 학점 출력하기
 		// 단, 100점이 넘거나 0점보다 작으면 오류 출력
-		
+
 		Scanner scanner = new Scanner(System.in);
 		char result = 'Z';
 
@@ -29,6 +29,7 @@ class IfMainTest2 {
 		}
 		System.out.println("당신의 학점은 :" + result + "입니다.");
 
+		scanner.close();
 	}
 
 }

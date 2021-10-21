@@ -29,7 +29,6 @@ public class continueMainTest {
 				// System.out.println("출력 값 : " + num);
 		} // end of for
 		System.out.println(MULTIPLE + "의 배수 갯수 : " + count);
-
 		sc.close();
 	}// end of main
 
