@@ -1,1 +1,1 @@
-# KoeanITPython
+# KoeanITstudy
