@@ -1,4 +1,4 @@
-package ch1;
+package day2.ch1;
 
 public class StudentMainTest1 {
     public static void main(String[] args) {

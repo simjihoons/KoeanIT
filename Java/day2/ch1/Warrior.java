@@ -1,4 +1,4 @@
-package ch1;
+package day2.ch1;
 
 // Ŭ���� ��ü�� ����� �� ���� ���� �Դϴ�.
 class Warrior {

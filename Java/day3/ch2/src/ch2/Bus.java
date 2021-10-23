@@ -1,4 +1,4 @@
-package ch2;
+package Java.ch2;
 
 public class Bus {
 	int busNumber;
@@ -12,17 +12,17 @@ public class Bus {
 		this.busNumber = busNumber;
 	}
 
-//	public Bus(int busNumber, int passengerCount) {
-//		this.busNumber = busNumber;
-//		this.passengerCount = passengerCount;
-//	}
-//
-//	public Bus(int busNumber, int passengerCount, int money) {
-//		this.busNumber = busNumber;
-//		this.passengerCount = passengerCount;
-//		this.money = money;
-//	}
-	//의미없음
+	// public Bus(int busNumber, int passengerCount) {
+	// this.busNumber = busNumber;
+	// this.passengerCount = passengerCount;
+	// }
+	//
+	// public Bus(int busNumber, int passengerCount, int money) {
+	// this.busNumber = busNumber;
+	// this.passengerCount = passengerCount;
+	// this.money = money;
+	// }
+	// 의미없음
 	// 메서드
 	// 승객 태우기
 	public void take(int money) {

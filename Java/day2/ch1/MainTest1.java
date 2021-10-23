@@ -1,12 +1,12 @@
-package ch1;
+package day2.ch1;
 
 public class MainTest1 {
     public static void main(String[] args) {
         Order order1 = new Order();
 
         order1.orderId = 1;
-        order1.buyerId = 10;
-        order1.sellerId = 20;
+        order1.buyerId = "10";
+        order1.sellerId = "20";
         order1.productId = 5880;
         order1.orderDate = "2021-10-21";
 

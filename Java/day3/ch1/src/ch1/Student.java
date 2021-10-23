@@ -1,8 +1,7 @@
-package ch1;
+package day3.src.ch1;
 
 public class Student {
-	
-	
+
 	// 멤버 변수
 	// public int studentID;
 	public String studentName;
@@ -12,7 +11,8 @@ public class Student {
 	public void showStudentInfo() {
 		System.out.println(studentName + "," + address);
 	}
-	//의미없음
+
+	// 의미없음
 	public String getStudentName() {
 		return studentName;
 	}
@@ -24,11 +24,11 @@ public class Student {
 
 	// 1. 시험을 친다.
 	public void takeTest() {
-		System.out.println(studentName+" 학생이 시험을 친다.");
+		System.out.println(studentName + " 학생이 시험을 친다.");
 	}
 
 	// 2. 청소를 한다.
 	public void cleanUp() {
-		System.out.println(studentName+" 학생이 청소를 한다.");
+		System.out.println(studentName + " 학생이 청소를 한다.");
 	}
 }
