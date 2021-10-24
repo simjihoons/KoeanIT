@@ -42,3 +42,5 @@ else:
     print(f"입력된 이름은 {name}입니다.")
 finally:
     print("Program Off")
+
+# https://tinyurl.com/yjagob8z
