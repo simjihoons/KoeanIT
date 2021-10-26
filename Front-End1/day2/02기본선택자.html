@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 내부 css -->
+    <!--text/css가없으면 xhtml할때는오류가난다 웹표준검사할때오류남-->
+    <style type="text/css">
+        /* 기본구조
+        선택자{속성:속성값;속성:속성값;}
+        */
+
+        /*
+        태그선택자 - 태그명 이용해서 선택함
+        현재 boby에 있는 태그의 기본값을 선언할때
+        */
+
+        h1 {
+            color: skyblue;
+        }
+
+        h2 {
+            /*크기를 정하는 기본적인 단위는 픽셀이다.*/
+            font-size: 30px;
+        }
+
+        p {
+            /*글자는 폰트 저작권때문에 조심해야한다.*/
+            font-family: "바탕";
+            font-size: 30px;
+        }
+
+        a {
+            /*링크에 밑줄 없애기*/
+            text-decoration: none;
+            color: #444444;
+        }
+
+        span {
+            font-family: "바탕체";
+            font-size: 40px;
+            color: darkblue;
+        }
+    </style>
+
+    <!--외부 css-->
+    <!--대부분 작업을 할때 외부로한다.-->
+    <!--보안 , 파일 관리를 위해 외부로함-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>제목1</h1>
+    <h1>제목2</h1>
+    <h2>제목3</h2>
+    <p>문단</p>
+    <p>문단</p>
+    <p>문단</p>
+    <a href="#">버튼</a>
+    <span>글자 태그</span>
+    <span>글자 태그</span>
+</body>
+
+</html>

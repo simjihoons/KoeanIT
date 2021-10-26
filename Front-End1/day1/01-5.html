@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃구성</title>
+</head>
+
+<body>
+    <table width="300" height="300" border="1">
+        <tr>
+            <td>글자</td>
+            <td>글자</td>
+        </tr>
+        <tr>
+            <td>img</td>
+            <td>img</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <table width="300" height="300" border="1">
+        <tr>
+            <td colspan="2">글자1 글자2</td>
+        </tr>
+        <tr>
+            <td>img</td>
+            <td>img</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <table width="300" height="300" border="1">
+        <tr>
+            <td>test</td>
+            <td>test</td>
+        </tr>
+        <tr>
+            <td colspan="2">test</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <table width="500" height="400" border="1">
+        <tr>
+            <!--1번줄-->
+            <td rowspan="2"></td>
+            <td></td>
+            <td></td>
+            <td rowspan="3"></td>
+        </tr>
+        <tr>
+            <!--2번줄-->
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!--3번줄-->
+            <td></td>
+            <td rowspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!--4번줄-->
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <br><br>
+
+    <table width="300" height="300" border="1">
+        <tr>
+            <td width="100" height="100" align="center">aaa</td>
+            <td width="100" height="100" align="right">bbb</td>
+            <td width="100" height="100">ccc</td>
+        </tr>
+        <tr>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+        </tr>
+        <tr>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <table width="300" height="300" border="1">
+        <tr>
+            <!--가로정렬-->
+            <td width="100" height="100" align="center">aaa</td>
+            <td width="100" height="100" align="right">bbb</td>
+            <td width="100" height="100">ccc</td>
+        </tr>
+        <tr>
+            <!--세로정렬-->
+            <td valign="top">aaa</td>
+            <td valign="center">bbb</td>
+            <td valign="bottom">ccc</td>
+        </tr>
+        <tr>
+            <td align="right" valign="top">aaa</td>
+            <td align="center" valign="middle">bbb</td>
+            <td align="left" valign="bottom">ccc</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
