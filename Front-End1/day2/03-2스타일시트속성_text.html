@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style type="text/css">
+        /* 기본구조
+            선택자{속성:속성값;속성:속성값;}
+        */
+
+        /*
+            text 관련된 스타일 선언 
+            - line-height "normal, 숫자, 숫자em, %“ : 줄간격
+            - text-indent "숫자em, 퍼센트, 숫자“ : 들여쓰기, 음수사용시 내어쓰기
+            - text-align "left, right, center, justify" : 텍스트나 이미지 수평정렬
+            - text-decoration “none, underline, overline, line-through" : 줄 긋기 유전되지 않음
+            - letter-spacing "normal, 숫자em, 숫자“ : 글자 간격
+            - text-transform "capitalize, uppercase, lowercase, none" : 영문자 변환 첫글자만 대문자 소문자
+            ․ vertical-align "baseline, sup, sub, middle, text-top, - top, text-bottom, bottom" :텍스트나 이미지 수직정렬
+        */
+        h1 {
+            font-style: italic;
+        }
+
+        p {
+            font-size: 16px;
+            /*line-height: 21px; /*5만큼의 크기를 주고싶으면 현재 글자크기(16)+5를 해야한다.*/
+
+            line-height: 1em;
+            /*현재 글자 크기 100% 1로 표현*/
+
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <h1>제목1</h1>
+    <address>글자</address>
+    <p>
+        문단 태그<br>
+        문단 태그<br>
+        문단 태그<br>
+        문단 태그<br>
+        문단 태그<br>
+    </p>
+    <a href="">링크</a>
+    <br><br>
+    <span>글자 두께 설정</span>
+
+</body>
+
+</html>

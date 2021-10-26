@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style type="text/css">
+        /* 기본구조
+            선택자{속성:속성값;속성:속성값;}
+        */
+
+        /*
+            폰트 관련된 스타일 선언 
+            - font "값들만“ : 대표속성
+            - font-family : 글꼴, 글꼴 이름은 쉼표(,)로 구분, 글꼴 이름이 두 단어 이상이면 큰 따옴표로 묶는다. 브라우저는 앞에 있는 글꼴 부터 보여준다.
+            - font-style "normal, italic, oblique" : 기울임꼴을 적용
+            - font-variant "normal, small-caps" :
+              small-caps 크기가 작은 대문자
+            - font-weight "normal, bold, 100～900" : 글자 굵기
+              normal=400, bold=700, 숫자는 인식 못하는 경우 있음
+            - font-size "숫자em(상위 element 크기에 배수), 숫자pt" : 글자 크기 유전되지 않음
+            - color  글꼴 색상 선언
+        */
+        h1 {
+            font-style: italic;
+        }
+
+        address {
+            font-style: normal;
+        }
+
+        .txt01 {
+            font-weight: 900;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <h1>제목1</h1>
+    <address>글자</address>
+    <p class="name" style="font-variant: small-caps;">shim ji hoon</p>
+    <p>SHIM JI HOON</p>
+
+    <span class="txt01">글자 두께 설정</span>
+
+</body>
+
+</html>

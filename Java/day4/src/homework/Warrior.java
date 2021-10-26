@@ -1,22 +1,22 @@
 package homework;
 
 public class Warrior {
-//¸â¹ö º¯¼ö]
-//hp ,power,name µî
-//´Ù get setÀ¸·Î ÇÏ±â
+//ë©¤ë²„ ë³€ìˆ˜
+//hp ,power,name ë“±
+//ë‹¤ get setìœ¼ë¡œ í•˜ê¸°
 	private String name;
 	private String skillName;
 	private int hp;
 	private int mp;
-	private int str; // °ø°İ·Â
-	private int def; // ¹æ¾î·Â
-	private int exp; // °æÇèÄ¡
-	private int level; // ·¹º§
+	private int str; // ê³µê²©ë ¥
+	private int def; // ë°©ì–´ë ¥
+	private int exp; // ê²½í—˜ì¹˜
+	private int level; // ë ˆë²¨
 
-	// »ı¼ºÀÚ ¿µ¿ª
+	// ìƒì„±ì ì˜ì—­
 	public Warrior() {
-		// ´Ù¸¥ »ı¼ºÀÚ È£Ãâ, ±âº»»óÅÂÃ¢
-		this("ÀÌ¸§¾øÀ½","½ºÅ³ÀÌ¸§¾øÀ½", 100, 100, 10, 5, 0, 1);
+		// ë‹¤ë¥¸ ìƒì„±ì í˜¸ì¶œ, ê¸°ë³¸ìƒíƒœì°½
+		this("ì´ë¦„ì—†ìŒ","ìŠ¤í‚¬ì´ë¦„ì—†ìŒ", 100, 100, 10, 5, 0, 1);
 	}
 
 	public Warrior(String name) {
@@ -34,7 +34,7 @@ public class Warrior {
 		this.level = level;
 	}
 
-	// get,set ¿µ¿ª
+	// get,set ì˜ì—­
 	public String getName() {
 		return name;
 	}
@@ -99,40 +99,42 @@ public class Warrior {
 		this.exp = exp;
 	}
 
-	// ¸Ş¼­µå ¿µ¿ª
+	// ë©”ì„œë“œ ì˜ì—­
 	public void attack() {	
 		exp += 50;
-		System.out.println(name + "ÀÌ(°¡) " + this.skillName + " ±â¼ú·Î °ø°İ ÇÕ´Ï´Ù.\n");
+		System.out.println(name + "ì´(ê°€) " + this.skillName + " ê¸°ìˆ ë¡œ ê³µê²© í•©ë‹ˆë‹¤.\n");
 		if (exp == 100 || exp>100) {
-			System.out.println("\n!!!·¹º§¾÷!!!\n");
+			System.out.println("\n!!!ë ˆë²¨ì—…!!!\n");
 			exp = 0;
 			level++;
+			
 		}
 
 	}
 
 	public void showInfo() {
-		// »óÅÂÃ¢
-		System.out.println("ÀÌ¸§ : " + this.name + "\n·¹º§ : " + this.level + "\nÃ¼·Â : " + this.hp + "\n¸¶³ª : " + this.mp
-				+ "\n°ø°İ·Â : " + this.str + "\n¹æ¾î·Â : " + this.def + "\n°æÇèÄ¡ : " + this.exp);
+		// ìƒíƒœì°½
+		System.out.println("ì´ë¦„ : " + this.name + "\në ˆë²¨ : " + this.level + "\nì²´ë ¥ : " + this.hp + "\në§ˆë‚˜ : " + this.mp
+				+ "\nê³µê²©ë ¥ : " + this.str + "\në°©ì–´ë ¥ : " + this.def + "\nê²½í—˜ì¹˜ : " + this.exp);
 	}
 
 	public static void main(String[] args) {
-		Warrior w1 = new Warrior("È«±æµ¿");
+		Warrior w1 = new Warrior("í™ê¸¸ë™");
 
 //		String name = w1.getName();
 //		System.out.println(name);
 //
-//		w1.setName("ÀÌ¼ø½Å");
-//		w1.setSkillName("º®·ÂÀÏ¼¶");
+//		w1.setName("ì´ìˆœì‹ ");
+//		w1.setSkillName("ë²½ë ¥ì¼ì„¬");
 		//w1.attack();
 		// w1.showInfo();
 
 		System.out.println("=================================");
 		Warrior w2 = new Warrior();
-		w2.setName("Á¨ÀÌÃ÷");
+		w2.setName("ì  ì´ì¸ ");
+		w2.setSkillName("ë²½ë ¥ì¼ì„¬");
 		w2.attack();
-		//w2.attack();
+		w2.attack();
 		w2.showInfo();
 
 		

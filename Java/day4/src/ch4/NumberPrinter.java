@@ -1,19 +1,19 @@
 package ch4;
 
 public class NumberPrinter {
-	// ¹øÈ£Ç¥
+	// ï¿½ï¿½È£Ç¥dd
 
-	private int id; // ½Äº°ÀÚ
-	private static  int waitNumber = 1; // ´ë±â¹øÈ£
+	private int id; // ï¿½Äºï¿½ï¿½ï¿½
+	private static  int waitNumber = 1; // ï¿½ï¿½ï¿½ï¿½È£
 
-	// »ý¼ºÀÚ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public NumberPrinter(int id) {
 		this.id = id;
 	}
 
-	// ¹øÈ£Ç¥ Âï¾îÁÖ¼¼¿ä
+	// ï¿½ï¿½È£Ç¥ ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
 	public void printWaitNumber() {
-		System.out.println(id + " ±â±âÀÇ ´ë±â¼ø¹ø : " + waitNumber);
+		System.out.println(id + " ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + waitNumber);
 		this.waitNumber++;
 	}
 
