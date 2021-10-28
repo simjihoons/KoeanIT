@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style type="text/css">
+        /* 기본구조
+            선택자{속성:속성값;속성:속성값;}
+        */
+
+        /* [색상과 배경에 관련된 스타일]
+        - color "영문자, RGB“ : 글자 및 밑줄 색
+        - background-color "영문자, RGB, transparent" : 배경색
+        - background-image "none, url(파일위치)“ : 배경 그림
+        - background-repeat "repeat, repeat-x, repeat-y, no-repeat" : 배경이미지 반복 여부
+        - background-attachment "scroll, fixed" : 화면이 스크롤 될 때 이동여부
+        - background-position "top, bottom, left, center, right, 가로% 세로%“ : 이미지 반복 여부 가로p 세로p(음수 사용됨)
+       */
+        body {
+            background-color: orange;
+
+        }
+
+        body {
+
+            background-image: url(../images/main_img.jpg);
+            /*background-repeat: repeat-y;*/
+
+            background-repeat: no-repeat;
+
+            /* position을 사용하려면 이미지의 반복여부를 no-repeat로 설정해야한다.*/
+            /*가로 세로*/
+            /*background-position: 500px 500px;*/
+            /*background-position: center top;*/
+            background-position: 50% top;
+
+
+            height: 5000px;
+            background-attachment: scroll;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

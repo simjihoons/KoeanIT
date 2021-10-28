@@ -29,16 +29,59 @@
 
         p {
             font-size: 16px;
-            /*line-height: 21px; /*5만큼의 크기를 주고싶으면 현재 글자크기(16)+5를 해야한다.*/
 
+            /*line-height: 21px; /*5만큼의 크기를 주고싶으면 현재 글자크기(16)+5를 해야한다.*/
             line-height: 1em;
+
             /*현재 글자 크기 100% 1로 표현*/
             text-indent: 50px;
         }
 
         .title {
             text-align: center;
+            /*text-align을 선언 하려면 자신의 가로 크기의 값이 설정되어야 한다.*/
+            /*span은 가로값이 없기 때문에 display를 이용해 가로값을 준다.*/
             display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            /*hover는 마우스 커서를 가져다 댔을때.*/
+            text-decoration: underline;
+        }
+
+        a:active {
+            /*active는 눌렀을때*/
+            text-decoration: overline;
+        }
+
+        a:visited {
+            /*눌렀다가 떘을때*/
+            text-decoration: line-through;
+        }
+
+        .title_2 {
+            text-align: center;
+            letter-spacing: 50px;
+        }
+
+        .title_3 {
+            word-spacing: 20px;
+        }
+
+        .transfom01 {
+            text-transform: capitalize;
+        }
+
+        .transfom02 {
+            text-transform: lowercase;
+        }
+
+        .transfom03 {
+            text-transform: uppercase;
         }
     </style>
 
@@ -48,6 +91,8 @@
 
 <body>
     <h1 class="title">제목1</h1>
+    <h1 class="title_2">제목2</h1>
+    <h2 class="title_3">제목3 제목3</h2>
     <address>글자</address>
     <p class="ptag">
         문단 태그<br>
@@ -56,10 +101,14 @@
         문단 태그<br>
         문단 태그<br>
     </p>
-    <a href="">링크</a>
+    <a href="#">링크</a>
     <br><br>
     <span class="title">글자 두께 설정</span>
 
+
+    <p class="transfom01">address</p>
+    <p class="transfom02">address</p>
+    <p class="transfom03">address</p>
 </body>
 
 </html>
