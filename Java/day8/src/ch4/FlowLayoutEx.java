@@ -13,9 +13,9 @@ class MyFrame2 extends JFrame {
 //	private JButton button5;
 //	private JButton button6;
 
-	//private ArrayList<JButton> button = new ArrayList<JButton>();
-	  private JButton[] buttons = new JButton[6];
-	  
+	private ArrayList<JButton> buttons = new ArrayList<JButton>();
+//	  private JButton[] buttons = new JButton[6];
+
 	public MyFrame2() {
 		initData();
 		setInitLayout();
@@ -26,25 +26,24 @@ class MyFrame2 extends JFrame {
 		setTitle("Flow Layout 연습");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(500, 500);
-		setLayout(new FlowLayout(FlowLayout.LEFT,1,10)); // 수평,수직
-		
+		setLayout(new FlowLayout(FlowLayout.LEFT, 1, 10)); // 수평,수직
 
-//		button.add(new JButton("1번재 버튼"));
-//		button.add(new JButton("2번재 버튼"));
-//		button.add(new JButton("3번재 버튼"));
-//		button.add(new JButton("4번재 버튼"));
-//		button.add(new JButton("5번재 버튼"));
-//		button.add(new JButton("6번재 버튼"));
-//		
+		buttons.add(new JButton("1번재 버튼"));
+		buttons.add(new JButton("2번재 버튼"));
+		buttons.add(new JButton("3번재 버튼"));
+		buttons.add(new JButton("4번재 버튼"));
+		buttons.add(new JButton("5번재 버튼"));
+		buttons.add(new JButton("6번재 버튼"));
+
 //		buttons[0] = new JButton("1번재 버튼");
 //		buttons[1] = new JButton("2번재 버튼");
 //		buttons[2] = new JButton("3번재 버튼");
 //		buttons[3] = new JButton("4번재 버튼");
 //		buttons[4] = new JButton("5번재 버튼");
 //		buttons[5] = new JButton("6번재 버튼");
-		for (int i = 0; i < buttons.length; i++) {
-			buttons[i] = new JButton((i+1)+"번째 버튼");
-		}
+//		for (int i = 0; i < buttons.length; i++) {
+//			buttons[i] = new JButton((i+1)+"번째 버튼");
+//		}
 	}// end of initData
 
 	private void setInitLayout() {
@@ -55,18 +54,19 @@ class MyFrame2 extends JFrame {
 //		add(button4);
 //		add(button5);
 //		add(button6);
-		
-		for(int i =0; i<buttons.length; i++) {
-			add(buttons[i]); 
+
+		for (int i = 0; i < buttons.size(); i++) {
+			JButton a = buttons.get(i);
+			add(a);
 		}
-		
+
 //		add(buttons[0]);
 //		add(buttons[1]);
 //		add(buttons[2]);
 //		add(buttons[3]);
 //		add(buttons[4]);
 //		add(buttons[5]);
-		
+
 	}// end of setInitLayout
 }
 
