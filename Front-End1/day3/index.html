@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 맑은 고딕;
+            font-size: 12px;
+            color: #444;
+            height: 5000px;
+        }
+
+        img {
+            border: 0;
+        }
+
+        ul ol li {
+            list-style: none;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: blueviolet;
+        }
+
+        /*layout.css*/
+        #warp {
+            width: 100%;
+        }
+
+        #header {
+            width: 100%;
+            height: 95px;
+            background-color: wheat;
+        }
+
+        #header_in {
+            /*가운대로*/
+            margin: 0 auto;
+            width: 1000px;
+            height: 95px;
+            background-color: red;
+        }
+
+        #header_in .logo {
+            margin: 25px 0 0 50px;
+            float: left;
+        }
+
+        #header_in .main_nav {}
+
+        #header_in .main_nav li {}
+
+        #header_in .main_nav li a {}
+
+        #header_in .go_btn {}
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- 상단부분 -->
+        <div id="header">
+            <div id="header_in">
+                <h1 class="logo"><img src="/Front-End1/images/logo.jpg" alt="로고입니다"></h1>
+
+                <!-- 메인메뉴 -->
+                <ul class="main_nav">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">사업분야</a></li>
+                    <li><a href="#">제품정보</a></li>
+                    <li><a href="#">채용정보</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+
+                <!-- 인트라넷 바로가기 -->
+                <a href="#" class="go_btn">intranet</a>
+
+                <!-- info 메뉴 -->
+                <ul class="info_mn">
+                    <li>
+                        <a href="#">Home</a>
+                        <a href="#">Sitemap</a>
+                        <a href="#">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 메인 이미지 -->
+        <div id="main_img"></div>
+
+        <!-- 사이트 내용 부분 -->
+        <div id="contents"></div>
+
+        <!--하단 부분-->
+        <div id="footer"></div>
+    </div>
+
+
+</body>
+
+</html>
