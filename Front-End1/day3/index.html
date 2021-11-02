@@ -23,7 +23,9 @@
             border: 0;
         }
 
-        ul ol li {
+        ul,
+        ol,
+        li {
             list-style: none;
         }
 
@@ -51,7 +53,6 @@
         #header {
             width: 100%;
             height: 95px;
-            background-color: wheat;
         }
 
         #header_in {
@@ -59,7 +60,7 @@
             margin: 0 auto;
             width: 1000px;
             height: 95px;
-            background-color: red;
+            position: relative;
         }
 
         #header_in .logo {
@@ -67,13 +68,122 @@
             float: left;
         }
 
-        #header_in .main_nav {}
+        #header_in .main_nav {
+            float: left;
+            margin: 35px 0 0 60px;
+        }
 
-        #header_in .main_nav li {}
+        #header_in .main_nav li {
+            float: left;
+            margin-right: 35px;
+        }
 
-        #header_in .main_nav li a {}
+        #header_in .main_nav li a {
+            font-size: 18px;
+            color: #000;
+        }
 
-        #header_in .go_btn {}
+        #header_in .go_btn {
+            float: right;
+            margin: 35px 20px 0 0px;
+            background-color: #444;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            width: 100px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+
+        }
+
+        #header_in .info_mn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+
+        #header_in .info_mn li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        #header_in .info_mn li a {
+            font-size: 12px;
+            color: #000;
+        }
+
+        /*메인 이미지*/
+        #main_img {
+            margin: 0 auto;
+            width: 1000px;
+            height: 255;
+            background-color: bisque;
+        }
+
+        /*사이트 내용*/
+        #contents {
+            margin: 0 auto;
+            width: 100%;
+            background-color: cornsilk;
+        }
+
+        #contents_in {
+            margin: 0 auto;
+            width: 1000px;
+            height: 270px;
+            background-color: burlywood;
+        }
+
+        #contents_in>div {
+            float: left;
+        }
+
+        #banner {
+            width: 360px;
+            height: 130px;
+            background-color: darkblue;
+        }
+
+        #board {
+            width: 300px;
+            height: 130px;
+            background-color: darkorange;
+        }
+
+        #news {
+            margin-left: 40px;
+            width: 300px;
+            height: 130px;
+            background-color: darkorchid;
+        }
+
+        #service {
+            width: 360px;
+            height: 120px;
+            background-color: darkseagreen;
+        }
+
+        #product {
+            width: 640px;
+            height: 120px;
+            background-color: aqua;
+        }
+
+        /*하단 영역*/
+        #footer {
+            width: 100%;
+            height: 80px;
+            background-color: cadetblue;
+        }
+
+        #footer_in {
+            margin: 0 auto;
+            width: 1000px;
+            height: 80px;
+            background-color: chocolate;
+        }
     </style>
 </head>
 
@@ -108,13 +218,23 @@
         </div>
 
         <!-- 메인 이미지 -->
-        <div id="main_img"></div>
+        <div id="main_img"><img src="../images/main_img.jpg"></div>
 
         <!-- 사이트 내용 부분 -->
-        <div id="contents"></div>
+        <div id="contents">
+            <div id="contents_in">
+                <div id="banner">banner</div>
+                <div id="board">board</div>
+                <div id="news">news</div>
+                <div id="service">service</div>
+                <div id="product">product</div>
+            </div>
+        </div>
 
         <!--하단 부분-->
-        <div id="footer"></div>
+        <div id="footer">
+            <div id="footer_in">footer_in</div>
+        </div>
     </div>
 
 
