@@ -57,6 +57,7 @@ public class MyFrame4 extends JFrame {
 			g.drawImage(backgroundImage, 0, 0, 500, 500, null);
 			g.drawImage(imageIcon, 200, 200, 80, 80, null);
 			g.drawImage(imageIcon2, 100, 100, 80, 80, null);
+			
 		}
 	}// end of inner class
 
