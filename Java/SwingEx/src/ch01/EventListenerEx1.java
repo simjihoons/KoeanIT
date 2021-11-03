@@ -43,8 +43,8 @@ class MyFrame1 extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("시스템 콜백 실행");
 		System.out.println("버튼이 클릭 되었습니다.");
-		//System.out.println(e.toString());
-		
+		// System.out.println(e.toString());
+
 	}
 
 }

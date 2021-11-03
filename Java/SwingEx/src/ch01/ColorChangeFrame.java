@@ -16,16 +16,17 @@ public class ColorChangeFrame extends SuperMyFrame implements ActionListener {
 	BorderLayout borderLayout;
 	JPanel panel1;
 	JPanel panel2;
-//	JButton button1;
-//	JButton button2;
-//	JButton button3;
-//	JButton button4;
-//	JButton button5;
-//	JButton button6;
-//	JButton button7;
+	// JButton button1;
+	// JButton button2;
+	// JButton button3;
+	// JButton button4;
+	// JButton button5;
+	// JButton button6;
+	// JButton button7;
 	Scanner sc = new Scanner(System.in);
 	ArrayList<JButton> button = new ArrayList<>();
 	String name = "";
+
 	public ColorChangeFrame() {
 		initData();
 		setInitLayout();
@@ -41,15 +42,15 @@ public class ColorChangeFrame extends SuperMyFrame implements ActionListener {
 		borderLayout = new BorderLayout();
 		panel1 = new JPanel();
 		panel2 = new JPanel();
-//		button1 = new JButton("빨간색");
-//		button2 = new JButton("주황색");
-//		button3 = new JButton("노란색");
-//		button4 = new JButton("초록색");
-//		button5 = new JButton("파란색");
-//		button6 = new JButton("분홍색");
-//		button7 = new JButton("검은색");
-//		
-		
+		// button1 = new JButton("빨간색");
+		// button2 = new JButton("주황색");
+		// button3 = new JButton("노란색");
+		// button4 = new JButton("초록색");
+		// button5 = new JButton("파란색");
+		// button6 = new JButton("분홍색");
+		// button7 = new JButton("검은색");
+		//
+
 		for (int i = 0; i < 7; i++) {
 			button.add(new JButton(sc.nextLine()));
 		}
@@ -73,30 +74,29 @@ public class ColorChangeFrame extends SuperMyFrame implements ActionListener {
 		panel2.setPreferredSize(new Dimension(500, 100));
 		add(panel2);
 
-
-//		panel2.add(button1);
-//		panel2.add(button2);
-//		panel2.add(button3);
-//		panel2.add(button4);
-//		panel2.add(button5);
-//		panel2.add(button6);
-//		panel2.add(button7);
+		// panel2.add(button1);
+		// panel2.add(button2);
+		// panel2.add(button3);
+		// panel2.add(button4);
+		// panel2.add(button5);
+		// panel2.add(button6);
+		// panel2.add(button7);
 		for (int i = 0; i < button.size(); i++) {
 			panel2.add(button.get(i));
 		}
-		
+
 	}
 
 	@Override
 	protected void addEventListener() {
 		super.addEventListener();
-//		button1.addActionListener(this);
-//		button2.addActionListener(this);
-//		button3.addActionListener(this);
-//		button4.addActionListener(this);
-//		button5.addActionListener(this);
-//		button6.addActionListener(this);
-//		button7.addActionListener(this);
+		// button1.addActionListener(this);
+		// button2.addActionListener(this);
+		// button3.addActionListener(this);
+		// button4.addActionListener(this);
+		// button5.addActionListener(this);
+		// button6.addActionListener(this);
+		// button7.addActionListener(this);
 		for (int i = 0; i < button.size(); i++) {
 			button.get(i).addActionListener(this);
 		}
@@ -108,23 +108,23 @@ public class ColorChangeFrame extends SuperMyFrame implements ActionListener {
 		// 1 버튼이 눌러지면 panel1 색 변경
 		// 2 버튼이 눌러지면 panel1 색 변경
 		JButton clickedButton = (JButton) e.getSource();
-		
-		if(clickedButton.getText().equals(button.get(0).getText())){
+
+		if (clickedButton.getText().equals(button.get(0).getText())) {
 			panel1.setBackground(Color.RED);
-		}else if(clickedButton.getText().equals(button.get(1).getText())) {
+		} else if (clickedButton.getText().equals(button.get(1).getText())) {
 			panel1.setBackground(Color.ORANGE);
-		}else if(clickedButton.getText().equals(button.get(2).getText())) {
+		} else if (clickedButton.getText().equals(button.get(2).getText())) {
 			panel1.setBackground(Color.YELLOW);
-		}else if(clickedButton.getText().equals(button.get(3).getText())) {
+		} else if (clickedButton.getText().equals(button.get(3).getText())) {
 			panel1.setBackground(Color.GREEN);
-		}else if(clickedButton.getText().equals(button.get(4).getText())) {
+		} else if (clickedButton.getText().equals(button.get(4).getText())) {
 			panel1.setBackground(Color.BLUE);
-		}else if(clickedButton.getText().equals(button.get(5).getText())) {
+		} else if (clickedButton.getText().equals(button.get(5).getText())) {
 			panel1.setBackground(Color.PINK);
-		}else {
+		} else {
 			panel1.setBackground(Color.BLACK);
 		}
-		
+
 	}
 
 	public static void main(String[] args) {
