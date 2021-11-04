@@ -66,12 +66,16 @@ public class MyFrame8 extends JFrame {
 				switch (keyCode) {
 				case KeyEvent.VK_UP:
 					yPoint -= (yPoint < 0) ? 0 : 10;
+					break;
 				case KeyEvent.VK_DOWN:
 					yPoint += (yPoint >= 390) ? 0 : 10;
+					break;
 				case KeyEvent.VK_LEFT:
 					xPoint -= (xPoint < 0) ? 0 : 10;
+					break;
 				case KeyEvent.VK_RIGHT:
 					xPoint += (xPoint >= 410) ? 0 : 10;
+					break;
 				}
 
 				repaint();
