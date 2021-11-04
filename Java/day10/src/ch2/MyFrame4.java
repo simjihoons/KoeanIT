@@ -32,9 +32,9 @@ public class MyFrame4 extends JFrame {
 
 		try {
 			backgroundImage = ImageIO.read(new File("background1.jpg"));
-			imageIcon = ImageIO.read(new File("among1.jpg"));
+			//imageIcon = ImageIO.read(new File("among1.jpg"));
 			
-			imageIcon.add("among1.jpg");
+			//imageIcon.add("among1.jpg");
 			//imageIcon2 = ImageIO.read(new File("among2.jpg"));
 		} catch (IOException e) {
 			System.out.println("파일을 찾을 수 없습니다.");
@@ -54,9 +54,9 @@ public class MyFrame4 extends JFrame {
 		@Override
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			g.drawImage(backgroundImage, 0, 0, 500, 500, null);
-			g.drawImage(imageIcon, 200, 200, 80, 80, null);
-			g.drawImage(imageIcon2, 100, 100, 80, 80, null);
+//			g.drawImage(backgroundImage, 0, 0, 500, 500, null);
+//			g.drawImage(imageIcon, 200, 200, 80, 80, null);
+//			g.drawImage(imageIcon2, 100, 100, 80, 80, null);
 			
 		}
 	}// end of inner class
