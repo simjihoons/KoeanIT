@@ -53,6 +53,8 @@ public class MyFrame8 extends JFrame {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				int keyCode = e.getKeyCode();
+
+				// 숙제 삼항연산자 이용
 //				if (keyCode == KeyEvent.VK_UP) {
 //					yPoint -= (yPoint < 0) ? 0 : 10;
 //				} else if (keyCode == KeyEvent.VK_DOWN) {
@@ -63,15 +65,20 @@ public class MyFrame8 extends JFrame {
 //					xPoint += (xPoint >= 410) ? 0 : 10;
 //				}
 
+				// 숙제 switch 이용
 				switch (keyCode) {
 				case KeyEvent.VK_UP:
 					yPoint -= (yPoint < 0) ? 0 : 10;
+					break;
 				case KeyEvent.VK_DOWN:
 					yPoint += (yPoint >= 390) ? 0 : 10;
+					break;
 				case KeyEvent.VK_LEFT:
 					xPoint -= (xPoint < 0) ? 0 : 10;
+					break;
 				case KeyEvent.VK_RIGHT:
 					xPoint += (xPoint >= 410) ? 0 : 10;
+					break;
 				}
 
 				repaint();
