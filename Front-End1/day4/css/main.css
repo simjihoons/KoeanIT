@@ -60,6 +60,38 @@
   background-color: aqua;
 }
 
+/* 인기상품 */
+.product {
+  float: left;
+  width: 600px;
+  height: 670px;
+  background-color: darkgray;
+}
+
+.product h3 {
+  width: 590px;
+  height: 70px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 70px;
+  background-color: white;
+  padding: 5px;
+}
+
+.product img {
+}
+
+.product .info_box {
+}
+.product .info_box h4 {
+}
+.product .info_box p {
+}
+.product .info_box span {
+}
+.product .info_box a {
+}
+
 /* 하단 부분  */
 #footer {
   width: 100%;
