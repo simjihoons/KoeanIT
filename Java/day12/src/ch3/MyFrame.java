@@ -1,33 +1,47 @@
-package ch02;
+package ch3;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class MyFrame8 extends JFrame {
+public class MyFrame extends JFrame implements ActionListener {
 	BufferedImage backgroundImage;
 	BufferedImage imageIcon1;
+	
+	
+	BorderLayout borderLayout;
+	
 	MyImagePanel imagePanel;
+	JPanel panel1;
+	
+	JButton button1;
+	JButton button2;
 
 	int xPoint = 200;
 	int yPoint = 200;
 
-	public MyFrame8() {
+	public MyFrame() {
 		initData();
 		setInitLayout();
 		addEventListener();
 	}
 
 	private void initData() {
-		setTitle("이미지 백그라운드 연습2");
-		setSize(500, 500);
+		setTitle("어몽어스");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(500, 500);
 
 		try {
 			backgroundImage = ImageIO.read(new File("background1.jpg"));
@@ -35,37 +49,41 @@ public class MyFrame8 extends JFrame {
 		} catch (Exception e) {
 			System.err.println("파일이 없습니다.");
 			System.exit(0);
-
 		}
 
-		// try catch문으로 객체 생성 후
 		imagePanel = new MyImagePanel();
+		borderLayout = new BorderLayout();
+		panel1 = new JPanel();
+
+		button1 = new JButton("그냥 왔다갔다");
+		button2 = new JButton("회전하면서 왔다갔다");
 	}
 
+
 	private void setInitLayout() {
-		this.setVisible(true);
-		this.setResizable(false); // 마우스로 넓히거나 줄일수 없게
-		this.add(imagePanel);
+		setVisible(true);
+		setResizable(false); // 창을 줄이거나 늘릴수 없게하기.
+		setLayout(borderLayout);
+		add(imagePanel);
+		
+		
+		
+		panel1.setLayout(new FlowLayout(FlowLayout.CENTER,20,20));
+		panel1.setPreferredSize(new Dimension(500, 100));
+		add(panel1,BorderLayout.SOUTH);
+		panel1.add(button1);
+		panel1.add(button2);
+		
+		
+		
 	}
 
 	private void addEventListener() {
-		this.addKeyListener(new KeyAdapter() {
+		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				int keyCode = e.getKeyCode();
 
-				// 숙제 삼항연산자 이용
-//				if (keyCode == KeyEvent.VK_UP) {
-//					yPoint -= (yPoint < 0) ? 0 : 10;
-//				} else if (keyCode == KeyEvent.VK_DOWN) {
-//					yPoint += (yPoint >= 390) ? 0 : 10;
-//				} else if (keyCode == KeyEvent.VK_LEFT) {
-//					xPoint -= (xPoint < 0) ? 0 : 10;
-//				} else if (keyCode == KeyEvent.VK_RIGHT) {
-//					xPoint += (xPoint >= 410) ? 0 : 10;
-//				}
-
-				// 숙제 switch 이용
 				switch (keyCode) {
 				case KeyEvent.VK_UP:
 					yPoint -= (yPoint < 0) ? 0 : 10;
@@ -82,20 +100,33 @@ public class MyFrame8 extends JFrame {
 				}
 
 				repaint();
-			}// end of keyPressed
-
+			}
 		});
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		JButton clickedButton = (JButton) e.getSource();
+		
+		clickedButton.getText().equals(button1);
+		
 	}
 
 	// 내부 클래스
-	// 그림을 넣을땐 클래스가 따로 필요
 	private class MyImagePanel extends JPanel {
 		@Override
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			g.drawImage(backgroundImage, 0, 0, 500, 500, null); // 이미지,x,y,가로크기,세로크기,null
-			g.drawImage(imageIcon1, xPoint, yPoint, 80, 80, null); // 방향키 눌렀을때 움직이게 하기위해 변수를 사용
+			// 이미지,x,y,가로크기,세로크기,null
+			g.drawImage(backgroundImage, 0, 0, 500, 500, null);
+			g.drawImage(imageIcon1, xPoint, yPoint, 50, 50, null);
+
 		}
 	}
 
+	public static void main(String[] args) {
+		new MyFrame();
+	}
+
+	
 }
