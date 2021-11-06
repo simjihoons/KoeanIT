@@ -57,15 +57,14 @@
   width: 1200px;
   height: 1600px;
   margin: 0 auto;
-  background-color: aqua;
 }
 
 /* 인기상품 */
 .product {
   float: left;
-  width: 600px;
+  width: 598px;
   height: 670px;
-  background-color: darkgray;
+  border: 1px solid #ccc;
 }
 
 .product h3 {
@@ -74,7 +73,6 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 70px;
-  background-color: white;
   padding: 5px;
 }
 
@@ -108,22 +106,41 @@
 
 /* 리스트 박스 부분 */
 .list_box {
-  float: left;
+  float: right;
+  width: 545px;
+  background-color: burlywood;
 }
 .list_box > ul {
+  margin-top: 50px;
 }
 .list_box > ul > li {
   border-bottom: 1px solid #ccc;
+  height: 160px;
 }
-.list_box > li > h4 {
+.list_box li > h4 {
+  margin: 55px 0 0 20px;
+  font-size: 40px;
+  float: left;
 }
-.list_box > li > .group {
+.list_box li > img {
+  float: left;
+  margin: 25px 0 0 20px;
 }
-.list_box > li > .group > p {
+.list_box li > .group {
+  float: left;
+  margin: 60px 0 0 20px;
 }
-.list_box > li > .group > span {
+.list_box li > .group > p {
+  font-size: 20px;
 }
-.list_box > a {
+.list_box li > .group > span {
+  font-size: 14px;
+}
+.list_box li > a {
+  float: right;
+  margin: 60px 5px 0 0;
+  font-size: 16px;
+  color: lawngreen;
 }
 /* 하단 부분  */
 #footer {
