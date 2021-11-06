@@ -78,11 +78,11 @@
   padding: 5px;
 }
 
-.product img {
-}
+/* .product img {
+} */
 
-.product .info_box {
-}
+/* .product .info_box {
+} */
 .product .info_box > h4 {
   float: left;
   margin: 40px 0 0 20px;
@@ -106,6 +106,25 @@
   font-size: 18px;
 }
 
+/* 리스트 박스 부분 */
+.list_box {
+  float: left;
+}
+.list_box > ul {
+}
+.list_box > ul > li {
+  border-bottom: 1px solid #ccc;
+}
+.list_box > li > h4 {
+}
+.list_box > li > .group {
+}
+.list_box > li > .group > p {
+}
+.list_box > li > .group > span {
+}
+.list_box > a {
+}
 /* 하단 부분  */
 #footer {
   width: 100%;
