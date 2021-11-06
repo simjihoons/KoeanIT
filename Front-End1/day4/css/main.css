@@ -83,13 +83,27 @@
 
 .product .info_box {
 }
-.product .info_box h4 {
+.product .info_box > h4 {
+  float: left;
+  margin: 40px 0 0 20px;
+  font-size: 40px;
 }
+
+.product .info_box .group {
+  float: left;
+  margin: 45px 0 0 20px;
+}
+/* 한줄에 한개만 존재 두개 이상일 경우 문단그룹으로 묶어줌*/
 .product .info_box p {
+  font-size: 20px;
 }
 .product .info_box span {
+  font-size: 14px;
 }
-.product .info_box a {
+.product .info_box > a {
+  float: right;
+  margin: 55px 20px 0 0;
+  font-size: 18px;
 }
 
 /* 하단 부분  */
