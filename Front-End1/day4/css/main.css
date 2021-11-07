@@ -64,7 +64,6 @@
   float: left;
   width: 598px;
   height: 670px;
-  border: 1px solid #ccc;
 }
 
 .product h3 {
@@ -77,9 +76,13 @@
 }
 
 /* .product img {
+  height: 460x;
 } */
 
 /* .product .info_box {
+  height: 160px;
+  border: 1px solid #444;
+  border-top: white;
 } */
 .product .info_box > h4 {
   float: left;
@@ -91,6 +94,7 @@
   float: left;
   margin: 45px 0 0 20px;
 }
+
 /* 한줄에 한개만 존재 두개 이상일 경우 문단그룹으로 묶어줌*/
 .product .info_box p {
   font-size: 20px;
@@ -108,7 +112,6 @@
 .list_box {
   float: right;
   width: 545px;
-  background-color: burlywood;
 }
 .list_box > ul {
   margin-top: 50px;
@@ -140,18 +143,188 @@
   float: right;
   margin: 60px 5px 0 0;
   font-size: 16px;
-  color: lawngreen;
+}
+
+/* 배너 부분 */
+.banner {
+  float: left;
+  width: 1200px;
+  height: 140px;
+}
+/* 기획/이벤트 영역 */
+.event {
+  float: left;
+  width: 1200px;
+  height: 760px;
+}
+.event_h {
+  width: 1200px;
+  height: 50px;
+  font-size: 18px;
+}
+.event_b {
+  width: 1200px;
+}
+
+.event_b > li {
+  float: left;
+  /* display: inline-block;  float: left; 와 같지만 inline-block은 테투리에 여백을 -5정도 줘야함 */
+  width: 370px;
+  height: 520px;
+  margin-right: 40px;
+  border: 1px solid #ccc;
+}
+.event_b > li > img {
+  width: 370px;
+  border-bottom: 1px solid #ccc;
+}
+.event_b > li > h4 {
+  margin: 25px 0 0 18px;
+  font-size: 20px;
+  color: #555;
+}
+.event_b > li > p {
+  font-size: 13px;
+  margin: 13px 0 0 18px;
+}
+
+.event_b .group > span {
+  float: left;
+  font-size: 15px;
+  margin: 30px 0 0 20px;
+}
+.event_b .group > a {
+  float: right;
+  font-size: 15px;
+  margin: 30px 20px 0 0px;
+}
+.event_b > li.last {
+  margin-right: 0px;
+}
+.event_bom {
+  float: left;
+  width: 1200px;
+  height: 170px;
+}
+.event_bom > a {
+  display: block;
+  margin: 0 auto;
+  margin-top: 65px;
+  font-size: 14px;
+  width: 120px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  border: 1px double #ccc;
+}
+
+.event_bom > a:hover {
+  background-color: aqua;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+/*  전화번호,카톡상담 부분 */
+.info {
+  width: 100%;
+  height: 150px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.info .center_box {
+  margin: 0 auto;
+  width: 1200px;
+  height: 150px;
+}
+
+/* box1 */
+.info .box1 {
+  float: left;
+  width: 240px;
+  height: 150px;
+}
+.info .box1 > span {
+  display: block;
+  margin: 30px 0 0 0;
+  font-size: 11px;
+}
+.info .box1 > h4 {
+  margin: 8px 0 0 0;
+  font-size: 25px;
+}
+.info .box1 > p {
+  margin: 8px 0 0 0;
+  font-size: 13px;
+}
+
+/* box2 */
+.info .center_box .box2 {
+  float: left;
+  width: 480px;
+  height: 150px;
+  margin-left: 140px;
+}
+
+.info .box2 > p {
+  font-size: 13px;
+  margin-top: 50px;
+}
+
+.info .box2 > h4 {
+  margin-top: 8px;
+  font-size: 30px;
+  color: #888;
+}
+/* box3 */
+.info .center_box .box3 {
+  float: right;
+  width: 265px;
+}
+
+.info .box3 > p {
+  margin-top: 50px;
+}
+
+.info .box3 > img {
+  width: 100%;
+  margin-top: 6px;
 }
 /* 하단 부분  */
 #footer {
   width: 100%;
   height: 165px;
-  background-color: palevioletred;
 }
 
 #footer_in {
   margin: 0 auto;
-  width: 1200px;
+  padding-top: 30px;
+  /* width: 1200px; */
+  width: 100%;
   height: 165px;
-  background-color: hotpink;
+  background-color: #f1f1f1;
+}
+#footer_in .footer_mn {
+  margin: 0 auto;
+  width: 550px;
+}
+#footer_in .footer_mn > li {
+  float: left;
+  text-align: center;
+  width: 78.5px;
+}
+
+#footer_in .footer_mn > li > a {
+  font-size: 13px;
+}
+
+#footer_in .address {
+  float: left;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.2;
 }
