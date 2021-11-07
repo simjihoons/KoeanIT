@@ -36,13 +36,16 @@
         <section id="main_img"></section>
 
         <!-- 콘텐츠 부분 -->
-        <div id="contents">
+        <section id="contents">
             <div id="contents_in">
+
                 <!-- 인기 상품 -->
-                <div class="product">
-                    <h3>인기상품</h3>
-                    <img src="images/img1.jpg" alt="이미지">
-                    <div class="info_box">
+                <article class="product">
+                    <header>
+                        <h3>인기상품</h3>
+                    </header>
+                    <section><img src="images/img1.jpg" alt="이미지"></section>
+                    <footer class="info_box">
                         <h4>1</h4>
                         <div class="group">
                             <p>울릉도패키지</p>
@@ -50,10 +53,11 @@
                         </div>
 
                         <a href="#">구매하기</a>
-                    </div>
-                </div>
+                    </footer>
+                </article>
+
                 <!-- 리스트 박스 -->
-                <div class="list_box">
+                <article class="list_box">
                     <ul>
                         <li>
                             <h4>2</h4>
@@ -96,56 +100,60 @@
                             <a href="#">구매하기</a>
                         </li>
                     </ul>
-                </div>
+                </article>
 
                 <!-- 배너 부분(옵션투어) -->
-                <div class="banner">
+                <article class="banner">
                     <img src="images/banner180807.gif" alt="">
 
-                </div>
+                </article>
 
                 <!-- 기획/이벤트 영역 -->
-                <div class="event">
-                    <h3 class="event_h">기획전/이벤트</h3>
-                    <ul class="event_b">
-                        <li>
-                            <img src="images/img115.jpg" alt="아기">
-                            <h4>엄마 행복,아이 행복</h4>
-                            <p> 내 아이와의 잊지못할 소중한 추얼이 될 여행!<br>#워킹맘 #시모노세키 #추억 #2박3일</p>
+                <article class="event">
+                    <header class="event_h">
+                        <h3>기획전/이벤트</h3>
+                    </header>
+                    <section>
+                        <ul class="event_b">
+                            <li>
+                                <img src="images/img115.jpg" alt="아기">
+                                <h4>엄마 행복,아이 행복</h4>
+                                <p> 내 아이와의 잊지못할 소중한 추얼이 될 여행!<br>#워킹맘 #시모노세키 #추억 #2박3일</p>
 
-                            <div class="group">
-                                <span>149,000원~</span>
-                                <a href="#">구매하기</a>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="images/img117.jpg" alt="">
-                            <h4>됐어, 둘 다 가.그냥</h4>
-                            <p> 두 도시 이야기<br>#방콕 #파타야 #후쿠오카 #야마구치 #유후인 #벳부</p>
+                                <div class="group">
+                                    <span>149,000원~</span>
+                                    <a href="#">구매하기</a>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/img117.jpg" alt="">
+                                <h4>됐어, 둘 다 가.그냥</h4>
+                                <p> 두 도시 이야기<br>#방콕 #파타야 #후쿠오카 #야마구치 #유후인 #벳부</p>
 
-                            <div class="group">
-                                <span>189,000원~</span>
-                                <a href="#">구매하기</a>
-                            </div>
-                        </li>
-                        <li class="last">
-                            <img src="images/img119.jpg" alt="">
-                            <h4>[특보] 세기의 대결</h4>
-                            <p> 괌 vs 사이판<br>#괌 #사이판 #가족</p>
+                                <div class="group">
+                                    <span>189,000원~</span>
+                                    <a href="#">구매하기</a>
+                                </div>
+                            </li>
+                            <li class="last">
+                                <img src="images/img119.jpg" alt="">
+                                <h4>[특보] 세기의 대결</h4>
+                                <p> 괌 vs 사이판<br>#괌 #사이판 #가족</p>
 
-                            <div class="group">
-                                <span>499,000원~</span>
-                                <a href="#">구매하기</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="event_bom">
+                                <div class="group">
+                                    <span>499,000원~</span>
+                                    <a href="#">구매하기</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <footer class="event_bom">
                         <a href="#">더 불러오기</a>
-                    </div>
-                </div>
+                    </footer>
+                </article>
             </div>
             <!-- 전화번호,카톡상담 부분 -->
-            <div class="info">
+            <article class="info">
                 <div class="center_box">
                     <div class="box1">
                         <span>나의여행 고객센터</span>
@@ -164,12 +172,12 @@
                         <img src="images/kakaotalk.png" alt="카카오톡">
                     </div>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
 
 
         <!-- 하단 부분 -->
-        <div id="footer">
+        <footer id="footer">
             <div id="footer_in">
                 <ul class="footer_mn">
                     <li><a href="#">menu1</a></li>
@@ -180,14 +188,14 @@
                     <li><a href="#">menu6</a></li>
                     <li><a href="#">menu7</a></li>
                 </ul>
-                <p class="address">
+                <address class="address">
                     나의여행 주식회사 | 사업자등록번호:642-88-00573<br>
                     통신판매업신고번호 | 1233564876 | 대표:홍길동<br>
                     주소: 부산관역시 사하구 00동<br>
                     관광사업자등록번호 : 제 12345678977호
-                </p>
+                </address>
             </div>
-        </div>
+        </footer>
     </div>
 </body>
 
