@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class LottoFrame extends JFrame implements ActionListener {
 	JButton button;
