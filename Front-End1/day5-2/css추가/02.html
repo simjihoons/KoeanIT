@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*
+        [웹 접두사]
+            =>웹 브라우저별로 접도사를 제공한다. 
+            웹브라우저별로 다르게 표현이 될 수 있어서 하나의 속성을
+            선언하기 위해서 여러번 동일하게 선언을 지정한다.
+
+            파이어폭스 -moz-
+            크롬,사파리 -webkit-
+            오페라 -o-
+            익스플로러 -ms-
+        */
+        div {
+            margin-top: 50px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+
+        /*
+        transform:요소의 형태를 변경함(애니메이션할때 사용)
+        
+                    translate([dx],[dy]) : 지정한 크기 만큼 이동 시킴
+
+                    scale([ds]) : 지정한 배율 만큼 확대함   =>1이 100%
+
+                    rotate([deg]) : 지정한 각도만큼 회전 시킴
+
+                    skew([degx],[degy]) : 지정한 경사로 기울림 값이 +면 왼쪽기준 값이 -면 오른쪽기준
+        */
+
+        .box1 {
+            transform: translate(100px, 100px);
+        }
+
+        .box2 {
+            margin: 200px;
+            transform: scale(.5);
+        }
+
+        .box3 {
+            transform: rotate(45deg);
+        }
+
+        .box4 {
+            transform: skew(-40deg, 0deg);
+        }
+    </style>
+</head>
+
+<body style="height: 5000px;">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+
+</body>
+
+</html>
