@@ -133,7 +133,7 @@ class MiniAmongUs extends JFrame implements ActionListener {
 			boolean isRight = true;
 
 			while (true) {
-				if (isflag == true) {
+				if (isflag) {
 
 					if (isRight) {
 						among1XPoint += 10;
@@ -173,11 +173,11 @@ class MiniAmongUs extends JFrame implements ActionListener {
 
 		// 2. 변수를 새롭게 활용해서 while을 멈추거나 다시 시작할 수 있게 코드를 수정
 		if (clickedButton == btnStart) {
-			System.out.println("시작 버튼");
+			// System.out.println("시작 버튼");
 			isflag = true;
 
 		} else {
-			System.out.println("종료 버튼");
+			// System.out.println("종료 버튼");
 			isflag = false;
 		}
 	}
