@@ -131,10 +131,20 @@
 }
 
 .f_top {
+  margin: 0 auto;
+  width: 1000px;
+  height: 300px;
+  background-color: darkred;
 }
 
 .f_bom {
+  width: 100%;
+  border-top: 2px solid #ccc;
 }
 
 .f_bom_in {
+  margin: 0 auto;
+  width: 1000px;
+  height: 120px;
+  background-color: aquamarine;
 }
