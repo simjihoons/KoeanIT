@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*
+        [웹 접두사]
+        =>웹 브라우저별로 접도사를 제공한다. 
+          웹브라우저별로 다르게 표현이 될 수 있어서 하나의 속성을
+          선언하기 위해서 여러번 동일하게 선언을 지정한다.
+
+        파이어폭스 -moz-
+        크롬,사파리 -webkit-
+        오페라 -o-
+        익스플로러 -ms-
+        */
+
+        .box01 {
+            width: 300px;
+            height: 200px;
+            border: 2px solid #ccc;
+            box-shadow: 10px 10px 5px 5px red;
+            -webkit-box-shadow: 10px 10px 5px 5px red;
+            -ms-box-shadow: 10px 10px 5px 5px red;
+
+        }
+
+        /*
+        box-shadow:[dx] [dy] [bulr] [spread] [set]
+            ;지정된 요소의 그림자를 설정함
+
+            dx : 그림자의 가로방향 위치
+            dy : 그림자의 세로방향 위치
+            bulr : 흐려짐 정도
+            spread : 번짐 정도
+            set : 그림자의 형태
+            •outset : 요소 바깥쪽으로 그림자가 떨어짐 (기본값)
+            •inset : 요소 안쪽으로 그림자가 떨어짐
+        
+        */
+        .box02 {
+            margin-top: 50px;
+            width: 300px;
+            height: 200px;
+            border: 2px solid #ccc;
+            /*background-color: #ccc; */
+
+            /*
+             box4 
+             opacity: ;투명도 0 ~ 1 배경과 안의 글자 까지 다 같이 투명해짐
+                        숨기더라도 원래의 자기 자리를 가진체로 숨겨짐
+             0% ~ 100% 
+             display:none 은 있다 없다의 개념으로 숨김 , opacity는 투명도로 숨김
+                          요소자체를 삭제, 숨길때 그자리 자체를 없앰(밑에 뭔가가 있으면 빈자리로 올라옴)
+             
+             box8_1 , 2 , 3
+             visibility 화면에 보이거나 숨기거나 함.
+             visibility:hidden; 화면에서 숨김
+             visibility:visible; 화면에서 보여줌
+             
+             box7
+             overflow: ; 지정된 영역 밖으로 나간 요소를 보이거나 숨기는 속성
+             overflow:hidden; 숨김
+             overflow:scroll; 벗어난 만큼 스크롤 생성
+             overflow:auto; 원래크기 그대로 보여줌
+             overflow:visible => 기본값으로 생략가능 (보이게함)
+            */
+
+            opacity: 1;
+
+            /*
+            RGBA형식 --> color:rgba(255, 127, 45, 0.5)
+                         color:rgba(red, greeen, blue, 투명도)  
+
+            HSLA형식 --> color:hsla(0, 0%, 100%, 0.5)
+                         color:hsla(색상, 채도, 명도, 투명도)
+            */
+
+            background-color: rgba(183, 223, 41, 0.3);
+
+            /*글자색 투명 */
+            color: rgba(183, 223, 41, 0.8);
+        }
+
+
+        /*
+        background-size : [x], [y]
+            ;백 그라운 이미지의 크기를 지정한다.
+
+            [x]% [y]% : 적용되는 요소의 크기에 비례하여 배경 이미지 적용
+            [x]px [y]px : 절대 크기로 배경 이미지 적용
+            100%: 배경이미지가 적용된 요소의 크기에 맞춤(크기의 변화가 생기면 배경의사이즈도 변화생김.)
+
+            auto: 배경이미지의 원래크기를 그대로 유지
+
+            cover : 배경 이미지를 늘여 적용되는 요소 전체에 표시
+                    배경이미지 영역의 사이즈 바뀔때->  이미지의 가로,세로크기중 작은크기를 기준으로 
+                    배경이미지의 사이즈 변화생김 
+                    
+            contain : 배경 이미지의 가로 세로 비율을 맞춰 요소에 표시할수 있는 최대 크기로 표시
+                    배경이미지 영역의 사이즈 바뀔때->  이미지의 가로,세로크기중 큰크기를 기준으로 
+                    배경이미지의 사이즈 변화생김
+        */
+
+
+        .box03 {
+            margin-top: 50px;
+            width: 100%px;
+            height: 500px;
+            background: url(../images/main_img.jpg) no-repeat 50% 0;
+            background-size: contain;
+        }
+
+
+        /*
+        border-radius:[length]
+            ;Box Model 외각선의 곡률 지정
+            length : 곡률의 크기 
+            border-top-left-radius / border-top-right-radius / 
+            border-bottom-left/ border-bottom-right으로 개별 지정 가능
+            border-radius : top_left top_right  bottom_right bottom_left
+        */
+
+        .box04 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            /*border-radius: 30px;*/
+            /*border-radius: 50%;*/
+            /*border-top-left-radius: 30px;*/
+            border-radius: 30px 50px 10px 100px;
+        }
+
+
+        .box05 {
+            margin-top: 50px;
+            width: 500px;
+            height: 200px;
+            border: 2px solid #000;
+            /*기본적인 진행방향 : 위->아래*/
+            /*background: linear-gradient(red, blue);*/
+
+            /*진행방향을 왼->오*/
+            /*left 대신 to right 써도됨 */
+            /*background: -webkit-linear-gradient(left, yellow 10%, red 20%, blue 50%, white);*/
+
+            /*deg => 각도 지정*/
+            background: -webkit-linear-gradient(45deg, rgba(255, 127, 45, 0.5) 20%, red 20%, blue 30%, white);
+        }
+
+        /*radial-gradient*/
+        .box06 {
+            margin-top: 50px;
+            width: 500px;
+            height: 500px;
+            border: 2px solid #000;
+            background: -webkit-radial-gradient(red 5%, yellow 25%, #ccc 50%);
+        }
+
+        /*
+             overflow: ; 지정된 영역 밖으로 나간 요소를 보이거나 숨기는 속성
+             overflow:hidden; 숨김
+             overflow:scroll; 벗어난 만큼 스크롤 생성
+             overflow:auto; 원래크기 그대로 보여줌
+             overflow:visible => 기본값으로 생략가능 (보이게함)
+        */
+
+        .box07 {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            width: 300px;
+            height: 100px;
+            border: 1px solid #000;
+
+            /*회원가입 약관에 사용*/
+            overflow: scroll;
+
+        }
+
+        /*
+        visibility:화면에 보이거나 숨기거나 함.
+        visibility:hidden; 화면에서 숨김
+        visibility:visible; 화면에서 보여줌
+        */
+        .box08_1 {
+            border: 1px solid #000;
+
+        }
+
+        .box08_2 {
+            border: 1px solid #000;
+            visibility: hidden;
+
+        }
+
+        .box08_3 {
+            border: 1px solid #000;
+        }
+
+        /*
+        text-shadow:[dx] [dy] [bulr] [color]
+            ;텍스트에 그림자를 지정
+
+            dx : 본체와 그림자의 가로방향 거리 (+값이면 오른쪾으로 -값이면 왼쪽으로)
+            dy : 본체와 그림자의 세로방향 거리 (+값이면 아래쪽으로 -값이면 위쪽으로)
+            bulr : 그림자의 흐려짐 정도
+            color : 그림자의 색상  (rgba방식도 사용 가능)
+        */
+
+        h1 {
+            color: cornflowerblue;
+            text-shadow:
+                0 0 4px #ccc,
+                0 -3px 4px #ff3,
+                1px -6px 6px #fd3,
+                -1px -9px 11px #f80,
+                1px -12px 18px #f20;
+        }
+    </style>
+</head>
+
+<body style="height: 5000px;">
+    <div class="box01">box01</div>
+    <div class="box02">
+        <h1>색상,투명도</h1>
+    </div>
+    <div class="box03">배경이미지사이즈</div>
+    <div class="box04">모서리부분을 둥글게</div>
+    <div class="box05">그라디언트(여러색을 섞음)<br>원근감을 주기위해 씀</div>
+    <div class="box06">원 그라디언트</div>
+    <div class="box07">
+        모서리부분을 둥글게<br>
+        모서리부분을 둥글게<br>
+        모서리부분을 둥글게<br>
+        모서리부분을 둥글게<br>
+        모서리부분을 둥글게<br>
+        모서리부분을 둥글게<br>
+        모서리부분을 둥글게<br>
+        모서리부분을 둥글게
+    </div>
+    <div class="box08_1">숨기기박스1</div>
+    <div class="box08_2">숨기기박스2</div>
+    <div class="box08_3">숨기기박스3</div>
+
+    <h1>제목입니다.</h1>
+</body>
+
+</html>
