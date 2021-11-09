@@ -21,7 +21,7 @@ public class LottoNumber {
 			// 위와 같이 반복적인것을 처리하기 위함
 			for (int j = 0; j < i; j++) {
 				if (numbers[i] == numbers[j]) {
-					i -= 1;
+					i = i - 1;
 					break;
 				}
 			}
@@ -36,12 +36,13 @@ public class LottoNumber {
 	}
 
 	// 테스트 코드
-//	public static void main(String[] args) {
-//		LottoNumber lottoNumber = new LottoNumber();
-//		int[] nums = lottoNumber.getLottoNumber();
-//
-//		for (int i : nums) {
-//			System.out.print(i + "\t");
-//		}
-	
+	public static void main(String[] args) {
+		LottoNumber lottoNumber = new LottoNumber();
+		int[] nums = lottoNumber.getLottoNumber();
+
+		for (int i : nums) {
+			System.out.print(i + "\t");
+		}
+
+	}
 }

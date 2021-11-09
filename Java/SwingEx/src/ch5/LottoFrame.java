@@ -57,7 +57,7 @@ public class LottoFrame extends JFrame implements ActionListener {
 	}
 
 	// 내부 클래스
-	class LottoPanel extends JFrame {
+	class LottoPanel extends JPanel {
 		@Override
 		public void paint(Graphics g) {
 			Font font = new Font("궁서체", Font.BOLD, 20); // 궁서체 , 굵게 , 사이즈 20
