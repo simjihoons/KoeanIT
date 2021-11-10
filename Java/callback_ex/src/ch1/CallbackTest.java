@@ -38,9 +38,7 @@ class MainActivity extends JFrame implements CallbackBtnAction {
 
 	public MainActivity() {
 		count = 0;
-		this.name = "홍길동";
-		this.age = 20;
-		this.address = "부산";
+	
 
 		label = new JLabel(count + "");
 		setSize(300, 300);
