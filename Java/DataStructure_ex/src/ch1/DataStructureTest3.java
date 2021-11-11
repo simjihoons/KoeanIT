@@ -3,7 +3,6 @@ package ch1;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class DataStructureTest3 {
 
@@ -29,27 +28,27 @@ public class DataStructureTest3 {
 
 //		map2.put("D01",null);
 
-		System.out.println(map1);
+//		System.out.println(map1);
 	
 
 		// 값 출력 방법
 		System.out.println(map1.get("A01"));
 		
 		// 삭제 방법
-		System.out.println(map1.remove("C01"));
-		System.out.println(map1);
+//		System.out.println(map1.remove("C01"));
+//		System.out.println(map1);
 		
 		// for문 사용 방법
 		// java.util.Map.Entry 사용
-		for (Entry<String,String> entry  : map1.entrySet()) {
-			System.out.println("Key : "+entry.getKey()+"\nValue : "+entry.getValue());
-		}
-		
-		System.out.println("================");
-		
-		for (String key : map1.keySet()) {
-			System.out.println(key+" : "+map1.get(key));
-		}
+//		for (Entry<String,String> entry  : map1.entrySet()) {
+//			System.out.println("Key : "+entry.getKey()+"\nValue : "+entry.getValue());
+//		}
+//		
+//		System.out.println("================");
+//		
+//		for (String key : map1.keySet()) {
+//			System.out.println(key+" : "+map1.get(key));
+//		}
 		
 		
 	}
