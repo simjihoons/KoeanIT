@@ -50,6 +50,8 @@ public class DataStructureTest3 {
 		for (String key : map1.keySet()) {
 			System.out.println(key+" : "+map1.get(key));
 		}
+		
+		
 	}
 
 }
