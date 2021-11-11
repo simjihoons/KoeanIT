@@ -77,13 +77,10 @@ public class DataStructureTest1 {
 		while (true) {
 			System.out.println("이름 입력을 입력하세요 \n종료 : 0번");
 			String name = sc.nextLine();
-			if (name.equals("exit")) {
+			if (name.equals("0")) {
 				break;
 			}
-			for (int i = 0; i < 6; i++) {
-				names.add(i, name);
-			}
-
+			names.add(name);
 		}
 
 		Iterator<String> iter2 = names.iterator();
