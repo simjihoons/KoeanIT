@@ -53,11 +53,11 @@
 .h_body > .logo {
   float: left;
   margin-top: 15px;
+  width: 220px;
 }
 
 .h_body > .go_btn {
   float: left;
-  width: 240px;
   margin: 30px 0 0 120px;
 }
 
@@ -122,7 +122,6 @@
 #contents {
   float: left;
   width: 100%;
-  height: 1950px;
 }
 
 /* 
@@ -210,8 +209,7 @@
   width: 1000px;
   height: 275px;
 }
-
-.banner > img {
+.banner > a {
   float: left;
   margin-right: 18.5px;
 }
@@ -256,7 +254,7 @@
   height: 260px;
 }
 .style_h > .ttl {
-  padding: 20px 0 20px 0;
+  padding: 15px 0;
   font-size: 25px;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -321,13 +319,60 @@
   margin-top: 40px;
   width: 1000px;
   height: 390px;
-  background-color: darkmagenta;
+}
+
+.go_btns > div {
+  float: left;
+  width: 492px;
+}
+
+.go_btns > div > a:first-child {
+  display: block;
+  margin-bottom: 13px;
+}
+
+.go_btns > a {
+  float: right;
 }
 
 .info_box {
+  margin: 80px 0 25px 0;
   width: 100%;
   height: 165px;
   background: url(../images/footer_top_bg.jpg) repeat-x 0 0;
+}
+
+.info_box > .info_go_btn {
+  width: 1000px;
+  height: 110px;
+  margin: 0 auto;
+}
+
+.info_box > .notice {
+  width: 1000px;
+  height: 55px;
+  margin: 0 auto;
+}
+
+.info_box > .notice > .title {
+  float: left;
+  margin-top: 20px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.info_box > .notice > .txt {
+  float: left;
+  margin: 21px 0 0 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.info_box > .notice > .date {
+  float: right;
+  margin-top: 21.5px;
+  color: #fff;
+  font-size: 13px;
 }
 
 /* 하단 부분 */
@@ -335,19 +380,65 @@
   float: left;
   width: 100%;
   height: 420px;
-  background-color: coral;
 }
 
 .f_top {
   margin: 0 auto;
   width: 1000px;
   height: 300px;
-  background-color: darkred;
+}
+
+/* .f_top > .m_mn {
+  margin: 0 auto;
+} */
+
+.f_top > .m_mn > li {
+  float: left;
+  margin-right: 80px;
+}
+
+/* .f_top > .m_mn > li > .s_mn {
+} */
+
+.f_top .s_mn > li {
+  margin-bottom: 8px;
+}
+
+.f_top .s_mn > li > h4 {
+  font-size: 15px;
+}
+
+.f_top .s_mn > li > a {
+  font-size: 12px;
+}
+
+.f_top .s_mn > li > a:hover {
+  color: red;
+  transition: 0.5s;
+}
+
+.location {
+  float: right;
+  width: 200px;
+}
+.location > h3 {
+  font-size: 25px;
+  padding: 0 0 10px;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+.location > h4 {
+  font-size: 16px;
+  margin-top: 14px;
+}
+.location > p {
+  font-size: 12px;
+  margin-top: 8px;
 }
 
 .f_bom {
   width: 100%;
-  border-top: 2px solid #ccc;
+  border-top: 3px solid #000;
 }
 
 .f_bom_in {
@@ -355,4 +446,12 @@
   width: 1000px;
   height: 120px;
   background-color: aquamarine;
+}
+
+.f_bom_in > .logo2 {
+  float: left;
+  margin-top: 28px;
+  width: 80px;
+  height: 60px;
+  background-color: red;
 }
