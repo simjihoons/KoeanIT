@@ -445,7 +445,6 @@
   margin: 0 auto;
   width: 1000px;
   height: 120px;
-  background-color: aquamarine;
 }
 
 .f_bom_in > .logo2 {
@@ -453,5 +452,45 @@
   margin-top: 28px;
   width: 80px;
   height: 60px;
-  background-color: red;
+}
+
+.f_bom_in .group {
+  float: left;
+  margin-left: 30px;
+}
+
+.f_bom_in .info_nav {
+  margin: 20px 0 10px 0;
+}
+
+.f_bom_in .info_nav > li {
+  /* 가로배치 */
+  display: inline;
+}
+
+.f_bom_in .info_nav > li:after {
+  content: "/";
+  display: inline;
+  padding: 0 10px;
+  position: relative;
+  top: -1px;
+  color: #000;
+}
+
+.f_bom_in .info_nav > li:last-child::after {
+  content: none;
+  display: none;
+}
+
+.f_bom_in .info_nav > li > a {
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.f_bom_in .address {
+  font-style: normal;
+  float: left;
+  width: 100%;
+  color: #000;
+  font-size: 12px;
 }
