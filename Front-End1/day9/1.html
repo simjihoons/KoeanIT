@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        em 과 rem
+        
+        em : 부모 엘리먼트의 폰트 크기기준
+        rem : 최상위의 엘리먼트의 폰트 크기 기준
+
+        vw : 화면의 가로 값의 기준으로 폰트 크기 100vw화면의 가로 크기 100%맞춤
+        vh : 회면의 세로 값의 기준으로 폰트 크기 100vh화면의 세로 크기 100%맞춤
+
+        vmin : 최소 가로크기
+        hmin : 최소 세로크기
+        vmax : 최대 가로크기
+        hmax : 최대 세로크기
+        */
+
+        body {
+            font-size: 12px;
+        }
+
+        .box1 {
+            /*부모의 글자크기를 기준으로 1em 은 12px 이다. 2em은 24px*/
+            font-size: 2em;
+        }
+
+        /*.box1-1 {
+            --box1 기준--
+            font-size: 0.5em;
+        }*/
+
+        .box1-1 {
+            /* body 기준 */
+            font-size: 2rem;
+        }
+
+        .box2 {
+            font-size: 10vh;
+        }
+    </style>
+</head>
+
+<body>
+    텍스트입니다.(body의 폰트 크기)
+    <div class="box1">
+        텍스트입니다(.box1의 폰트 크기)
+        <div class="box1-1">
+            텍스트1-1입니다(.box1의 폰트크기를 기준으로 폰트크기 설정)
+        </div>
+    </div>
+
+    <div class="box2">
+        화면의 크기를 기준으로 폰트 크기 설정
+    </div>
+</body>
+
+</html>
