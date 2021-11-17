@@ -1,4 +1,5 @@
 {
   "python.formatting.provider": "yapf",
-  "java.project.sourcePaths": ["Java"]
+  "java.project.sourcePaths": ["Java"],
+  "liveServer.settings.port": 5501
 }
