@@ -115,10 +115,9 @@
     #header_in .info_mn li:last-child{border-right: 0;
                                       margin-right: 0px; padding-right: 0px; }            
     #header_in .info_mn a{ font-size: 14px; color: #fff;}
-    #header_in .main_nav{clear:left;
-                         padding: 30px 0 0 0; }
+    #header_in .main_nav{clear:both; float: right; padding: 30px 0 0 0; }
                .main_nav li{ float:left; margin-right: 7vw;} /*vw - 현재 화면 기준(1300 / 99 = 13) 99/13 =7.6vw 보다 조금 작게7vw*/
-               .main_nav li:last-child{margin-right: 0vw;}
+               .main_nav li:last-child{margin-right: 2vw;}
                .main_nav a{ font-size: 20px; color: #fff;}
 
 }
