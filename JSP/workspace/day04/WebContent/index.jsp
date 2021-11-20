@@ -10,7 +10,9 @@
 	<h1>JSP로 만든 페이지</h1>
 	
 	<!-- action으 로가서 메소드 실행 -->
-	<form action="" method="get">
+	<!-- get이면 생략 가능 -->
+	<!--  -->
+	<form action="Hello" method="post">
 	<p>서블릿으로 이동</p>
 	<button>이동</button>
 	</form>
