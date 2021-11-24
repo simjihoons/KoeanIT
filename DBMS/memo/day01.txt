@@ -1,0 +1,14 @@
+DB(Data Base)
+	데이터가 모여있는 기지
+	추상적 용어
+
+DBMS(DataBaseManagementSystem)
+	데이터를 관리할 수 있는 구체적인 시스템
+	오라클(에프터 시스템이 좋음 , 돈이 좀 든다),마리아DB,MySQL,MS-SQL,Mongo...
+	
+오라클DBMS 설치
+	https://www.oracle.com/database/technologies/xe-prior-release-downloads.html
+
+오라클 설치 확인
+	cmd -> sqlplus sys as sysdba ->password(1234)
+	
