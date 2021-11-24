@@ -1,398 +1,830 @@
 @charset "utf-8";
 
-#wrap{ width: 100%;}
+#wrap {
+  width: 100%;
+}
 
-#main{ width: 100%; height:680px;
-        background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
-        background-size: 1920px;}
-#header{ width: 100%; height: 140px;
-         background: rgba(0,0,0,0.4);}       
-#header_in{ margin: 0 auto;
-                     width: 1300px; height: 140px;}
-#header_in .logo{float: left; margin-top: 50px;}
-    
+#main {
+  width: 100%;
+  height: 680px;
+  background: url(../images/mainslide01.jpg) no-repeat 50% -200px;
+  background-size: 1920px;
+}
+#header {
+  width: 100%;
+  height: 140px;
+  background: rgba(0, 0, 0, 0.4);
+}
+#header_in {
+  margin: 0 auto;
+  width: 1300px;
+  height: 140px;
+}
+#header_in .logo {
+  float: left;
+  margin-top: 50px;
+}
+
 /* 모바일 전체메뉴 pc에서는 숨기기위해 */
-#herder_in .all_btn{display: none;}
+#herder_in .all_btn {
+  display: none;
+}
 
-#header_in .r_box{float: right; }
-#header_in .info_mn{float:left;  margin: 15px 0 0 490px; }
-#header_in .info_mn li{ float: left; border-right: 1px solid #fff;
-                             margin-right: 10px; padding-right: 10px; line-height: 14px;}
-#header_in .info_mn li:last-child{border-right: 0;
-                                margin-right: 0px; padding-right: 0px; }            
-#header_in .info_mn a{ font-size: 14px; color: #fff;}
+#header_in .r_box {
+  float: right;
+}
+#header_in .info_mn {
+  float: left;
+  margin: 15px 0 0 490px;
+}
+#header_in .info_mn li {
+  float: left;
+  border-right: 1px solid #fff;
+  margin-right: 10px;
+  padding-right: 10px;
+  line-height: 14px;
+}
+#header_in .info_mn li:last-child {
+  border-right: 0;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+#header_in .info_mn a {
+  font-size: 14px;
+  color: #fff;
+}
 
-.main_nav{clear:left; padding: 30px 0 0 0; }
-.main_nav li{ float:left; margin-right: 99px;}
-.main_nav li:last-child{margin-right: 0px;}
-.main_nav a{ font-size: 20px; color: #fff;}
+.main_nav {
+  clear: left;
+  padding: 30px 0 0 0;
+}
+.main_nav li {
+  float: left;
+  margin-right: 99px;
+}
+.main_nav li:last-child {
+  margin-right: 0px;
+}
+.main_nav a {
+  font-size: 20px;
+  color: #fff;
+}
 
-#main > .main_txt{ width: 100%; height:160px;
-                   padding-top: 70px;}
-#main > .main_txt > h3{ margin: 0 auto;
-                        width:455px; font-size:41px; color:#fff; 
-                        border-bottom: 1px solid #fff; 
-                        padding-bottom: 15px;}
-#main > .main_txt > p{ padding-top: 30px; font-size: 20px; color:#fff; 
-                       text-align: center;}     
-                       
+#main > .main_txt {
+  width: 100%;
+  height: 160px;
+  padding-top: 70px;
+}
+#main > .main_txt > h3 {
+  margin: 0 auto;
+  width: 455px;
+  font-size: 41px;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 15px;
+}
+#main > .main_txt > p {
+  padding-top: 30px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+}
+
 /* 콘텐츠*/
-#contents{ width: 100%;}
+#contents {
+  width: 100%;
+}
 /*다시 찾는 인기 여행지 TOP3 */
-#contents .top3_area{width: 100%; height: 860px;
-                     background: linear-gradient(#fff 35%,rgba(247, 238, 189,1) 35%);}
-#contents .top3_area_h{margin: 0 auto;
-                      width:1300px; height:190px;}
-#contents .top3_area_h > h3{font-size:48px;
-                            text-align: center; 
-                            line-height: 190px;}                      
-#contents .top3_area_b{margin: 0 auto;
-                      width:1300px; height:670px;}
-#contents .top3_area_b li{ float: left; 
-                          margin-right: 20px;
-                          width:420px; height:670px; }
-#contents .top3_area_b li:last-child{margin-right: 0;} 
-#contents .top3_area_b img{ width: 100%;} 
-#contents .top3_area_b h4{font-size: 25px; 
-                          color: #000;
-                          text-align: center;
-                          padding:35px 0 15px;}
-#contents .top3_area_b p{ font-size: 20px;
-                          text-align: center;
-                          line-height: 40px;}
-#contents .top3_area_b a{  display: block;
-                           width:45px; margin: 0 auto;  
-                           margin-top:30px ;  
-                           font-size: 16px; text-align: center; 
-                           border-top: 1px solid #000;
-                           padding-top: 10px;
-                         }  
-#contents .group{margin:0 auto; 
-                 width: 1300px; height:485px;}                                         
-#contents .advice_area{float: left;
-                 margin-top:75px;
-                 width:860px; height:240px;
-                 background:url(../images/bg_app.jpg)no-repeat 0 0;
-                 background-size:100% 100%;}
-#contents .advice_area ul{float: left; margin: 75px 0 0 65px;}
-#contents .advice_area li{float: left; padding: 30px 80px 30px 30px;
-                          border:2px solid #fff;
-                          margin-right: 20px;}               
-#contents .advice_area li > img{ vertical-align:top;}
-#contents .advice_area li > span{font-size:30px;
-                                color:#fff; font-weight: 800;
-                                display: inline-block;
-                                height: 43px;
-                                line-height:43px;}
+#contents .top3_area {
+  width: 100%;
+  height: 860px;
+  background: linear-gradient(#fff 35%, rgba(247, 238, 189, 1) 35%);
+}
+#contents .top3_area_h {
+  margin: 0 auto;
+  width: 1300px;
+  height: 190px;
+}
+#contents .top3_area_h > h3 {
+  font-size: 48px;
+  text-align: center;
+  line-height: 190px;
+}
+#contents .top3_area_b {
+  margin: 0 auto;
+  width: 1300px;
+  height: 670px;
+}
+#contents .top3_area_b li {
+  float: left;
+  margin-right: 20px;
+  width: 420px;
+  height: 670px;
+}
+#contents .top3_area_b li:last-child {
+  margin-right: 0;
+}
+#contents .top3_area_b img {
+  width: 100%;
+}
+#contents .top3_area_b h4 {
+  font-size: 25px;
+  color: #000;
+  text-align: center;
+  padding: 35px 0 15px;
+}
+#contents .top3_area_b p {
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+}
+#contents .top3_area_b a {
+  display: block;
+  width: 45px;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 16px;
+  text-align: center;
+  border-top: 1px solid #000;
+  padding-top: 10px;
+}
+#contents .group {
+  margin: 0 auto;
+  width: 1300px;
+  height: 485px;
+}
+#contents .advice_area {
+  float: left;
+  margin-top: 75px;
+  width: 860px;
+  height: 240px;
+  background: url(../images/bg_app.jpg) no-repeat 0 0;
+  background-size: 100% 100%;
+}
+#contents .advice_area ul {
+  float: left;
+  margin: 75px 0 0 65px;
+}
+#contents .advice_area li {
+  float: left;
+  padding: 30px 80px 30px 30px;
+  border: 2px solid #fff;
+  margin-right: 20px;
+}
+#contents .advice_area li > img {
+  vertical-align: top;
+}
+#contents .advice_area li > span {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 800;
+  display: inline-block;
+  height: 43px;
+  line-height: 43px;
+}
 
-#contents .notice{ float:right;
-                 margin-top:75px;
-                 width:400px; height:240px;}
-#contents .notice_h{width:400px; height: 50px; }
-#contents .notice_h > h3{ font-size:25px; line-height: 50px;}
+#contents .notice {
+  float: right;
+  margin-top: 75px;
+  width: 400px;
+  height: 240px;
+}
+#contents .notice_h {
+  width: 400px;
+  height: 50px;
+}
+#contents .notice_h > h3 {
+  font-size: 25px;
+  line-height: 50px;
+}
 /* #contents .notice_b{} */
-#contents .notice_b li{width: 390px; height:20px;
-                       background:url(../images/ico_bullet.png)no-repeat 8px 8px;
-                       padding-left: 20px;
-                       font-size: 14px; line-height: 20px;
-                       margin-bottom: 15px;
-                }
-#footer{ width: 100%; height: 200px;
-         border: 1px solid #000}
-#footer_in{margin:0 auto;
-           width: 1300px; height: 200px;
-           background-color: aqua;}         
-#footer .info_mn{ float: left; margin-top: 30px;}
-#footer .info_mn li{ float:left;}
-#footer .info_mn li:first-child::after{content:"|";
-                  display: inline-block; padding:0 5px;
-                  font-size:15px; position: relative; top:-2.5px;}
-#footer .info_mn li > a{font-size: 20px; color: #555;}
-#footer .address{clear: left; width: 100%; font-style: normal; padding-top: 30px;}
-        .address h4{font-size: 16px; margin-bottom: 7px;}
-        .address .txt{font-size: 15px;}
-        .address .sns{font-size: 16px; font-weight: 500;}
+#contents .notice_b li {
+  width: 390px;
+  height: 20px;
+  background: url(../images/ico_bullet.png) no-repeat 8px 8px;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+#footer {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #000;
+}
+#footer_in {
+  margin: 0 auto;
+  width: 1300px;
+  height: 200px;
+  background-color: aqua;
+}
+#footer .info_mn {
+  float: left;
+  margin-top: 30px;
+}
+#footer .info_mn li {
+  float: left;
+}
+#footer .info_mn li:first-child::after {
+  content: "|";
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 15px;
+  position: relative;
+  top: -2.5px;
+}
+#footer .info_mn li > a {
+  font-size: 20px;
+  color: #555;
+}
+#footer .address {
+  clear: left;
+  width: 100%;
+  font-style: normal;
+  padding-top: 30px;
+}
+.address h4 {
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+.address .txt {
+  font-size: 15px;
+}
+.address .sns {
+  font-size: 16px;
+  font-weight: 500;
+}
 
+@media screen and (max-width: 1300px) {
+  #main {
+    width: 100%;
+    height: 680px;
+    background: url(../images/mainslide01.jpg) no-repeat 50% -200px;
+    background-size: 1920px;
+  }
+  #header {
+    width: 100%;
+    height: 140px;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  #header_in {
+    margin: 0 auto;
+    width: 100%;
+    height: 140px;
+    background-color: blue;
+  }
+  /* width가 1300이 되면 왼쪽,오른쪽 여백 */
+  /* logo , r_box */
+  #header_in .logo {
+    float: left;
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+  #header_in .r_box {
+    float: right;
+    margin-right: 20px;
+  }
 
-@media screen and (max-width:1300px) {
-#main{ width: 100%; height:680px;
-                background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
-                background-size: 1920px;}
-#header{ width: 100%; height: 140px;
-                 background: rgba(0,0,0,0.4);}          
-#header_in{ margin: 0 auto;
-            width: 100%; height: 140px;
-            background-color: blue;}
-/* width가 1300이 되면 왼쪽,오른쪽 여백 */
-/* logo , r_box */
-#header_in .logo{float: left; margin-top: 50px; margin-left: 20px;}
-#header_in .r_box{float: right; margin-right: 20px;}
+  #header_in .info_mn {
+    float: left;
+    margin: 15px 0.8vw 0 490px;
+  }
+  #header_in .info_mn li {
+    float: left;
+    border-right: 1px solid #fff;
+    margin-right: 0.8vw;
+    padding-right: 0.8vw;
+    line-height: 14px;
+  }
+  #header_in .info_mn li:last-child {
+    border-right: 0;
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+  #header_in .info_mn a {
+    font-size: 14px;
+    color: #fff;
+  }
 
-#header_in .info_mn{float:left;  margin: 15px 0.8vw 0 490px; }
-#header_in .info_mn li{ float: left; border-right: 1px solid #fff;
-                        margin-right: 0.8vw; padding-right: 0.8vw; line-height: 14px;}
-#header_in .info_mn li:last-child{border-right: 0;
-                           margin-right: 0px; padding-right: 0px; }            
-#header_in .info_mn a{ font-size: 14px; color: #fff;}
+  .main_nav {
+    clear: both;
+    float: right;
+    padding: 30px 0 0 0;
+  }
+  .main_nav li {
+    float: left;
+    margin-right: 7vw;
+  } /*% 자신의 부모를 기준 vw 1300  */
+  .main_nav li:last-child {
+    margin-right: 2vw;
+  }
+  .main_nav a {
+    font-size: 20px;
+    color: #fff;
+  }
 
-.main_nav{clear:both; float: right; padding: 30px 0 0 0; }
-.main_nav li{ float:left; margin-right: 7vw;} /*% 자신의 부모를 기준 vw 1300  */
-.main_nav li:last-child{margin-right: 2vw;}
-.main_nav a{ font-size: 20px; color: #fff;}   
+  #contents {
+    width: 100%;
+  }
+  /*다시 찾는 인기 여행지 TOP3 */
+  /* width 수정 */
+  #contents .top3_area {
+    width: 100%;
+    height: 860px;
+    background: linear-gradient(#fff 35%, rgba(247, 238, 189, 1) 35%);
+  }
 
+  #contents .top3_area_h {
+    margin: 0 auto;
+    width: 100%;
+    height: 190px;
+  }
+  #contents .top3_area_h > h3 {
+    font-size: 30px;
+    text-align: center;
+    line-height: 190px;
+  }
 
-#contents{ width: 100%;}
-/*다시 찾는 인기 여행지 TOP3 */
-/* width 수정 */
-#contents .top3_area{width: 100%; height: 860px;
-        background: linear-gradient(#fff 35%,rgba(247, 238, 189,1) 35%);}
+  /* width 수정 */
+  #contents .top3_area_b {
+    margin: 0 auto;
+    width: 100%;
+    height: 670px;
+  }
 
-#contents .top3_area_h{margin: 0 auto;
-         width:100%; height:190px;}
-#contents .top3_area_h > h3{font-size:30px;
-               text-align: center; 
-               line-height: 190px;}   
-               
-/* width 수정 */               
-#contents .top3_area_b{margin: 0 auto;
-         width:100%; height:670px;}
+  /* (420 / 13.0) = 32.2% */
+  /* 20 / 13 = 1.5% */
+  #contents .top3_area_b li {
+    float: left;
+    margin-right: 1.5%;
+    width: 32%;
+    height: 670px;
+  }
 
-/* (420 / 13.0) = 32.2% */
-/* 20 / 13 = 1.5% */
-#contents .top3_area_b li{ float: left; 
-             margin-right: 1.5%;
-             width:32%; height:670px; }
+  #contents .top3_area_b li:last-child {
+    margin-right: 0;
+  }
+  #contents .top3_area_b img {
+    width: 100%;
+  }
+  #contents .top3_area_b h4 {
+    font-size: 25px;
+    color: #000;
+    text-align: center;
+    padding: 35px 0 15px;
+  }
+  #contents .top3_area_b p {
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+  }
+  #contents .top3_area_b a {
+    display: block;
+    width: 45px;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid #000;
+    padding-top: 10px;
+  }
 
+  /* width 수정 */
+  #contents .group {
+    margin: 0 auto;
+    width: 100%;
+    height: 485px;
+  }
 
+  /* width = 860px */
+  /* 860 / 13 */
+  /* margin-left 는 임시로 값을 넣음 */
+  #contents .advice_area {
+    float: left;
+    margin-top: 75px;
+    margin-left: 15px;
+    width: 66%;
+    height: 240px;
+    background: url(../images/bg_app.jpg) no-repeat 0 0;
+    background-size: 100% 100%;
+  }
 
-#contents .top3_area_b li:last-child{margin-right: 0;} 
-#contents .top3_area_b img{ width: 100%;} 
-#contents .top3_area_b h4{font-size: 25px; 
-             color: #000;
-             text-align: center;
-             padding:35px 0 15px;}
-#contents .top3_area_b p{ font-size: 20px;
-             text-align: center;
-             line-height: 40px;}
-#contents .top3_area_b a{  display: block;
-              width:45px; margin: 0 auto;  
-              margin-top:30px ;  
-              font-size: 16px; text-align: center; 
-              border-top: 1px solid #000;
-              padding-top: 10px;
-            }
+  /* 부모가 area (width = 860) */
+  /* 65 / 8.6  = 7.5% => 3.5%*/
+  /* 테스트 했을때 따라오는게 느리거나 그런 이유들이 발생할때 값을 임의로 바꿔줌 */
 
-/* width 수정 */
- #contents .group{margin:0 auto; 
-                width: 100%; height:485px;}   
-                
-/* width = 860px */
-/* 860 / 13 */
-/* margin-left 는 임시로 값을 넣음 */
-#contents .advice_area{float: left;
-                margin-top:75px; margin-left: 15px;
-                width:66%; height:240px;
-                background:url(../images/bg_app.jpg)no-repeat 0 0;
-                background-size:100% 100%;}
+  /* 93% => 730 / 8.6 =>84%인데 결과가 잘 안나와 임의로 수정 */
+  #contents .advice_area ul {
+    float: left;
+    width: 93%;
+    margin: 75px 0 0 3.5%;
+  }
 
-/* 부모가 area (width = 860) */
-/* 65 / 8.6  = 7.5% => 3.5%*/
-/* 테스트 했을때 따라오는게 느리거나 그런 이유들이 발생할때 값을 임의로 바꿔줌 */
-
-/* 93% => 730 / 8.6 =>84%인데 결과가 잘 안나와 임의로 수정 */
-#contents .advice_area ul{float: left; width: 93%; margin: 75px 0 0 3.5%;}
-
-/* 반응형을 부모를 기준으로 하기 때문에 각각의 블록이 크기가 주어진게 코딩하기 편하다. */
-/* 본래의 코드를 봤을때 860에서 마진 왼쪽 값이 65이기(ul 중앙배치 때문에
+  /* 반응형을 부모를 기준으로 하기 때문에 각각의 블록이 크기가 주어진게 코딩하기 편하다. */
+  /* 본래의 코드를 봤을때 860에서 마진 왼쪽 값이 65이기(ul 중앙배치 때문에
    오른쪽도 65가 들어가게 된것이다.) 때문에 빼주면  ul 은 730 */
-/* li는 2개기 때문에 730/2 (여백의 값을 제외하고 계산)한다. 355 */
-/* (80 / 3.5) = 22% , (30 / 3.5) = 8.5% */
-/* padding 30px 22 % 30px 8.5% 인데 잘 안되서 임의로 수정 */
-#contents .advice_area li{float: left; padding: 30px 0 30px 4%; width: 47.5%;
-                         border:2px solid #fff;
-                         margin-right: 5%;
-                         box-sizing: border-box;}       
-#contents .advice_area li:last-child {margin-right:  0%;}         
-#contents .advice_area li > img{ vertical-align:top;}
-#contents .advice_area li > span{font-size:20px;
-                               color:#fff; font-weight: 800;
-                               display: inline-block;
-                               height: 43px;
-                               line-height:43px;}
+  /* li는 2개기 때문에 730/2 (여백의 값을 제외하고 계산)한다. 355 */
+  /* (80 / 3.5) = 22% , (30 / 3.5) = 8.5% */
+  /* padding 30px 22 % 30px 8.5% 인데 잘 안되서 임의로 수정 */
+  #contents .advice_area li {
+    float: left;
+    padding: 30px 0 30px 4%;
+    width: 47.5%;
+    border: 2px solid #fff;
+    margin-right: 5%;
+    box-sizing: border-box;
+  }
+  #contents .advice_area li:last-child {
+    margin-right: 0%;
+  }
+  #contents .advice_area li > img {
+    vertical-align: top;
+  }
+  #contents .advice_area li > span {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 800;
+    display: inline-block;
+    height: 43px;
+    line-height: 43px;
+  }
 
-/* 400 / 13(부모가 1300) = 37% */
-#contents .notice{ float:right;
-                margin-top:75px;
-                width:30.7%; height:240px;}
-#contents .notice_h{width:100%; height: 50px; }
-#contents .notice_h > h3{ font-size:25px; line-height: 50px;}
-#contents .notice_b{width:100%;} 
+  /* 400 / 13(부모가 1300) = 37% */
+  #contents .notice {
+    float: right;
+    margin-top: 75px;
+    width: 30.7%;
+    height: 240px;
+  }
+  #contents .notice_h {
+    width: 100%;
+    height: 50px;
+  }
+  #contents .notice_h > h3 {
+    font-size: 25px;
+    line-height: 50px;
+  }
+  #contents .notice_b {
+    width: 100%;
+  }
 
-/* 390 / 4(부모가 400) =97.5% */
-#contents .notice_b li{width: 97.5%; height:20px;
-                      background:url(../images/ico_bullet.png)no-repeat 8px 8px;
-                      padding-left: 20px;
-                      font-size: 14px; line-height: 20px;
-                      margin-bottom: 15px;
-               }
+  /* 390 / 4(부모가 400) =97.5% */
+  #contents .notice_b li {
+    width: 97.5%;
+    height: 20px;
+    background: url(../images/ico_bullet.png) no-repeat 8px 8px;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 15px;
+  }
 
-#footer{ width: 100%; height: 250px;
-                border: 1px solid #000}
-       #footer_in{margin:0 auto;
-                  width: 1300px; height: 250px;
-                 }         
-       #footer .info_mn{ float: left; margin-top: 30px; margin-left: 20px;}
-       #footer .info_mn li{ float:left;}
-       #footer .info_mn li:first-child::after{content:"|";
-                         display: inline-block; padding:0 5px;
-                         font-size:15px; position: relative; top:-2.5px;}
-       #footer .info_mn li > a{font-size: 20px; color: #555;}
-       #footer .address{clear: left; width: 100%; font-style: normal; padding-top: 30px;
-                        margin-left: 20px;}
-               .address h4{font-size: 16px; margin-bottom: 7px;}
-               .address .txt{font-size: 15px;}
-               .address .sns{font-size: 16px; font-weight: 500;}        
+  #footer {
+    width: 100%;
+    height: 250px;
+    border: 1px solid #000;
+  }
+  #footer_in {
+    margin: 0 auto;
+    width: 1300px;
+    height: 250px;
+  }
+  #footer .info_mn {
+    float: left;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  #footer .info_mn li {
+    float: left;
+  }
+  #footer .info_mn li:first-child::after {
+    content: "|";
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 15px;
+    position: relative;
+    top: -2.5px;
+  }
+  #footer .info_mn li > a {
+    font-size: 20px;
+    color: #555;
+  }
+  #footer .address {
+    clear: left;
+    width: 100%;
+    font-style: normal;
+    padding-top: 30px;
+    margin-left: 20px;
+  }
+  .address h4 {
+    font-size: 16px;
+    margin-bottom: 7px;
+  }
+  .address .txt {
+    font-size: 15px;
+  }
+  .address .sns {
+    font-size: 16px;
+    font-weight: 500;
+  }
 }
 
+@media screen and (max-width: 960px) {
+  #main {
+    width: 100%;
+    height: 680px;
+    background: url(../images/mainslide01.jpg) no-repeat 50% -200px;
+    background-size: 1920px;
+  }
+  #header {
+    width: 100%;
+    height: 140px;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  #header_in {
+    margin: 0 auto;
+    width: 100%;
+    height: 140px;
+    background-color: green;
+  }
+  /* width가 1300이 되면 왼쪽,오른쪽 여백 */
+  /* logo , r_box */
+  #header_in .logo {
+    float: left;
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+  #header_in .r_box {
+    float: right;
+    margin-right: 20px;
+  }
 
-@media screen and (max-width:960px) {
-        #main{ width: 100%; height:680px;
-                        background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
-                        background-size: 1920px;}
-        #header{ width: 100%; height: 140px;
-                         background: rgba(0,0,0,0.4);}          
-        #header_in{ margin: 0 auto;
-                    width: 100%; height: 140px;
-                    background-color: green;}
-        /* width가 1300이 되면 왼쪽,오른쪽 여백 */
-        /* logo , r_box */
-        #header_in .logo{float: left; margin-top: 50px; margin-left: 20px;}
-        #header_in .r_box{float: right; margin-right: 20px;}
-        
+  /* 490px -> 490 / 9.6(vw는 화면기준이기 때문에 960) = 약 51 */
+  /* 44vw로 임의로 변경 */
+  #header_in .info_mn {
+    float: left;
+    margin: 15px 0.8vw 0 44vw;
+  }
+  #header_in .info_mn li {
+    float: left;
+    border-right: 1px solid #fff;
+    margin-right: 0.8vw;
+    padding-right: 0.8vw;
+    line-height: 14px;
+  }
+  #header_in .info_mn li:last-child {
+    border-right: 0;
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+  #header_in .info_mn a {
+    font-size: 14px;
+    color: #fff;
+  }
 
-        /* 490px -> 490 / 9.6(vw는 화면기준이기 때문에 960) = 약 51 */
-        /* 44vw로 임의로 변경 */
-        #header_in .info_mn{float:left;  margin: 15px 0.8vw 0 44vw; }
-        #header_in .info_mn li{ float: left; border-right: 1px solid #fff;
-                                margin-right: 0.8vw; padding-right: 0.8vw; line-height: 14px;}
-        #header_in .info_mn li:last-child{border-right: 0;
-                                   margin-right: 0px; padding-right: 0px; }            
-        #header_in .info_mn a{ font-size: 14px; color: #fff;}
-        
-        .main_nav{clear:both; float: right; padding: 30px 0 0 0; }
-        
-        /* 7vw -> 4vw (임의로 설정) */
-        .main_nav li{ float:left; margin-right: 4vw;} /*% 자신의 부모를 기준 vw 1300  */
-        .main_nav li:last-child{margin-right: 2vw;}
-        .main_nav a{ font-size: 20px; color: #fff;}   
+  .main_nav {
+    clear: both;
+    float: right;
+    padding: 30px 0 0 0;
+  }
+
+  /* 7vw -> 4vw (임의로 설정) */
+  .main_nav li {
+    float: left;
+    margin-right: 4vw;
+  } /*% 자신의 부모를 기준 vw 1300  */
+  .main_nav li:last-child {
+    margin-right: 2vw;
+  }
+  .main_nav a {
+    font-size: 20px;
+    color: #fff;
+  }
 }
 
-@media screen and (max-width:800px) {
- /* #main{width: 100%; height:680px;
+@media screen and (max-width: 800px) {
+  /* #main{width: 100%; height:680px;
           background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
           background-size: 1920px;} */
-        #header{ width: 100%; height: 140px;
-                         background: rgba(0,0,0,0.4);}          
-        #header_in{ margin: 0 0; float: left;
-                    width: 100%; height: 140px;
-                    background-color: chocolate;}
-        
-        
-        #header_in .logo{float: left; width: 100%; margin-top: 50px; margin-left: 0px; text-align: center; }
-        #header_in .logo img{width: 220px;}
-        
-        /* 모바일 전체메뉴 버튼 */
-        #herder_in .all_btn{display: block; margin: 50px 0 0 50px;}
-        #herder_in .all_btn span{display: block; width: 30px; height: 5px; margin-bottom: 5px; 
-                                 background-color: white;}
-        #herder_in .all_btn span:nth-child(2){width: 20px;}
+  #header {
+    width: 100%;
+    height: 140px;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  #header_in {
+    margin: 0 0;
+    float: left;
+    width: 100%;
+    height: 140px;
+    background-color: chocolate;
+  }
 
+  #header_in .logo {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 0px;
+    text-align: center;
+  }
+  #header_in .logo img {
+    width: 220px;
+  }
 
-        #header_in .r_box{float: right; margin-right: 20px; display: none;}
-        
-        /* 490px -> 490 / 9.6(vw는 화면기준이기 때문에 960) = 약 51 */
-        /* 44vw로 임의로 변경 */
-        #header_in .info_mn{float:left;  margin: 15px 0.8vw 0 44vw; }
-        #header_in .info_mn li{ float: left; border-right: 1px solid #fff;
-                                margin-right: 0.8vw; padding-right: 0.8vw; line-height: 14px;}
-        #header_in .info_mn li:last-child{border-right: 0;
-                                   margin-right: 0px; padding-right: 0px; }            
-        #header_in .info_mn a{ font-size: 14px; color: #fff;}
-        
-        .main_nav{clear:both; float: right; padding: 30px 0 0 0; display: none; }
-        
-        /* 7vw -> 4vw (임의로 설정) */
-        .main_nav li{ float:left; margin-right: 4vw;} /*% 자신의 부모를 기준 vw 1300  */
-        .main_nav li:last-child{margin-right: 2vw;}
-        .main_nav a{ font-size: 20px; color: #fff;}   
+  /* 모바일 전체메뉴 버튼 */
+  #herder_in .all_btn {
+    display: block;
+    margin: 50px 0 0 50px;
+  }
+  #herder_in .all_btn span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+  }
+  #herder_in .all_btn span:nth-child(2) {
+    width: 20px;
+  }
+
+  #header_in .r_box {
+    float: right;
+    margin-right: 20px;
+    display: none;
+  }
+
+  /* 490px -> 490 / 9.6(vw는 화면기준이기 때문에 960) = 약 51 */
+  /* 44vw로 임의로 변경 */
+  #header_in .info_mn {
+    float: left;
+    margin: 15px 0.8vw 0 44vw;
+  }
+  #header_in .info_mn li {
+    float: left;
+    border-right: 1px solid #fff;
+    margin-right: 0.8vw;
+    padding-right: 0.8vw;
+    line-height: 14px;
+  }
+  #header_in .info_mn li:last-child {
+    border-right: 0;
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+  #header_in .info_mn a {
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .main_nav {
+    clear: both;
+    float: right;
+    padding: 30px 0 0 0;
+    display: none;
+  }
+
+  /* 7vw -> 4vw (임의로 설정) */
+  .main_nav li {
+    float: left;
+    margin-right: 4vw;
+  } /*% 자신의 부모를 기준 vw 1300  */
+  .main_nav li:last-child {
+    margin-right: 2vw;
+  }
+  .main_nav a {
+    font-size: 20px;
+    color: #fff;
+  }
 }
 
-@media screen and (max-width:480px) {
-       
-#contents .top3_area{width: 100%; height: auto;
-                     background: none;} 
-#contents .top3_area_h{margin: 0 0;
-         width:100%; height:190px;}
-#contents .top3_area_h > h3{font-size:20px;
-               text-align: center; 
-               line-height: 190px;}   
-#contents .top3_area_b{margin: 0 0;
-         width:100%; height: auto;}
-#contents .top3_area_b li{ float: none; 
-             margin-right: 0;
-             margin-left: 5%;
-             margin-bottom: 20px;
-             width:90%; height:670px; }
-#contents .top3_area_b li:last-child{margin-right: 0;} 
-#contents .top3_area_b img{ width: 100%;} 
-#contents .top3_area_b h4{font-size: 25px; 
-             color: #000;
-             text-align: center;
-             padding:35px 0 15px;}
-#contents .top3_area_b p{ font-size: 20px;
-             text-align: center;
-             line-height: 40px;}
-#contents .top3_area_b a{  display: block;
-              width:45px; margin: 0 auto;  
-              margin-top:30px ;  
-              font-size: 16px; text-align: center; 
-              border-top: 1px solid #000;
-              padding-top: 10px;
-            }
-#contents .group{margin:0 0; 
-                width: 100%; height:485px;}   
-                
-#contents .advice_area{float: none; display: none;
-                margin-top:75px; margin-left: 15px;
-                width:66%; height:240px;
-                background:url(../images/bg_app.jpg)no-repeat 0 0;
-                background-size:100% 100%;}
+@media screen and (max-width: 480px) {
+  #contents .top3_area {
+    width: 100%;
+    height: auto;
+    background: none;
+  }
+  #contents .top3_area_h {
+    margin: 0 0;
+    width: 100%;
+    height: 190px;
+  }
+  #contents .top3_area_h > h3 {
+    font-size: 20px;
+    text-align: center;
+    line-height: 190px;
+  }
+  #contents .top3_area_b {
+    margin: 0 0;
+    width: 100%;
+    height: auto;
+  }
+  #contents .top3_area_b li {
+    float: none;
+    margin-right: 0;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 670px;
+  }
+  #contents .top3_area_b li:last-child {
+    margin-right: 0;
+  }
+  #contents .top3_area_b img {
+    width: 100%;
+  }
+  #contents .top3_area_b h4 {
+    font-size: 25px;
+    color: #000;
+    text-align: center;
+    padding: 35px 0 15px;
+  }
+  #contents .top3_area_b p {
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+  }
+  #contents .top3_area_b a {
+    display: block;
+    width: 45px;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid #000;
+    padding-top: 10px;
+  }
+  #contents .group {
+    margin: 0 0;
+    width: 100%;
+    height: 485px;
+  }
 
-#contents .advice_area ul{float: left; width: 93%; margin: 75px 0 0 3.5%;}
-#contents .advice_area li{float: left; padding: 30px 0 30px 4%; width: 47.5%;
-                         border:2px solid #fff;
-                         margin-right: 5%;
-                         box-sizing: border-box;}       
-#contents .advice_area li:last-child {margin-right: 0%;}         
-#contents .advice_area li > img{ vertical-align:top;}
-#contents .advice_area li > span{font-size:20px;
-                               color:#fff; font-weight: 800;
-                               display: inline-block;
-                               height: 43px;
-                               line-height:43px;}
+  #contents .advice_area {
+    float: none;
+    display: none;
+    margin-top: 75px;
+    margin-left: 15px;
+    width: 66%;
+    height: 240px;
+    background: url(../images/bg_app.jpg) no-repeat 0 0;
+    background-size: 100% 100%;
+  }
 
+  #contents .advice_area ul {
+    float: left;
+    width: 93%;
+    margin: 75px 0 0 3.5%;
+  }
+  #contents .advice_area li {
+    float: left;
+    padding: 30px 0 30px 4%;
+    width: 47.5%;
+    border: 2px solid #fff;
+    margin-right: 5%;
+    box-sizing: border-box;
+  }
+  #contents .advice_area li:last-child {
+    margin-right: 0%;
+  }
+  #contents .advice_area li > img {
+    vertical-align: top;
+  }
+  #contents .advice_area li > span {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 800;
+    display: inline-block;
+    height: 43px;
+    line-height: 43px;
+  }
 
-  #contents .notice{ float:none; margin-top: 0px; margin-left: 5%; width:90%; height:240px; 
-                     border-top: 1px solid #333; border-bottom: 1px solid #333;}
-                #contents .notice_h{width:100%; height: 50px; }
-                #contents .notice_h > h3{ font-size:25px; line-height: 50px;}
-                #contents .notice_b{width:100%;} 
-                
-                #contents .notice_b li{width: 97.5%; height:20px;
-                                      background:url(../images/ico_bullet.png)no-repeat 8px 8px;
-                                      padding-left: 20px;
-                                      font-size: 14px; line-height: 20px;
-                                      margin-bottom: 15px;
-                               }
-                
+  #contents .notice {
+    float: none;
+    margin-top: 0px;
+    margin-left: 5%;
+    width: 90%;
+    height: 240px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+  #contents .notice_h {
+    width: 100%;
+    height: 50px;
+  }
+  #contents .notice_h > h3 {
+    font-size: 25px;
+    line-height: 50px;
+  }
+  #contents .notice_b {
+    width: 100%;
+  }
+
+  #contents .notice_b li {
+    width: 97.5%;
+    height: 20px;
+    background: url(../images/ico_bullet.png) no-repeat 8px 8px;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 15px;
+  }
 }
