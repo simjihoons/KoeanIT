@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .wrapper {
+        display: flex;
+        width: 500px;
+        height: 50px;
+        margin: 0 auto;
+        border: 1px solid red;
+      }
+
+      .wrapper > div {
+        width: 100px;
+        background-color: aquamarine;
+        border: 1px solid #000;
+      }
+
+      #container1 {
+        justify-content: flex-start;
+      }
+      #container2 {
+        justify-content: flex-end;
+      }
+      #container3 {
+        justify-content: center;
+      }
+      #container4 {
+        justify-content: space-between;
+      }
+      #container5 {
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex - justify-content</h1>
+    <h2>justify-content : flex-start(기본값)</h2>
+    <div id="container1" class="wrapper">
+      <div id="box1"><h2>1</h2></div>
+      <div id="box2"><h2>2</h2></div>
+      <div id="box3"><h2>3</h2></div>
+    </div>
+
+    <h2>justify-content : flex-end</h2>
+    <div id="container2" class="wrapper">
+      <div id="box1"><h2>1</h2></div>
+      <div id="box2"><h2>2</h2></div>
+      <div id="box3"><h2>3</h2></div>
+    </div>
+
+    <h2>justify-content : center</h2>
+    <div id="container3" class="wrapper">
+      <div id="box1"><h2>1</h2></div>
+      <div id="box2"><h2>2</h2></div>
+      <div id="box3"><h2>3</h2></div>
+    </div>
+
+    <h2>justify-content : space-betwwen</h2>
+    <div id="container4" class="wrapper">
+      <div id="box1"><h2>1</h2></div>
+      <div id="box2"><h2>2</h2></div>
+      <div id="box3"><h2>3</h2></div>
+    </div>
+
+    <h2>justify-content : space-around</h2>
+    <div id="container5" class="wrapper">
+      <div id="box1"><h2>1</h2></div>
+      <div id="box2"><h2>2</h2></div>
+      <div id="box3"><h2>3</h2></div>
+    </div>
+  </body>
+</html>
