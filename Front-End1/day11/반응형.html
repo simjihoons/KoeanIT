@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width , initial-scale=1.0">
+<title>Untitled Document</title>
+
+<style>
+*{ margin:0; padding:0;}
+body{ margin:0; padding:0; min-width: 320px;}
+img{border:0;}
+ul, li{ list-style:none;}
+a{ text-decoration:none; color:#333;}
+
+#all{ width:100%;}
+#header{ margin:0 auto; width:1000px; height:95px; background-color:#963; position:relative; }
+#header .logo{ float:left; position:absolute; top:20px; left:50px; 
+                    width:135px; height:45px; background-color:#F60;}
+					
+#header .top_nav{ float:left; position:absolute; top:30px; right: 10px;  
+                         width:700px; height:35px; background-color:#0066FF;}
+/* #header .top_nav ul{} */
+#header .top_nav li{float:left;  margin-right:60px;}
+#header .top_nav li:last-child{ margin-right:0;}
+#header .top_nav a{ font-size:16px; color:#fff;}
+
+#header .info{ float:left; position:absolute; top:5px; right:10px; }
+#header .info li{ float:left; margin-right:10px;}
+#header .info li:last-child{ margin-right:0;}
+#header .info a{ font-size:9px; color:#fff;} 
+
+#main_img{margin:0 auto; width:1000px; height:255px; background-color:#33FFCC;}
+
+#contents{margin:0 auto; width:1000px; height:250px; background-color:#FF3333;}
+#contents .con01{ float:left; width:360px; height:130px; background-color:#6CF;}
+#contents .con02{ float:left; width:320px; height:130px; background-color:#033;}
+#contents .con03{ float:left; width:320px; height:130px; background-color:#00FFFF;}
+#contents .con04{ float:left; width:360px; height:120px; background-color:#00FF00;}
+#contents .con05{ float:left; width:640px; height:120px; background-color:#F09;}
+
+#footer{margin:0 auto; width:1000px; height:105px; background-color:#339999;}
+#footer .logo{float:left; margin:35px 0 0 65px; width:120px; height:45px; background-color:#000000;}
+#footer .addr{float:left; margin:35px 0 0 60px; width:420px; height:45px; background-color:#999;}
+
+@media screen and (max-width:1000px) {
+  /* 상단부분  자신의가로값을 부모의 가로값으로 나눈다 * 100 */
+  #header{margin:0 0; width: 100%; height:95px; background-color:#963; position:relative;}
+
+/* left(25%) => 50 / 10(1000/100 한 값) = 5% */
+  #header .logo{float:left; position:absolute; top:20px; left:5%; 
+                width:135px; height:45px; background-color:#F60;}
+	
+  /* width 700 => 700 / 10 = 70% */
+  #header .top_nav{ float:left; position:absolute; top:30px; /*left:26%;*/right: 10px;  
+                    width:70%; height:35px; background-color:#0066FF;}
+
+  /* .top_nav(부모) 의 100% */
+  #header .top_nav ul{width: 100%; /*display: flex;*/}
+
+  /* ul -> width 70% => 약 700px   ==> 116 / 6 = 19.3*/
+  /* 임의로 16.6% 수정 */
+  #header .top_nav li{float:left; width: 16.6%; margin-right:0px; text-align: center;
+                      /*justify-content: space-between;*/}
+  
+  
+  
+  /* 메인이미지 */
+  #main_img{margin:0 0; width: 100%; height:255px; background-color:#33FFCC;}
+
+  /* 콘텐츠 */
+  #contents{margin:0 0; width: 100%; height:250px; background-color:#FF3333; 
+            display: flex;  flex-flow: row wrap;}
+  
+  /* 1~3 까지 한 블록으로 친다 */
+  /* 1~3까지 합쳐서 1000px 이기 때문에 %로 변환할때 합쳐서 100%가 되게끔 하면된다.(0을 하나 뺴고 %로 바꾸면됨) */
+  /* #contents .con01{ float:left; width:36%; height:130px; background-color:#6CF;}
+  #contents .con02{ float:left; width:32%; height:130px; background-color:#033;}
+  #contents .con03{ float:left; width:32%; height:130px; background-color:#00FFFF;}
+
+  #contents .con04{ float:left; width:36%; height:120px; background-color:#00FF00;}
+  #contents .con05{ float:left; width:64%; height:120px; background-color:#F09;} */
+
+
+  /* 위의 내용 flex로 바꾸기 */
+ 
+  #contents .con01{float: none; flex: 1 1 36%;  height:130px; background-color:#6CF;}
+  #contents .con02{float: none; flex: 1 1 32%;  height:130px; background-color:#033;}
+  #contents .con03{float: none; flex: 1 1 32%;  height:130px; background-color:#00FFFF;}
+
+  #contents .con04{float: none; flex: 1 1 36%;  height:120px; background-color:#00FF00;}
+  #contents .con05{float: none; flex: 1 1 64%;  height:120px; background-color:#F09;}
+
+  /* 하단 */
+  #footer{margin:0 0; width: 100%; height:105px; background-color:#339999;}
+
+  /* 65 / 10 => 6.5% */
+  #footer .logo{float:left; margin:35px 0 0 6.5%; width:120px; height:45px; background-color:#000000;}
+  /* 420 => 420 / 10 */
+  #footer .addr{float:left; margin:35px 0 0 6%; width:42%; height:45px; background-color:#999;}
+
+}
+
+
+@media screen and (max-width:750px) {
+  /* 상단메뉴 */
+  #header .logo{float:left; position:absolute; top:20px; left:5%; 
+                width:18%; height:45px; background-color:#F60;}
+  #header .top_nav{ float:left; position:absolute; top:30px; /*left:26%;*/right: 10px;  
+                    width:70%; height:35px; background-color:#0066FF;}
+          .top_nav ul{width: 100%; /*display: flex;*/}
+          .top_nav li{float:left; width: 16.6%; margin-right:0px; text-align: center;
+                      /*justify-content: space-between;*/}
+                      
+  /* 하단 주소 */
+  /* 위의 코드(아래) 에서 width는 12% 마진값을 더하면 18.5%  .addr에서의 6%  => 24.5%*/
+  /*  #footer .logo{float:left; margin:35px 0 0 6.5%; width:120px; height:45px; background-color:#000000;} */
+  /* .aadr에서 width값 42% + 24.5% => 66.5% // 현재 32.5%정도가 남아있음 */
+  /* 6.5% 12% 6% (.addr의 width) 6.5% => 69%가 남는다 (하지만 여유있게 주기 위해 임의로 값을 변경)*/
+  #footer .logo{float:left; margin:35px 0 0 6.5%; width:12%; height:45px; background-color:#000000;}
+  #footer .addr{float:left; margin:35px 0 0 6%; width:69%; height:45px; background-color:#999;}
+}
+
+@media screen and (max-width:480px) {
+  #header .info{display: none;}
+  
+  #header .logo{float:left; position:absolute; top:10px; left:50%; margin-left: -50px;
+                width:18%; min-width: 100px; height:45px; background-color:#F60;}
+
+  /* top => 임의로 65로 설정 */
+  #header .top_nav{ float:left; position:absolute; top:60px; /*left:26%;*/right: 0px;  
+                    width:100%; height:35px; background-color:#0066FF;}
+          .top_nav li{float:left; width: 16.6%; margin-right:0px; text-align: center;
+                      /*justify-content: space-between;*/}   
+
+                      
+  /* #contents{margin:0 0; width: 100%; height:auto; background-color:#FF3333; padding: 0 2.5%;}  */
+          
+  /* #contents > article{margin-bottom: 20px;}         */
+  /* #contents .con01{ float:none; width:95%; height:130px; background-color:#6CF;}
+  #contents .con02{ float:none; width:95%; height:130px; background-color:#033}
+  #contents .con03{ float:none; width:95%; height:130px; background-color:#00FFFF;}
+  #contents .con04{ float:none; width:95%; height:120px; background-color:#00FF0095}
+  #contents .con05{ float:none; width:95%; height:120px; background-color:#F09;} */
+
+
+  #contents{margin:0 0; width: 100%; height: auto; display: flex;  flex-flow: row wrap; 
+            background-color:#FF3333;  
+            }  
+  #contents > article{margin:10px 10px;}
+  #contents .con01{float: none;  flex: 1 1 100%;  height:130px; background-color:#6CF;}
+  #contents .con02{float: none;  flex: 1 1 100%;  height:130px; background-color:#033;}
+  #contents .con03{float: none;  flex: 1 1 100%;  height:130px; background-color:#00FFFF;}
+  #contents .con04{float: none;  flex: 1 1 100%;  height:120px; background-color:#00FF00;}
+  #contents .con05{float: none;  flex: 1 1 100%;  height:120px; background-color:#F09;}
+
+
+  /* 하단 */
+  #footer .logo{float:left; margin:0px 0 0 0%; position: absolute; left: 50%; margin-left: -50px;
+                width:12%; height:45px; min-width: 100px; background-color:#000000;}
+  #footer .addr{float:left; margin: 60px 0 0 2.5%; width:95%; height:45px; background-color:#999;}
+}
+
+
+</style>
+</head>
+
+<body>
+<div id="all">
+<header id="header">
+  <h1 class="logo">logo</h1>
+  <nav class="top_nav">
+    <ul>
+     <li><a href="">menu1</a></li>
+     <li><a href="">menu2</a></li>
+     <li><a href="">menu3</a></li>
+     <li><a href="">menu4</a></li>
+     <li><a href="">menu5</a></li>
+     <li><a href="">menu6</a></li>
+    </ul>
+  </nav>
+  <ul class="info">
+    <li><a href="">imenu</a></li>
+    <li><a href="">imenu</a></li>
+    <li><a href="">imenu</a></li>
+  </ul>
+</header>
+
+<div id="main_img"></div>
+
+<section id="contents">
+    <article class="con01">con01</article>
+    <article class="con02">con02</article>
+    <article class="con03">con03</article>
+    <article class="con04">con04</article>
+    <article class="con05">con05</article>
+</section>
+
+<footer id="footer">
+  <h2 class="logo" style="color: #fff;">logo2</h2>
+  <address class="addr">address</address>
+</footer>
+</div>
+
+</body>
+</html>
