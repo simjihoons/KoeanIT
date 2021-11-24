@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .wrapper {
+        display: flex;
+        width: 500px;
+        height: 200px;
+        margin: 0 auto;
+        border: 1px solid red;
+
+        align-items: center;
+      }
+
+      .wrapper > div {
+        width: 100px;
+        background-color: aquamarine;
+        border: 1px solid #000;
+      }
+
+      /* #box1 {
+        align-self: flex-start;
+      }
+      #box3 {
+        align-self: flex-end;
+      } */
+
+      #box1 {
+        order: 2;
+      }
+      #box2 {
+        order: 3;
+      }
+      #box3 {
+        order: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>align-self</h2>
+    <div id="container" class="wrapper">
+      <div id="box1"><h2>1</h2></div>
+      <div id="box2"><h2>2</h2></div>
+      <div id="box3"><h2>3</h2></div>
+    </div>
+  </body>
+</html>
