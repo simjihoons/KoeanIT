@@ -1,5 +1,6 @@
 {
   "python.formatting.provider": "yapf",
   "java.project.sourcePaths": ["Java"],
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "html-to-css-autocompletion.autocompletionFilesScope": "multi-root"
 }
