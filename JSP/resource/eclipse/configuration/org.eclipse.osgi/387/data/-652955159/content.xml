@@ -2,7 +2,7 @@
 <?metadataRepository version='1.2.0'?>
 <repository name='update site: http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/updates/libertyAdapter/photon/' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1'>
   <properties size='2'>
-    <property name='p2.timestamp' value='1637319538281'/>
+    <property name='p2.timestamp' value='1637994128450'/>
     <property name='site.checksum' value='3100026806'/>
   </properties>
   <units size='20'>

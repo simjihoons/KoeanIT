@@ -1,2 +1,7 @@
 아파치 톰캣 설치
-	
+	build path에서 JDK 11버전으로 설정
+	bulid path -> Libraries -> Modulepath -> (11버전 이외의것 remove-> Add Library -> 11버전
+
+톰캣 연동
+	window->Preferences ->server 검색 -> Server and Runtime -> 톰캣 9버전
+			                      -> Runtiem Environments -> 9.0 추가

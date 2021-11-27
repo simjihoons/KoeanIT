@@ -1,0 +1,2 @@
+include 디렉티브 태그
+	<% include file=""%>
