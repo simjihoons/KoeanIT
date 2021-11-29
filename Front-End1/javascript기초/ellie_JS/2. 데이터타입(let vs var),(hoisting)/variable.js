@@ -22,6 +22,14 @@
 //할당 한 뒤로는 값을 변경할 수 없음
 // Immutable
 
+//Note!
+// Immutable data types : primitive types, frozen objects(i.e. object.freeze())
+// Mutable data types : all objects by default are mutable in JS
+// favor immutable data type always for a few reasons:
+// - security
+// - thread safety
+// - reduce human mistakes
+
 // 4. Variable type
 //primitive type, single item => 더이상 작은 단위로 나눠질 수 없는 한가지의 아이템
 //               => number,string , boolean , null , undefiednm, symbol
