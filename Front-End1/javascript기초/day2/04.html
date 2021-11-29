@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>논리 연산자</h1>
+
+    <!-- 
+        주어진 논리식을 판단하여 참과 거짓을 반환
+
+        and(&&)
+        두 논리식 모두 참이면 참
+
+        or(||)
+        두 논리식 중 하나라도 참이면 참
+
+        not(!)
+        논리식의 결과의 반대의 값을 반환
+
+        삼항연산자
+        변수(상수) = 조건식 ? true일 때 : false일 때
+    -->
+    <script>
+      // var 생략 가능
+      a = "A";
+      b = "B";
+      c = !2 || (3 && !0);
+      document.write(c + "<br>");
+
+      c = a < b && a == b;
+      document.write(c + "<br>");
+
+      c = a < b || a == b;
+      document.write(c + "<br>");
+    </script>
+  </body>
+</html>
