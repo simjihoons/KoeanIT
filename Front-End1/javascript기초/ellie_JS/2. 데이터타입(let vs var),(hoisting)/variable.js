@@ -1,6 +1,6 @@
 "use strict";
 
-// 2. Variable
+// 2. Variable , rw(read/write)
 // let (added in ES6)
 //Mutable
 {
@@ -18,7 +18,7 @@
 
 //그래서 let이 나오게 됨
 
-//3. constants
+//3. constant , read
 //할당 한 뒤로는 값을 변경할 수 없음
 // Immutable
 
