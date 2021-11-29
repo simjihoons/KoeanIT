@@ -20,6 +20,14 @@
       var avgScore = totalScore / 3;
       let grade;
 
+      if (
+        (korScore > 100 && korScore < 0) ||
+        (engScore > 100 && engScore < 0) ||
+        (mathScore > 100 && mathScore < 0)
+      ) {
+        document.write("점수는 100점을 넘거나 -가 될수 없습니다.");
+      }
+
       if (avgScore >= 90) {
         grade = "A";
       } else if (avgScore >= 80) {
