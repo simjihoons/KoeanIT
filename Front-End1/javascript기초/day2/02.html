@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>증감 연산자</h1>
+
+    <!-- 
+        전위 연산자
+        var ++res  , --res
+
+        
+        후위 연산자
+        var res++ , res--
+    -->
+    <script>
+      // var 생략 가능
+      a = 10;
+      b = 20;
+      c = 3;
+
+      document.write("++a : " + ++a + "<br>"); // 11
+      document.write("a++ : " + a++ + "<br>"); // 11
+      document.write("a : " + a + "<br>"); // 12
+
+      document.write("c++ : " + c++ + "<br>"); // 3
+      document.write("c : " + c + "<br>"); // 4
+
+      document.write("++a + b++ : " + (++a + b++) + "<br>"); // 33
+      document.write("b : " + b + "<br>"); // 21
+
+      document.write("++a + +b : " + (++a + ++b) + "<br>"); // 36
+
+      
+    </script>
+  </body>
+</html>
