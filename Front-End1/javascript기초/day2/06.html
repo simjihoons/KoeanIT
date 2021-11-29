@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>if문</h1>
+
+    <script>
+      "use strict"; // 자바 스크립트를 엄격하게 문법을 입력하겠다고 선언
+
+      const age = prompt("나이를 입력하세요");
+      if (age > 19) {
+        document.write("성인 입니다." + "<br>");
+      } else if (age > 12) {
+        document.write("청소년 입니다." + "<br>");
+      } else {
+        document.write("아동 입니다." + "<br>");
+      }
+
+      const age2 =
+        age > 19 ? document.write("성인") : document.write("비 성인");
+    </script>
+  </body>
+</html>
