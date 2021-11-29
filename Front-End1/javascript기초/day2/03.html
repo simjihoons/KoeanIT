@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>비교 연산자</h1>
+
+    <!-- 
+        >
+        <
+        >=
+        <=
+        == 타입이 달라도 값이 같으면 참 ("10" == 10 는 true)
+        === 타입과 값 모두 같아야 함 ("10" === 10 는 false)
+        != 값만 다르면 참 
+        !== 값과 타입 둘중 하나만 달라도 참
+    -->
+    <script>
+      // var 생략 가능
+      a = 10;
+      b = 5;
+      c = a > b;
+      str1 = "5";
+
+      document.write("a > b : " + c + "<br>");
+
+      c = a < b;
+      document.write("a < b : " + c + "<br>");
+
+      c = a != b;
+      document.write("a != b : " + c + "<br>");
+
+      c = str1 == b;
+      document.write("str1 == b : " + c + "<br>");
+
+      c = str1 === b;
+      document.write("str1 === b : " + c + "<br>");
+    </script>
+  </body>
+</html>
