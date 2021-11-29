@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열-3</title>
+</head>
+<body>
+    <script>
+        'use strict';
+         const cnt =Number(prompt('입력받을 숫자의 개수를 입력하세요'));//배열요소 5
+         let idx = 0;
+         let arr = [];//배열선언
+
+         while (idx < cnt) {
+             arr[idx] = Number(prompt(`${idx + 1}번째 숫자를 입력하세요`));
+              //10, 20, 30, 40, 50
+             idx++;
+         }
+   
+         let max = arr[0];
+         let min = arr[0];
+         for(let i=0; i<arr.length; i++){
+             if(max < arr[i]){
+                max = arr[i]; //50 
+             }
+             if(min > arr[i]){
+                min = arr[i]; //10
+             }
+
+         }
+         document.write(`<p>입력한수 ${arr}에서 가장 큰 값은 ${max}입니다</p>`);
+         document.write(`<p>입력한수 ${arr}에서 가장 작은 값은 ${min}입니다</p>`);
+
+    </script>
+</body>
+</html>

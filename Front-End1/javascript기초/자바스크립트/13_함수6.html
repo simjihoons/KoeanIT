@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수6</title>
+    <script>
+        'use strict'
+         const hello1 = () => console.log('안녕하세요.');
+         const hello2 = (x,y) => console.log(`매개변수로 전달받은 X의 값은 ${x}이고, Y의 값은 ${y}입니다.`)
+
+         const hello3 = (start, end) =>{
+           let sum = 0;
+           for(let i=start; i<=end; i++){
+               sum += i;
+           }
+            return sum;
+
+         }
+    
+    </script>
+</head>
+<body>
+    <script>
+        'use strict'
+        hello1();
+        hello2(7,3);  
+        const result = hello3(1,100);
+        console.log(result);
+          
+        const age = Number(prompt('나이를 입력하세요'));
+        let isAdult = (age > 18) ?
+            () => alert('성인입니다') : //참일때
+            () => alert('미성년입니다');//거짓일때
+        isAdult();//함수호출
+    </script>
+</body>
+</html>

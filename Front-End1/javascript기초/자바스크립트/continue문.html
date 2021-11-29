@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue문</title>
+</head>
+<body>
+    <script>
+    'use strict'
+     const num = 3;
+    for(let i=1; i<=100; i++){ // 1 2 짝 4 5 짝 7 8 짝
+        if(i % num == 0){//3배수
+            document.write(`짝`);
+            continue;//현재 실행문하고 처음 조건 돌아아감
+        }
+        document.write(`${i}`);
+      
+    }
+    //document.write(`${i}`);
+    </script>
+</body>
+</html>

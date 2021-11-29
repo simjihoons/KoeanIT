@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열-2</title>
+</head>
+<body>
+    <script>
+        'use strict';
+         const cnt =Number(prompt('입력받을 숫자의 개수를 입력하세요'));//5
+         let idx = 0;
+         let arr = [];//배열선언
+
+         while(idx < cnt){//배열에 요소 추가
+            arr[idx] = Number(prompt(`${idx + 1}번째 숫자를 입력하세요`));
+
+            // arr[0] = Number(prompt(`1번째 숫자를 입력하세요`));
+            // arr[1] = Number(prompt(`1번째 숫자를 입력하세요`));
+            // arr[2] = Number(prompt(`1번째 숫자를 입력하세요`));
+            // arr[3] = Number(prompt(`1번째 숫자를 입력하세요`));
+            idx++;
+         }
+         for(let i=0; i<arr.length; i++){//화면에 출력
+             document.write(`${arr[i]}<br>`);
+         }
+
+    </script>
+</body>
+</html>

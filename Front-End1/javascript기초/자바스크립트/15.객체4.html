@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체4(생성자)</title>
+</head>
+<body>
+    <script>
+    'use strict';
+           
+    const Car = {
+            name: '소나타',
+            color: 'black',
+            start: function(){
+                return '시동을 켭니다';
+            }
+        }//----------> 객체를 하나를 생성하는 방법 , 속도가 빠름,만들기힘듬
+     
+     function Dog(name, color){
+        this.name = name;
+        this.color = color;
+        this.sleep = function(){
+            `${name}가 잠을 잡니다`;    
+        } 
+     }//----------> 객체를 하나이상을 생성하는 방법-기본틀 생성-계속추가
+     
+     const Rucy = new Dog('루시','흰색'); //객체1을 생성
+     console.log(Rucy.name);
+     console.log(Rucy.color);
+     console.log(Rucy.sleep());
+
+     const PPomi = new Dog('뽀미', '노란색');//객체2을 생성
+     console.log(PPomi.name);
+     console.log(PPomi.color);
+     console.log(PPomi.sleep());
+     
+     const Rucy1 = new Dog('루시','검정색');//객체3을 생성
+     console.log(Rucy1.name);
+     console.log(Rucy1.color);
+     console.log(Rucy1.sleep());
+    </script>
+</body>
+</html>
