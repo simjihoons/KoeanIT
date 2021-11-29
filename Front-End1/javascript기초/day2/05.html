@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>조건문</h1>
+
+    <script>
+      //   var a = 10;
+      //   var b = 20;
+
+      //   if (a > b) {
+      //     document.write(a + "값이 큽니다.");
+      //   } else {
+      //     document.write(b + "값이 큽니다.");
+      //   }
+
+      var score;
+      score = prompt("점수를 입력해 주십시오");
+      //90 80 70 60
+      if (score > 100) {
+        document.write("점수는 100점을 넘어갈 수 없습니다.");
+      } else if (score >= 90) {
+        document.write("A학점입니다.");
+      } else if (score >= 80) {
+        document.write("B학점입니다.");
+      } else if (score >= 70) {
+        document.write("C학점입니다.");
+      } else if (score >= 60) {
+        document.write("D학점입니다.");
+      } else if (score >= 0) {
+        document.write("F학점입니다");
+      } else {
+        document.write("-점수는 존재하지 않습니다.");
+      }
+    </script>
+  </body>
+</html>
