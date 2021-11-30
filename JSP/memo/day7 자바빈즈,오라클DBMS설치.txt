@@ -1,0 +1,34 @@
+자바빈즈(액션태그)
+	JSP의 표준 태그를 통해 접근할 수 있는 자바 클래스로서
+	멤버 변수와 , setter , gertter메소드로 이루어져 있다.
+
+자바빈즈 태그
+	1. 객체 생성
+	스크립틀릿 태그사용 -> <% MemberVO member = new MemberVO();%>
+	자바빈즈 사용 -> <jsp:useBean class="com.online.beansMemberVO" id="member> //기본생성자만 호출
+
+	2. setter()
+	<%member.setName("홍길동");%>
+	<jsp:setProperty property="name" name = "member" value="홍길동>
+
+	3. getter()
+	<%member.getName();%>
+	<jsp:getProperty property="name" name="member>
+
+
+자바빈즈 규칙
+	1. 패키지화(디폴트패키지를 만들지 마라 , 패키지의 이름을 설정하지 않는것)
+	2. 필드 접근자를 private으로 설정
+	3. getter,setter 메소드는 public으로 설정
+	4. 기본생성자 선언
+===============================================================================
+오라클 11.g 설치
+DBeaver 설치
+
+===============================================================================
+외부에 있는 장치와 연결할 때는 드라이버가 필요하다.
+
+이클립스 - 패키지 - 빌드패스 - 라이브러리스 - 모듈패스 -익스터널 자르스 - oracle jar.6추가
+레퍼런스라이브러리에 있는거 확인
+
+web-inf 폴더의 lib가 WAS가 라이브러리를 건들때 할당해야하는 경로 ( oracle jar.6 붙여넣기)
