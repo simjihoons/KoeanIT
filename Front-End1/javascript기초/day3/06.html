@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function getHello() {
+        return "Hello !!";
+      }
+
+      function getSum(num1, num2) {
+        return num1 + num2;
+      }
+
+      //   function plus(num1,num2) {
+      //       return num1 + num2;
+      //   }
+      //   function m(num1,num2) {
+      //       return num1 - num2;
+      //   }
+      //   function plus(num1,num2) {
+      //       return num1 * num2;
+      //   }
+
+      function plus(operator, num1, num2) {
+        switch (operator) {
+          case "+":
+            return num1 + num2;
+            break;
+          case "-":
+            return num1 - num2;
+            break;
+          case "*":
+            return num1 * num2;
+            break;
+          case "/":
+            //방어적코드
+            if (num2 === 0) {
+              alert("0으로 나눌 수 없습니다.");
+            } else {
+              return num1 / num2;
+              break;
+            }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      /*
+              함수란
+              미리 만들어 놓은 작은 프로그램이다.
+              혼자서 실행 되지 않고 함수 호출에 의해서 실행되거나 특정 이벤트에 의해 실행
+
+              함수 선언
+              function 함수명(){
+                  실행할 문장;
+              }
+      */
+      console.log(`바로 함수 호출 : ${getHello()}👍`);
+      const msg = getHello();
+      console.log(`변수에 담아서 호출 : ${msg}👍👍`);
+
+      //=============================================
+      const sum = getSum(1, 3);
+      console.log(`getSum 함수 호출 : ${sum}`);
+
+      //============================================
+      const num1 = Number(prompt("첫 번쨰 숫자 입력"));
+      const num2 = Number(prompt("두 번쨰 숫자 입력"));
+      const oper = prompt("연산 기호 입력 ");
+
+      let calc = plus(oper, num1, num2);
+      console.log(`${num1} ${oper} ${num2} = ${calc}`);
+    </script>
+  </body>
+</html>
