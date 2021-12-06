@@ -70,6 +70,14 @@
 
         // 하나의 대상에 여러가지 이벤트를 적용할때
         // on()
+        $(".btn6").on({
+          click: function () {
+            $(this).css("background-color", "#ffffcc");
+          },
+          mouseover: function () {
+            $(this).css("background-color", "#000");
+          },
+        });
       });
     </script>
 
