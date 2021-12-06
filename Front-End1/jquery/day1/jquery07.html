@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+  </head>
+  <body>
+    <script>
+      // 마우스 이벤트
+
+      // 1. 클릭
+      $(document).ready(function () {
+        // $("p").click(function () {
+        //   alert("클릭 되었습니다.");
+        // });
+        // $(".btn2").dblclick(function () {
+        //   alert("더블클릭 되었습니다.");
+        // });
+        //=========================================================
+        // $(".btn3").hover(
+        //   function () {
+        //     // 마우스 호버
+        //     $(this).css("background-color", "yellow");
+        //   },
+        //   function () {
+        //     // 호버하고 나갈때
+        //     $(this).css("background-color", "pink");
+        //   }
+        // );
+        $(".btn3").mouseover(function () {
+          $(this).css("background-color", "yellow");
+        });
+        $(".btn3").mouseout(function () {
+          $(this).css("background-color", "pink");
+        });
+        //===========================================================
+        $(".btn4").mouseenter(function () {
+          $(this).css("background-color", "yellow");
+        });
+        $(".btn4").mouseleave(function () {
+          $(this).css("background-color", "pink");
+        });
+
+        // 2. 마우스 좌료
+        // documnet : 현재 문서 기준
+        // window : 현재 창 기준
+        // 매개변수로 e , evnet 를 많이 쓴다.
+        $(document).mousemove(function (event) {
+          // text는 span 안에 잇는 글자를 의미하게 된다.
+          $("span").text(" x : " + event.pageX + " , " + " y : " + event.pageY);
+        });
+
+        // 3. focus
+        $("div").focusin(function () {
+          $(this).css("background-color", "#ffffcc");
+        });
+        $("div").focusout(function () {
+          $(this).css("background-color", "#ffffff");
+        });
+
+        $(".btn5").mouseup(function () {
+          $(this).after("<p style= 'color : green'>마우스 UP</p>");
+        });
+        $(".btn5").mousedown(function () {
+          $(this).after("<p style= 'color : red'>마우스 DOWN</p>");
+        });
+
+        // 하나의 대상에 여러가지 이벤트를 적용할때
+        // on()
+      });
+    </script>
+
+    <p><b>여기를 클릭해보세요</b></p>
+    <p class="btn2"><b>여기를 더블 클릭해보세요</b></p>
+    <p class="btn3"><b>이곳에 마우스를 가져다 두세요</b></p>
+    <p class="btn4"><b>마우스의 포인트를 이 곳에 두세요</b></p>
+
+    <br /><br /><br /><br /><br /><br /><br />
+    <p>마우스 좌표:<span>.</span></p>
+    <br /><br /><br /><br /><br /><br /><br />
+
+    <div style="border: 1px solid #000; padding: 10px">
+      이름:<input type="text" /> <br />
+      주소:<input type="text" />
+    </div>
+    <br /><br /><br /><br /><br /><br /><br />
+
+    <p class="btn5">aaaaaaaaaaaaaa</p>
+
+    <br /><br /><br /><br /><br /><br /><br />
+
+    <p class="btn6">클릭하거나 마우스 오버 했을때</p>
+  </body>
+</html>
