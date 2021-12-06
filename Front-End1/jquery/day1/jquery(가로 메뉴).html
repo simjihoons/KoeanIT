@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        list-style: none;
+      }
+
+      #menu {
+        width: 500px;
+        height: 25px;
+        border: 1px solid #ccc;
+      }
+
+      /* #menu > ul {
+      } */
+
+      #menu > ul > li {
+        width: 100px;
+        float: left;
+        text-align: center;
+        line-height: 25px;
+      }
+
+      #menu ul.sub {
+        width: 100px;
+        border: 1px solid #ccc;
+      }
+
+      #menu ul.sub > li {
+        border-bottom: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        //$(".sub").css({ display: "none" });
+        //          or      (밑에꺼 쓰는게 좋을듯함)
+        $(".sub").hide();
+
+        $("#menu > ul > li").hover(
+          function () {
+            //jQuery에서 애니메이션의 시간은 1000이 1초
+            //$(this).find(".sub").show(500);
+            //$(".sub").scc({display:"block"});
+            //              or
+            // $(this).find(".sub").fadeIn(1000);
+            //$(this).find(".sub").slideDown(1000);
+            $(this)
+              .find(".sub")
+              .stop()
+              .css({ opacity: "0" })
+              .animate({ opacity: "1" }, 1000);
+          },
+          function () {
+            // $(this).find(".sub").hide(500);
+            //$(".sub").scc({display:"none"});
+            //              or
+            // $(this).find(".sub").fadeOut(100);
+            //$(this).find(".sub").slideUp(500);
+            $(this)
+              .find(".sub")
+              .stop()
+              .css({ opacity: "1" })
+              .animate({ opacity: "0" }, 1000);
+          }
+        );
+      });
+    </script>
+
+    <nav id="menu">
+      <ul>
+        <li>
+          menu1
+          <ul class="sub">
+            <li>s_mn1</li>
+            <li>s_mn2</li>
+            <li>s_mn3</li>
+            <li>s_mn4</li>
+          </ul>
+        </li>
+        <li>
+          menu2
+          <ul class="sub">
+            <li>s_mn1</li>
+            <li>s_mn2</li>
+            <li>s_mn3</li>
+            <li>s_mn4</li>
+          </ul>
+        </li>
+        <li>
+          menu3
+          <ul class="sub">
+            <li>s_mn1</li>
+            <li>s_mn2</li>
+            <li>s_mn3</li>
+            <li>s_mn4</li>
+          </ul>
+        </li>
+        <li>
+          menu4
+          <ul class="sub">
+            <li>s_mn1</li>
+            <li>s_mn2</li>
+            <li>s_mn3</li>
+            <li>s_mn4</li>
+          </ul>
+        </li>
+        <li>
+          menu5
+          <ul class="sub">
+            <li>s_mn1</li>
+            <li>s_mn2</li>
+            <li>s_mn3</li>
+            <li>s_mn4</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
