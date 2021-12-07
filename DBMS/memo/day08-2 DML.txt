@@ -1,0 +1,22 @@
+DML(DATE Manipulation Language)
+	
+-SELECT : 조회(검색)
+	select 컬럼명1,컬럼명2 --- from 테이블명
+	where 조건식;
+
+-insert : 추가
+	insert into 테이블명
+	(컬럼명1,컬럼명2 ---) => 생략 가능
+	values(값1 , 값2---);
+
+-update : 수정
+	update 테이블명 
+	set 기존 컬럼 명 = 새로운 값
+	where 조건식;
+
+-delete : 삭제
+	delect from 테이블명
+	where 조건식;
+
+
+	
