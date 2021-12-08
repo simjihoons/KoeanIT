@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀다운메뉴</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        #header {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background-color: cadetblue;
+        }
+
+        .main_mn {
+            width: 800px;
+            height: 30px;
+            border: 2px solid #000;
+        }
+
+        .main_mn>li {
+            width: 25%;
+            float: left;
+            border-bottom: 2px solid #000;
+        }
+
+        .main_mn>li>div {
+            width: 100%;
+            height: 30px;
+            background-color: beige;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+
+        }
+
+        .main_mn>li>div:hover {
+            background-color: blueviolet;
+        }
+
+        #sub_mn_area {
+            position: absolute;
+            top: 150px;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background-color: cornflowerblue;
+        }
+
+        #sub_mn_area .inbox {
+            width: 1300px;
+            height: 250px;
+            margin: 0 auto;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            //⬇⬇ $("#sub_mn_area").hide();와 같은 의미 ⬇⬇
+            $("#sub_mn_area").css({ display: "none" });
+
+
+            $(".main_mn").mouseenter(function () {
+                // $("#sub_mn_area").css({ display: "block" });
+
+                //animate는 시작값과 끝나는 값을 설정가능
+                $("#sub_mn_area").stop().show().css({ height: "0px" }).animate({ height: "250px" }, 1000);
+            });
+
+            $("#sub_mn_area").mouseleave(function () {
+                // $(this).css({ display: "none" });
+                $(this).css({ height: "250px" }).animate({ height: "0px" }, 500);
+            });
+        });
+    </script>
+    <div id="header">
+        <ul class="main_mn">
+            <li class="mn1">
+                <div>menu</div>
+            </li>
+            <li class="mn2">
+                <div>menu</div>
+            </li>
+            <li class="mn3">
+                <div>menu</div>
+            </li>
+            <li class="mn4">
+                <div>menu</div>
+            </li>
+        </ul>
+    </div>
+    <div id="sub_mn_area">
+        <div class="inbox">
+            <ul>
+                <li><a href="#"></a>1</li>
+                <li><a href="#"></a>2</li>
+                <li><a href="#"></a>3</li>
+                <li><a href="#"></a>4</li>
+                <li><a href="#"></a>5</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
