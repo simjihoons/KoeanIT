@@ -1,0 +1,53 @@
+SELECT * FROM STADIUM;
+
+SELECT * FROM team;
+
+SELECT t.TEAM_ID "팀 아이디",s.ADDRESS "주소", t.TEL FROM STADIUM s , TEAM t;
+
+--concatenation(연결) : ||
+--누구누구의 별명은 머머 이다.
+
+SELECT PLAYER_NAME ||'의 별명은'|| NICKNAME ||'이다.' FROM PLAYER;
+
+SELECT * FROM PLAYER;
+
+--누구누구의 포지션은 머머이다.
+SELECT PLAYER_NAME||'의 영어 이름은'||E_PLAYER_NAME||'이고, 포지션은'||"POSITION"||'이다' FROM PLAYER;
+
+
+--LIKE
+-- 포함된 문자열의 값을 찾음 , 문자의 개수도 제한을 줄 수 있음.
+--% : 모든것
+--'%A' : A로 끝나는 모든 값
+--'%_A' : A로 끝나면서 글자 수가 2개인 값
+SELECT * FROM TEAM
+WHERE TEAM_NAME LIKE '%천마';
+
+
+SELECT * FROM PLAYER;
+SELECT PLAYER_NAME FROM PLAYER
+WHERE PLAYER_NAME LIKE '김%';
+
+SELECT * FROM PLAYER;
+SELECT PLAYER_NAME FROM PLAYER
+WHERE PLAYER_NAME LIKE '김_';
+
+SELECT * FROM PLAYER
+WHERE PLAYER_NAME LIKE '이%';
+
+SELECT * FROM PLAYER
+WHERE NOT PLAYER_NAME  LIKE  '이%';
+
+SELECT * FROM PLAYER
+WHERE NOT PLAYER_NAME LIKE '김__';
+
+
+
+
+
+
+
+
+
+
+
