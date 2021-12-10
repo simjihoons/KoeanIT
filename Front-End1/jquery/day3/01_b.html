@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slide img test</title>
+    <script src="../js/jquery.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        border: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* 전체 영역*/
+      #slider {
+        margin: 0 auto;
+        width: 600px;
+        height: 350px;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid #000;
+      }
+      /* 이미지 박스 */
+      #viewer {
+        height: 350px;
+        position: relative;
+      }
+
+      /* 이미지 좌표 */
+      #viewer > img {
+        position: absolute;
+        top: 0px;
+      }
+
+      #viewer > img:nth-child(1) {
+        left: 0;
+      }
+      #viewer > img:nth-child(2) {
+        left: 600px;
+      }
+      #viewer > img:nth-child(3) {
+        left: 1200px;
+      }
+      #viewer > img:nth-child(4) {
+        left: 1800px;
+      }
+
+      /* 버튼 영역 */
+      .btns {
+        position: absolute;
+        right: 20px;
+        top: 320px;
+      }
+      .btns > li {
+        float: left;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        background-color: #fff;
+        text-align: center;
+        line-height: 16px;
+      }
+      .btns li a {
+        display: block;
+      }
+      .btns li.on a {
+        background-color: rgb(219, 208, 230);
+        color: #000;
+      }
+      #btns_g {
+        margin: 0 auto;
+        margin-top: 15px;
+        width: 600px;
+      }
+      button {
+        border: none;
+        background-color: #000;
+        color: #fff;
+        padding: 5px 12px;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        let cut = 0;
+
+        //li 이벤트
+        $(".btns > li").click(function (e) {
+          e.preventDefault();
+          let n = $(this).index();
+          $(".btns > li").removeClass("on");
+          $(this).addClass("on");
+          slideAni(n);
+        });
+
+        //next
+        $("#next").click(function (e) {
+          e.preventDefault();
+          $(".btns > li").removeClass("on");
+          if (cut < 3) {
+            cut++;
+            slideAni(cut);
+          } else {
+            slideAni(0);
+          }
+          $(".btns > li").eq(cut).addClass("on");
+        });
+
+        //prev
+        $("#prev").click(function (e) {
+          e.preventDefault();
+          $(".btns > li").removeClass("on");
+
+          if (cut > 0) {
+            cut--;
+            slideAni(cut);
+          } else {
+            slideAni(3);
+          }
+          $(".btns > li").eq(cut).addClass("on");
+        });
+
+        //이벤트 함수
+        function slideAni(n) {
+          let pos = n * -600 + "px";
+          cut = n;
+          $("#viewer").animate({ left: pos }, 1000);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="slider">
+      <div id="viewer">
+        <img src="images/slide1.jpg" alt="" />
+        <img src="images/slide2.jpg" alt="" />
+        <img src="images/slide3.jpg" alt="" />
+        <img src="images/slide4.jpg" alt="" />
+      </div>
+      <ul class="btns">
+        <li class="on"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+      </ul>
+    </div>
+    <div id="btns_g">
+      <button id="prev">pervious</button>
+      <button id="next">next</button>
+    </div>
+  </body>
+</html>
