@@ -89,12 +89,12 @@
         background-color: #000;
         color: #fff;
         padding: 5px 12px;
+        cursor: pointer;
       }
     </style>
     <script>
       $(document).ready(function () {
         let current = 0; // 현재 보이는 이미지 인덱스 값
-
         $(".btns > li").click(function (e) {
           e.preventDefault();
           let n = $(this).index();
@@ -109,18 +109,23 @@
           if (current < 3) {
             current++;
             slideAni(current);
+          } else {
+            //slideAni(current - 3);
+            slideAni(0);
           }
           $(".btns > li").eq(current).addClass("on");
         });
 
         $("#prev").click(function (e) {
           e.preventDefault();
+          $(".btns > li").removeClass("on");
           if (current > 0) {
             current--;
-            $(".btns > li").removeClass("on");
-            $(".btns > li").eq(current).addClass("on");
             slideAni(current);
+          } else {
+            slideAni(3);
           }
+          $(".btns > li").eq(current).addClass("on");
         });
 
         //viewer 이미지 그룹의 애니메이션
