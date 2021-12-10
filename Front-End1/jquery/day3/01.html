@@ -25,11 +25,12 @@
 
       /* 전체 영역*/
       #slider {
-        margin: 200px;
+        margin: 0 auto;
         width: 600px;
         height: 350px;
         position: relative;
-        border: 1px solid #000;
+        overflow: hidden;
+        border: 3px solid #000;
       }
       /* 이미지 박스 */
       #viewer {
@@ -67,11 +68,67 @@
         width: 16px;
         height: 16px;
         margin-right: 6px;
+        background-color: #fff;
+        text-align: center;
+        line-height: 16px;
+      }
+      .btns li a {
+        display: block;
+      }
+      .btns li.on a {
+        background-color: rgb(219, 208, 230);
+        color: #000;
+      }
+      #btns_g {
+        margin: 0 auto;
+        margin-top: 15px;
+        width: 600px;
+      }
+      button {
+        border: none;
+        background-color: #000;
+        color: #fff;
+        padding: 5px 12px;
       }
     </style>
     <script>
       $(document).ready(function () {
+        let current = 0; // 현재 보이는 이미지 인덱스 값
+
+        $(".btns > li").click(function (e) {
+          e.preventDefault();
+          let n = $(this).index();
+          $(".btns > li").removeClass("on");
+          $(this).addClass("on");
+          slideAni(n);
+        });
+
+        $("#next").click(function (e) {
+          e.preventDefault();
+          $(".btns > li").removeClass("on");
+          if (current < 3) {
+            current++;
+            slideAni(current);
+          }
+          $(".btns > li").eq(current).addClass("on");
+        });
+
+        $("#prev").click(function (e) {
+          e.preventDefault();
+          if (current > 0) {
+            current--;
+            $(".btns > li").removeClass("on");
+            $(".btns > li").eq(current).addClass("on");
+            slideAni(current);
+          }
+        });
+
         //viewer 이미지 그룹의 애니메이션
+        function slideAni(n) {
+          let pos = n * -600 + "px";
+          current = n;
+          $("#viewer").animate({ left: pos }, 1000);
+        }
       });
     </script>
   </head>
@@ -84,11 +141,15 @@
         <img src="images/slide4.jpg" alt="" />
       </div>
       <ul class="btns">
-        <li><a href="#">1</a></li>
+        <li class="on"><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
       </ul>
+    </div>
+    <div id="btns_g">
+      <button id="prev">pervious</button>
+      <button id="next">next</button>
     </div>
   </body>
 </html>
