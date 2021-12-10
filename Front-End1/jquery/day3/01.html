@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        border: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* 전체 영역*/
+      #slider {
+        margin: 200px;
+        width: 600px;
+        height: 350px;
+        position: relative;
+        border: 1px solid #000;
+      }
+      /* 이미지 박스 */
+      #viewer {
+        height: 350px;
+        position: relative;
+      }
+
+      /* 이미지 좌표 */
+      #viewer > img {
+        position: absolute;
+        top: 0px;
+      }
+
+      #viewer > img:nth-child(1) {
+        left: 0;
+      }
+      #viewer > img:nth-child(2) {
+        left: 600px;
+      }
+      #viewer > img:nth-child(3) {
+        left: 1200px;
+      }
+      #viewer > img:nth-child(4) {
+        left: 1800px;
+      }
+
+      /* 버튼 영역 */
+      .btns {
+        position: absolute;
+        right: 20px;
+        top: 320px;
+      }
+      .btns > li {
+        float: left;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        //viewer 이미지 그룹의 애니메이션
+      });
+    </script>
+  </head>
+  <body>
+    <div id="slider">
+      <div id="viewer">
+        <img src="images/slide1.jpg" alt="" />
+        <img src="images/slide2.jpg" alt="" />
+        <img src="images/slide3.jpg" alt="" />
+        <img src="images/slide4.jpg" alt="" />
+      </div>
+      <ul class="btns">
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
