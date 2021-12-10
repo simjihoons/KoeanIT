@@ -55,12 +55,11 @@
         e.preventDefault();
         var path = $(this).attr("href");
         // console.log(path);
-        
-		if(path != $("#largeImg img").attr("src")){
-			$("#largeImg img").attr({ src: path });
-            $("#largeImg img").css({ opacity: 0 }).animate({ opacity: 1 });
-		}
-      
+
+        if (path != $("#largeImg img").attr("src")) {
+          $("#largeImg img").attr({ src: path });
+          $("#largeImg img").css({ opacity: 0 }).animate({ opacity: 1 });
+        }
       });
     </script>
   </body>
