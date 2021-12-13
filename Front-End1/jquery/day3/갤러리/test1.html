@@ -66,7 +66,7 @@
       /></a>
       <em>Lorem Ipsum is simply dummy.</em>
     </div>
-    <div id="largeImg"><img src="images/pic1.jpg" alt="image1" /></div>
+    <div id="largeImg"><img src="images/th_pic1.jpg" alt="image1" /></div>
     <script>
       //제이쿼리에서 태그의 속성를 갖고 오거나 새로이 적용할때 attr()메소드를 사용
       //let 변수명 = $(".thumbs a").attr("href"); 특정 태그의 속성을 추출해 변수에 담음
@@ -77,11 +77,17 @@
       $(".thumbs a").click(function (e) {
         e.preventDefault();
 
-        let msg = $(this).next("em").text();
-        $("largeImg").append('<div id="caption"></div>');
-        $("largeImg #caption").text(msg);
-        //        console.log(msg);
+        if ($("#caption")) {
+          //$("#caption") 있다 없다를 조건으로 해서 있다면 제거
+          $("caption").remove(); //append()와 반대되는 명령어
+        }
 
+        //설명 생성----------------------------------------
+        let msg = $(this).next("em").text();
+        $("largeImg").append("<div id='caption'></div>");
+        $("largeImg #caption").text(msg);
+
+        //큰 이미지 교체-------------------------------------
         let path = $(this).attr("href");
 
         // 같은 이미지를 계속 눌렀을때 적용 안되게
@@ -90,9 +96,8 @@
           $("#largeImg img").css({ opacity: 0 }).animate({ opacity: 1 });
         }
 
-        //caption 애니메이션
-        let posY = $("#largeImg #caption").height() + 27;
-        $("#largeImg #caption").animate({ top: "-=" + posY + "px" });
+        var posy = $("#largeImg #caption").height() + 27;
+        $("#largeImg #caption").animate({ top: "-=" + posy + "px" });
       });
     </script>
   </body>
