@@ -9,22 +9,12 @@
     <script>
       $(document).ready(function () {
         var el = $(".list");
-        //el 자식들중에서 맨 앞 부분에 태그를 추가
-        el.prepend('<li style="color:red">3-0</li>');
 
-        //el 자식들중에서 마지막 부분에 태그를 추가
-        el.append('<li style="color:blue">3-6</li>');
+        //appendTo () el라는 부모아래에 자식들 앞부분으로 이동
+        $(".li01").css({ color: "red" }).prependTo(el);
 
-        //el 요소를 기준으로 해서 이전에 태그를 추가
-        el.before("<h2>el을 기준으로 이전 위치에 추가된 태그</h2>");
-
-        //el 요소를 기준으로 해서 다음에 태그를 추가
-        el.after("<h2>el을 기준으로 다음 위치에 추가된 태그</h2>");
-
-        //추가된 태그 삭제
-        $("input").click(function () {
-          $("h2").remove();
-        });
+        //appendTo () el라는 부모아래에 자식들 마지막 부분으로 이동
+        $(".li04").css({ color: "blue" }).appendTo(el);
       });
     </script>
   </head>
@@ -35,6 +25,9 @@
       <li>3-3</li>
       <li>3-4</li>
       <!-- <li>3-5추가</li> -->
+
+      <li class="li01">4-0 appendTo 이동</li>
+      <li class="li04">4-1 prependTo 이동</li>
       <input type="button" value="태그삭제" />
     </ul>
   </body>
