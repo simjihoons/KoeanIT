@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        var box = $("#wrapper");
+        $(window).resize(function () {
+          $("#width").text(box.width());
+          $("#height").text(box.height());
+          $("#innerWidth").text(box.innerWidth());
+          $("#innerHeight").text(box.innerHeight());
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div
+      id="wrapper"
+      style="
+        border: 5px solid blue;
+        padding: 30px;
+        margin: 20px;
+        font-size: 20px;
+      "
+    >
+      <span>박스의 width=</span><span id="width">0</span><br />
+      <span>박스의 height=</span><span id="height">0</span><br />
+      <span>박스의 innerWidth=</span><span id="innerWidth">0</span><br />
+      <span>박스의 innerHeight=</span><span id="innerHeight">0</span>
+    </div>
+  </body>
+</html>
