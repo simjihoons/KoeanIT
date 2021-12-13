@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        //html 방식
+        //특정 요소를 html타입으로 변수에 대입
+        //let target = $("#hidden").html();
+
+        // html 타입으로 적용
+        //$("#wrapper").html(target);
+
+        // 실습
+        //$("#wrapper").html($("#hidden").html());
+        //$("#hidden").css("display", "none");
+
+        //텍스트 방식
+        //let target = $("#hidden").text(); => 특정 요소를 text 타입으로 변수에 대입
+        //$("#wrapper").text(target); => text 타입으로 적용(1,2,3,4만 들어가게 된다.)
+        $("#wrapper").text($("#hidden").text());
+      });
+    </script>
+  </head>
+  <body>
+    <div
+      id="wrapper"
+      style="
+        border: 1px solid blue;
+        padding: 20px;
+        margin: 20px;
+        font-size: 20px;
+      "
+    >
+      <span>이곳의 내용을 바꿔 주세요.</span>
+    </div>
+    <ul id="hidden">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </body>
+</html>
