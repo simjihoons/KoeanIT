@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrapper {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border: 3px solid blue;
+        left: 100px;
+        top: 150px;
+      }
+      #box {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        left: 50px;
+        top: 50px;
+        background: red;
+        color: white;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function () {
+        $("#box").draggable({
+          drag: function () {
+            //offset() 자기 자신을 기준
+            //position() 부모를 기준
+            $("#position_info").find(".ol").text($("#box").offset().left);
+            $("#position_info").find(".ot").text($("#box").offset().top);
+            $("#position_info").find(".pl").text($("#box").position().left);
+            $("#position_info").find(".pt").text($("#box").position().top);
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="position_info">
+      <span>offset().left = </span><span class="ol">0</span><br />
+      <span>offset().top = </span><span class="ot">0</span><br />
+      <span>position().left = </span><span class="pl">0</span><br />
+      <span>position().top = </span><span class="pt">0</span><br /><br />
+      <span>box를 드래그 해보세요.</span>
+    </div>
+
+    <div id="wrapper">
+      <div id="box"><span>box</span></div>
+    </div>
+  </body>
+</html>
