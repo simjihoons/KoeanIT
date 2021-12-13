@@ -15,6 +15,10 @@
 
         //appendTo () el라는 부모아래에 자식들 마지막 부분으로 이동
         $(".li04").css({ color: "blue" }).appendTo(el);
+
+        // 특정 태그 복사 clone
+        let clone = $(".list > li").clone();
+        $(".copy").append(clone);
       });
     </script>
   </head>
@@ -28,7 +32,10 @@
 
       <li class="li01">4-0 appendTo 이동</li>
       <li class="li04">4-1 prependTo 이동</li>
-      <input type="button" value="태그삭제" />
+
+      <ul class="copy" style="border: 1px solid #000">
+        <!-- li태그 복사해서 이곳으로 붙여넣기 -->
+      </ul>
     </ul>
   </body>
 </html>
