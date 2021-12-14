@@ -1,0 +1,56 @@
+--집계함수(NULL은 포함하지 않는다.) : 여러개의 값을 하나의 값으로 집계하여 나타낸다.
+--WHERE 절에서는 사용할 수 없다.
+
+--AVG(평균)
+--MAX(최대값)
+--MIN(최소값)
+--SUM(총합)
+--COUNT(갯수)
+
+SELECT ROUND(AVG(HEIGHT) , 2),MAX(HEIGHT),SUM(HEIGHT), COUNT(HEIGHT) FROM PLAYER;
+
+---------------------------------------------------------------------------------------------------------
+--정렬
+--ORDER BY : 정렬
+--ASC : 오름차순
+--DESC : 내림차순
+
+SELECT * FROM PLAYER ORDER BY HEIGHT DESC;
+
+--12번쨰 컬럼(키) 정렬
+SELECT * FROM PLAYER ORDER BY 12 DESC;
+
+--PLAYER 테이블에서 키,몸무게 (오름차순)으로 검색
+--NULL이 아닌값만 검색
+--첫번쨰 컬럼이 같으면 두번쨰 컬럼을 정렬
+SELECT PLAYER_NAME,HEIGHT,WEIGHT FROM PLAYER
+WHERE HEIGHT IS NOT NULL AND  WEIGHT IS NOT NULL
+ORDER BY 2, 3;
+
+----------------------------------------------------------------------------------------------------------
+--CASE
+--CASE  WHEN THEN ELSE END
+--CASE WHEN 조건식 THEN '참 값' ELSE '거짓 값' END
+
+--EMP 테이블에서 SAL 3000이상이면 HIGH 1000이상이면 MID 다 아니면 LOW
+SELECT * FROM EMP;
+SELECT ENAME "사원 이름",SAL "급여" ,
+	CASE WHEN SAL>=3000 THEN 'THEN'
+		 WHEN SAL>=1000 THEN 'MID'
+		 ELSE 'LOW' 
+	END
+FROM EMP;
+
+--STADIUM 테이블에서 SEAT_COUNT 가 0이상 30000 이하면 'S'
+--30001이상 50000이하면 'M' 다 아니면 'L'
+--중첩CASE문
+SELECT * FROM STADIUM;
+SELECT STADIUM_NAME "경기장 이름",SEAT_COUNT "좌석 수",
+	CASE WHEN SEAT_COUNT BETWEEN 0 AND 30000 THEN 'S'
+		 ELSE (
+		 	CASE WHEN SEAT_COUNT>=30001 AND SEAT_COUNT<=50000 THEN 'M'
+		 		 ELSE 'L'
+		 		 END
+		 )
+	END
+FROM STADIUM;

@@ -1,8 +1,6 @@
 package com.jspex.beans;
 
-//NUM NUMBER PRIMARY KEY,
-//NAME VARCHAR2(1000),
-//BIRTHDAY DATE
+
 public class MemberVO {
 	private int num;
 	private String name;
