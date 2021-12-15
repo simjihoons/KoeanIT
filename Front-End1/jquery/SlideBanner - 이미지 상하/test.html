@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="js/slidebannertop.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #wrap {
+            width: 100%;
+            height: 450px;
+            position: relative;
+        }
+
+        #view {
+            width: 100%;
+            height: 450px;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        /*#view ul {}*/
+
+        #view ul li {
+            width: 100%;
+            height: 450px;
+            position: absolute;
+            top: 0;
+            font-size: 300px;
+            color: #fff;
+        }
+
+        #view ul li:nth-child(1) {
+            top: 0;
+            background-color: blueviolet;
+        }
+
+        #view ul li:nth-child(2) {
+            top: 450px;
+            background-color: beige;
+        }
+
+        #view ul li:nth-child(3) {
+            top: 900px;
+            background-color: cadetblue;
+        }
+
+        #view ul li:nth-child(4) {
+            top: 1350px;
+            background-color: cornflowerblue;
+        }
+
+        #btns {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            z-index: 1000;
+            margin-left: -45px;
+        }
+
+        #btns li {
+            float: left;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: azure;
+            text-align: center;
+            line-height: 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #btns li:hover {
+            background-color: aqua;
+        }
+
+        #btns li.on {
+            background-color: aqua;
+        }
+
+        .l_mn {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #000;
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        .r_mn {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #000;
+            position: absolute;
+            top: 200px;
+            right: 100px;
+            z-index: 9999;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- 화면에 보여질 이미지 그룹 -->
+        <div id="view">
+            <ul>
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+                <li>d</li>
+            </ul>
+        </div>
+
+        <!-- 이미지들을 제어할 버튼 그룹 -->
+        <ul id="btns">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <!-- 좌우 버튼  -->
+        <div class="l_mn">Bottom->Top</div>
+        <div class="r_mn">Top->Bottom</div>
+    </div>
+</body>
+
+</html>
