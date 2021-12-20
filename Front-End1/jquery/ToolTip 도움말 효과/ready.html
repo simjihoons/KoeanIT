@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title> ToolTip 도움말 효과 </title>
+	<title> 연습 </title>
 	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
 
 
@@ -66,7 +66,52 @@
 
 	<!------------------------ jQuery 코드 ----------------------->
 	<script>
+		/*
+			도움말 두 가지 넣는데 변수 필요
+			1. 소스가 들어있는 속성 값을 담는 변수
+			2. 이미지 또는 텍스트를 구분하는 변수
+		*/
 
+		let tmpTitle;
+		let type;
+
+		$("a").hover(
+			function () {
+				//class가 있으면 이미지 없으면 텍스트
+				//title의 속성을 tmpTitle 변수에 담음
+				let tmpTitle = $(this).attr('title');
+				//class의 속성을 type 변수에 담음
+				let type = $(this).attr("class");
+
+				$(this).attr("title", "");
+				//console.log(type);
+				if (type == "img") {
+					tmpImg = "<img src='" + tmpTitle + "' width='100px' height='100px'/>"
+				}
+
+				//툴팁을 적용하기 위해 태그 추가
+				$("body").append("<div id='tip'></div>");
+
+				if (type == "img") {
+					$("#tip").html(tmpImg);
+					$("#tip").css("width", "100px");
+				} else {
+					$("#tip").text(tmpTitle);
+				}
+
+				//툴팁의 위치를 설정
+				// offset() => 자기자신을 기준
+				let pageX = $(this).offset().left - 20;
+
+				//tip의 높이값 만큼 빼겠다.
+				let pageY = $(this).offset().top - $("#tip").innerHeight();
+
+				//툴팁의 위치 설정 애니메이션
+				$("#tip").css({ left: pageX + "px", top: pageY + "px" }).fadeIn(500);
+			},
+			function () {
+				$("#tip").remove();
+			});
 	</script>
 
 </body>
