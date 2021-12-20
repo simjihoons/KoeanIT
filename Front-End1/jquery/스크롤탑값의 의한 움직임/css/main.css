@@ -1,0 +1,29 @@
+*{ margin:0; padding:0;}
+
+#wrap{ margin:0; padding:0;}
+#wrap > div{ width:100%; height:1000px; 
+             position:relative;}
+#con1{ background-color:#C60;}
+#con2{ background-color:#F60;}
+#con3{ background-color:#F93;}
+#con4{ background-color:#CCF;}
+
+.box{width:100px; height:100px;
+     border:2px solid #000;
+	}
+
+.box1-1{ position:absolute; top:200px; left:500px;}
+.box1-2{ position:absolute; top:500px; left:100px;}
+.box1-3{ position:absolute; top:700px; left:1200px; opacity: 0;}
+
+.box2-1{ position:absolute; top:200px; left:500px;}
+.box2-2{ position:absolute; top:500px; left:100px;}
+.box2-3{ position:absolute; top:700px; left:1200px;}
+
+.box3-1{ position:absolute; top:200px; left:500px;}
+.box3-1.act1{transform: rotate(360deg); transition: 0.7s; background-color: red;}
+.box3-2{ position:absolute; top:500px; left:100px;}
+.box3-2.act2{transform: rotate(180deg); transition: 0.7s; width: 140px; background-color: aqua;}
+.box3-3{ position:absolute; top:700px; left:1200px;}
+.box3-3.act3{transform: scale(2); transition: 0.7s; background-color: blueviolet;}
+.box3-3.act3-0{transform: scale(0.5); transition: 0.7s;}
