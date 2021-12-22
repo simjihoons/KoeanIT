@@ -1,0 +1,119 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>kwicks 네비게이션</title>
+    <style>
+        body {
+            padding: 50px;
+            font-family: "맑은 고딕";
+            font-size: 0.9em;
+            background: #1d1e21;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .nav {
+            position: relative;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .nav>li {
+            float: left;
+            width: 200px;
+            height: 300px;
+        }
+
+        .nav>li:nth-child(1) {
+            background-color: brown;
+        }
+
+        .nav>li:nth-child(2) {
+            background-color: aquamarine;
+        }
+
+        .nav>li:nth-child(3) {
+            background-color: blueviolet;
+        }
+
+        .nav>li:nth-child(4) {
+            background-color: darkslategray;
+        }
+
+        .nav>li:nth-child(5) {
+            background-color: burlywood;
+        }
+    </style>
+    <script src="js/jquery-1.8.3.js"></script>
+
+    <!-- 가속도를 주기위함 -->
+    <script src="js/jquery.easing.1.3.js"></script>
+
+
+    <script src="js/jquery.kwicks-1.5.1.pack.js"></script>
+    <script>
+        $(function () {
+            /*$(target).kwicks({
+            max|min:(필수)
+            완전히 확장 된 축소 패널의 너비 또는 높이 (픽셀 단위)입니다. if isVertical가 true이면 크기가 지정된 차원이 높이를 참조합니다. 그렇지 않으면 너비입니다.
+        	
+            max OR min을 지정해야하며 둘 다 지정할 수는 없습니다.
+        	
+            isVertical:(기본값 : false)
+            패널을 세로로 배열할지 어떨지를 나타냅니다.
+        	
+            isHorizontal: true
+            패널을 가로로 배치
+
+            sticky:(기본값 : false)
+            사실이라면 하나의 패널이 항상 확장됩니다.
+        	
+            defaultKwick:(기본값 : 0)
+            처음에 확장 된 패널의 색인입니다 (고정 점이 true 인 경우에만 해당).
+        	
+            event:(기본값 : 'mouseover')
+            확장 효과를 트리거하는 이벤트입니다. 다른 후보자는 'click'및 'dblclick'입니다.
+        	
+            duration:(기본값 : 200)
+            각 애니메이션을 완료하는 데 필요한 밀리 초 수입니다.
+        	
+            easing:(기본값 : none)
+            애니메이션을위한 커스텀 easing 함수 (easing plugin 필요).
+        	
+            spacing:(기본값 : 0)
+            각 패널을 분리하는 폭 (픽셀 단위)입니다.
+        	
+                })
+                */
+            $("ul.nav").kwicks({
+                //전체 값에서 조금 작은 값을 줘야 한다.
+                //남는 값은 나머지 li에게 배분이 된다.
+                max: 800,
+                spacing: 5,
+                //가로, 세로는 isVertical : true
+                isHorizontal: true,
+                behavior: "menu",
+                easing: "easeOutBounce"
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+
+</html>
