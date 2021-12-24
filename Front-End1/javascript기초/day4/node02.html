@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #protfolio {
+            font-size: 20px;
+            background-color: blueviolet;
+        }
+
+        #protfolio_s {
+            font-size: 20px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">html</li>
+            <li class="css">css</li>
+            <li class="css3">css3</li>
+            <li class="javascript">Javascript</li>
+            <li class="jquery">jQuery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="protfolio">protfolio</p>
+    </div>
+    <script>
+        "use strict"
+        /*
+        //노드의 태그 이름 속성
+        //element.tagName
+        var html = document.querySelector(".html");
+        var tagName = html.tagName;
+        console.log("tagName : " + tagName);
+
+        //노드의 ID속성
+        //element.id
+        var ul = document.querySelector("#tutorial");
+        var idName = ul.id;
+        console.log("idName : " + idName);
+
+        //노드의 클래스 이름 속성
+        //element.className
+        var li = document.querySelectorAll("#tutorial li");
+        for (var i = 0; i < li.length; i++) {
+            //노드의 클래스 이름
+            //element.className
+            if (li[i].className == "css3") {
+                li[i].style.backgroundColor = "#666";
+            }
+        }
+
+        //노드의 속성 읽기
+        //element.getAttribute(attributeName)
+        var li = document.querySelectorAll("#tutorial  li");
+        for (var i = 0; i < li.length; i++) {
+            var className = li[i].getAttribute("class");
+            console.log(className);
+        }
+
+        //노드의 속성 제거 (css가 있어야 한다.)
+        //element.removeAttribute(attributeName)
+        var p = document.querySelectorAll("p");
+
+        for (var i = 0; i < p.length; i++) {
+            if (p[i].textContent == "protfolio") {
+                p[i].removeAttribute("id");
+
+            }
+        }
+   */
+        //노드의 속성 변경
+        //element.setAttribute(attributeName , attributeValue)
+        var p = document.querySelectorAll("p");
+        for (var i = 0; i < p.length; i++) {
+            if (p[i].textContent == "protfolio") {
+                p[i].setAttribute("id", "protfolio_s");
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
