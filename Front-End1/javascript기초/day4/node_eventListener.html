@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">html</li>
+            <li class="css">css</li>
+            <li class="css3">css3</li>
+            <li class="javascript">Javascript</li>
+            <li class="jquery">jQuery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="protfolio">protfolio</p>
+    </div>
+
+    <script>
+        // addEventListener() => 최신버전 attachement() => 버전 낮은 곳에서도 작동 가능
+        // 대상.addEventListener("이벤트",function(){실행문});
+        /* let li = document.querySelectorAll("#tutorial li");
+         for (let i = 0; i < li.length; i++) {
+             li[i].addEventListener("click", function (e) {
+                 //e.target은 jQuery에서 $(this)와 같은 의미 이다.
+                 let ul = e.target.parentNode;
+                 ul.style.backgroundColor = "#666";
+             });
+         }*/
+
+
+        let li = document.querySelectorAll("#tutorial li");
+        for (let i = 0; i < li.length; i++) {
+            li[i].addEventListener("click", function (e) {
+                //e.target은 jQuery에서 $(this)와 같은 의미 이다.
+                let ul = e.target.parentElement;
+                ul.style.backgroundColor = "#666";
+            });
+        }
+    </script>
+</body>
+
+</html>
