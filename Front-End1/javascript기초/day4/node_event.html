@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function writeTest1() {
+            var area = document.querySelector(".note1")
+
+            //글자를 추가할떄 사용
+            area.innerHTML = "자바스크립트11";
+        }
+
+        function writeTest2(str) {
+            var area = document.querySelector(".note2")
+
+            //글자를 추가할떄 사용
+            area.innerHTML = str;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 인라인 방식 -->
+    <button onclick="writeTest1()">event1</button>
+    <textarea class="note1"></textarea>
+
+    <button onclick="writeTest2('자바스크립트22')">event2</button>
+    <textarea class="note2"></textarea>
+
+</body>
+
+</html>
