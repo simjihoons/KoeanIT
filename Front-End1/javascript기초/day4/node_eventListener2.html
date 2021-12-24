@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="call">event call</button>
+    <textarea id="demo"></textarea>
+
+    <script>
+        // addEventListener() => 최신버전 attachement() => 버전 낮은 곳에서도 작동 가능
+        // 대상.addEventListener("이벤트",function(){실행문});
+
+        if (window.addEventListener) {//addEventListener적용이 된다면 최신 브라우저 아니면 예전 브라우저
+            window.addEventListener("load", function () {
+                var button = document.getElementById("call");
+                var note = document.getElementById("demo");
+
+                button.addEventListener("click", function () {
+                    note.innerHTML = "자바스크립트!!";
+                });
+            });
+        } else {
+            window.attachEvent("onload", function () {
+                var button = document.getElementById("call");
+                var note = document.getElementById("demo");
+
+                button.addEventListener("onclick", function () {
+                    note.innerHTML = "자바스크립트!!!";
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
