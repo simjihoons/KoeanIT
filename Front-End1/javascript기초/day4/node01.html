@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">html</li>
+            <li class="css">css</li>
+            <li class="css3">css3</li>
+            <li class="javascript">Javascript</li>
+            <li class="jquery">jQuery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="protfolio">protfolio</p>
+    </div>
+    <script>
+        "use strict"
+
+        /*
+         //ID로 접근
+         //document.getElementById("elementID");
+         let tutorial = document.getElementById("tutorial");
+         tutorial.style.backgroundColor = "#666";
+ 
+         //태그로 접근 NodeList 
+         //document.getElementsByTagName("tagname");
+         let li = document.getElementsByTagName("li");
+ 
+         for (var i = 0; i < li.length; i++) {
+             li[i].style.backgroundColor = "#666";
+         }
+      
+
+        //클래스 명으로 접근 NodeList object
+        //document.getElementsByClassName("classname");
+        var html = document.getElementsByClassName("html");
+        html[0].style.backgroundColor = "#666";.
+    
+
+        //css 기법으로 첫번째 노드 선택
+        //document.querySelector(CSS selectors);
+        var li = document.querySelector("#tutorial > li");
+        li.style.backgroundColor = "#666";
+    */
+
+        //css 기법으로 전체 노드 선택
+        var li = document.querySelectorAll("#tutorial > li");
+        for (var i = 0; i < li.length; i++) {
+            li[i].style.backgroundColor = "#666";
+
+            //html 그리고 css만 찾아서 스타일 적용(노드 리스트에서 선호하는 대상만 스타일 적용)
+            //노드의 텍스트 내용 읽고 쓰기
+            //node.textContent
+            if (li[i].textxContent == "HTML" || li[i].textxContent == "CSS") {
+                li[i].style.backgroundColor = "#666";
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
