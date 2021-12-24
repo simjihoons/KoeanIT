@@ -7,10 +7,8 @@ $(function () {
 
   $("#btns > li").click(function () {
     let i = $(this).index();
-
     $("#btns > li").removeClass("on");
     $(this).addClass("on");
-
     move(i);
   });
 
