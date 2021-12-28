@@ -1,0 +1,27 @@
+sqlplus sys as sysdba
+revoke create user from scott;
+
+create user flower identified by flower; => 오류확인
+
+conn system/1234
+grant create user to scott;
+
+conn scott/tiger;
+create user flower identified by flower;
+
+conn system/1234
+create tablespace flower datafile'C:\oraclexe\app\oracle\oradata\XE\FLOWER.DBF'SIZE 500M AUTOEXTEND ON NEXT 10M MAXSIZE 800M;
+grant connect to flower; => 뭉쳐져있는 권한들(role)
+alter user flower default tablespace flower quota unlimited on flower;
+alter user flower default tablespace flower;
+alter user flower temporary tablespace temp;
+grant resource to flower; => 뭉쳐져있는 권한들(role)
+
+
+conn flower/flower;
+create table test002(id varchar2(50),pw varchar2(50), age number, constraint baby_pk primary key(id));
+----------------------------------------------------------------------------------------------------------------------------
+디비버
+CREATE TABLE COPY_PLAYER AS SELECT * FROM HR.PLAYER; => 권한을 주기위해 cmd에서 작업
+grant select on player to flower;
+grant select on TEAM to flower;
