@@ -1,0 +1,76 @@
+DCL(Data Control Language) 데이터 제어어
+-GRANT : 권한 부여
+-REVOKE : 권한 강탈
+
+cmd
+sqlplus system/1234
+@(스캇계정경로)
+
+show user = >scott이어야함
+
+conn system/1234
+alter user scott identified by tiger;
+
+conn scott/tiger
+
+conn sys as sysdba
+1234
+
+create tablespace BABY datafile'C:\oraclexe\app\oracle\oradata\XE\BABY.DBF'SIZE 200M AUTOEXTEND ON NEXT 5M MAXSIZE 300M;
+grant create user to scott;
+
+
+conn scott/tiger
+create user baby identified by baby;
+
+conn baby/baby => 에러 뜨는거 확인
+
+conn system/1234
+grant create session to baby;
+
+conn baby/baby => 계정 로그인 확인
+
+※방금 만든 테이블 스페이스와 baby 계정을 연결해야한다.
+안그러면 디폴트에 있는 USER로 가게된다.
+임시로 저장될수 있는 TEMP라는 테이블 스페이스와 baby에서 만든 테이블을 관리할수 있는 테이블스페이스인 baby DB파일을 연결해야한다.
+
+
+alter user baby default tablespace BABY; = >권한이 없어 에러뜨는것 확인
+
+
+conn system/1234
+alter user baby temporary tablespace TEMP;
+alter user baby default tablespace BABY QUOTA unlimited on baby;
+
+create table test001(id varchar2(10), pw varchar2(10), age number, constraints baby_pk primary key(id)); => 권한없는 에러 확인
+
+grant create table to baby;
+conn baby/baby
+create table test001(id varchar2(10), pw varchar2(10), age number, constraints baby_pk primary key(id));
+--------------------------------------------------------------------------------------------------------------------
+sqlplus baby/baby
+
+테이블하나 생성
+create table copy_emp as select * from hr.emp; => as를 써서 hr.emp 테이블을 검색해 전부 가져오는것 ( 테이블이 없다고 나온다 이 에러는 대부분 권한이 없다는 말과 같다)
+				             => hr에 접근하려면 hr이 baby에게 권한을 줘야한다.
+conn hr/hr
+grant select on emp to baby;
+grant update on emp to baby; =>스미스의 SAL을 변경하기 위함
+
+conn baby/baby
+create table copy_emp as select * from hr.emp;.
+select * from copy_emp;
+
+(스미스의 SAL를 변경 800->1000)
+update copy_emp set sal=1000 where ename='SMITH';
+commit;
+select * from copy_emp where ename='SMITH';
+
+
+-------------------------------------------------------------------
+
+C:\oraclexe\app\oracle\oradata\XE => 계정 임시 저장소
+
+스캇 계정 찾기
+C:\oraclexe\app 한다음 scott 검색 경로 복사 후 cmd에 @치고 넣기
+보통 비밀번호는 TIGER
