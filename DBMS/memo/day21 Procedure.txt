@@ -1,0 +1,58 @@
+프로시저(PROCEDURE)
+
+함수란?
+	이름()
+	f		(x)		=	2x+1
+	함수이름		매개변수(IN값)		OUT값(리턴값, 결과값)
+			:외부에서
+			전달받은 값을
+			함수와 연결해줌	
+
+CREATE OR REPLACE PROCEDURE 프로시저의이름
+(
+	매개변수1	IN	데이터타입:=타입,
+	매개변수2	OUT	데이터타입%TYPE
+)
+IS
+	함수 내에게서 변수,상수 등 선언	
+
+BEGIN
+	실행할 문장
+END;
+
+CALL 프로시저의 이름(값1,값2)
+=============================================================================
+/* CMD */
+	sqlplus sys as sysdba
+	1234
+	set serveroutput on
+
+/* DBeaver */
+	BEGIN
+		DBMS_OUTPUT.PUT_LINE('HELLO');
+	END;
+	=> 전체를 드래그 후 실행
+
+
+	CREATE OR REPLACE PROCEDURE F
+	(
+		--IN은 생략이 가능함.
+		X IN NUMBER
+	)
+	IS	 
+	BEGIN
+		DBMS_OUTPUT.ENABLE;
+		DBMS_OUTPUT.PUT_LINE(2*X+1);
+	END;
+	
+	CALL F(2)
+
+
+
+
+
+
+
+
+
+
