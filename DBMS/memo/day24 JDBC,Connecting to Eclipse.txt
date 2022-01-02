@@ -1,0 +1,15 @@
+JDBC(Java Database Conectivity)
+
+이클립스 연동
+오른쪽 상단 - open perspective 클릭해서 java로 변경
+
+새 패키지 알트 + 쉬트프 + n -> 방향키 ↓ -> 엔터
+window -> 설정 -> enc 검색 ->  workspace -> utf-8
+
+-----------------------------------------------------------------------------
+이클립스와 연동
+	프로젝트 우클릭 - 빌드패스 - 빌드패스 설정(제일 밑)
+	Libraries -> Add External JARs...-> C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib ->6.jar ->apply
+	Order and Export -> 전체 선택 후 적용
+
+
