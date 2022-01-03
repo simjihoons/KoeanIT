@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #f1f1f1;
+        color: #555;
+      }
+      ul,
+      li,
+      ol {
+        list-style: none;
+      }
+      .container {
+        margin-top: 40px;
+        min-width: 440px;
+      }
+      .controller {
+        margin-left: 40px;
+      }
+      .controller li {
+        display: inline-block;
+        margin-left: 8px;
+      }
+      .container li:first-child {
+        margin-left: 0;
+      }
+      .container li a {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #000;
+        border-radius: 20px;
+        transition: all 0.3s;
+        background-color: #fff;
+      }
+      .container li.on a {
+        width: 35px;
+        background-color: #8ac007;
+      }
+
+      .picture {
+        width: 400px;
+        height: 400px;
+        margin-top: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .picture ul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2400px;
+        transition: left 0.4s;
+      }
+      .picture ul li {
+        float: left;
+        width: 400px;
+        height: 400px;
+      }
+      .picture ul li img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function () {
+        //버튼 객체화
+        let container = document.getElementsByClassName("container")[0];
+        let controller = container.children[0];
+        let liList = controller.children;
+        let n = 0; // 현재 클릭한 대상의 인덱스 값을 저장하는 변수
+
+        //이미지 객체화
+        let picture = document.getElementsByClassName("picture")[0];
+        let pictureUL = picture.children[0];
+        let targetX = 0;
+
+        //버튼 영역
+        //li를 반복해서 실행하기 위한 문장
+        for (let i = 0; i < liList.length; i++) {
+          /*
+            liList[i].addEventListener("click", function (e) {
+            e.preventDefault();
+
+            //liList.classList.remove("on"); //모든 li에게 클래스(on) 삭제
+
+            //
+            for (var j = 0; j < liList.length; j++) {
+              liList[j].classList.remove("on");
+            }
+            e.currentTarget.classList.add("on");
+          });
+         */
+          //----------------------------------------------------------
+          // 버튼영역
+          //위와 기능은 같은 코드
+
+          liList[i].index = i;
+
+          liList[i].addEventListener("click", function (e) {
+            e.preventDefalut;
+            n = e.currentTarget.index; //현재 클릭한 대상의 인덱스 값을 추출하는 변수
+
+            //이미지 이벤트 영역==================
+            targetX = n * 400 * -1;
+            pictureUL.style.left = targetX + "px";
+            //====================================
+
+            for (let j = 0; j < liList.length; j++) {
+              if (j == n) {
+                liList[j].classList.add("on");
+              } else {
+                liList[j].classList.remove("on");
+              }
+            }
+            //이벤트가 적용된 대상 n과 클래스를 적용을 확인하기 위한 반복문 j랑 비교
+            //같은건 클래스를 적용하고 그렇지 않은 것은 클래스 삭제
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="controller">
+        <li class="on"><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+      <div class="picture">
+        <ul>
+          <li><img src="images/work1.jpg" alt="" /></li>
+          <li><img src="images/work2.jpg" alt="" /></li>
+          <li><img src="images/work3.jpg" alt="" /></li>
+          <li><img src="images/work4.jpg" alt="" /></li>
+          <li><img src="images/work5.jpg" alt="" /></li>
+          <li><img src="images/work6.jpg" alt="" /></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
