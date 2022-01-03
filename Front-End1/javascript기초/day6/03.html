@@ -10,14 +10,13 @@
         margin: 0;
         padding: 0;
       }
+      ul,
+      li {
+        list-style: none;
+      }
       body {
         background-color: #f1f1f1;
         color: #555;
-      }
-      ul,
-      li,
-      ol {
-        list-style: none;
       }
       .container {
         margin-top: 40px;
@@ -25,6 +24,11 @@
       }
 
       nav ul {
+        margin: 16px 0 16px 0;
+        padding: 8px 0;
+        text-align: left;
+        font-weight: 400;
+        border-bottom: 1px solid #d4d4d4;
       }
       nav ul li {
         display: inline;
@@ -46,7 +50,8 @@
         border-color: #8ac007;
       }
 
-      .description {
+      /* 탭에 의한 박스의 보이기 여부를 설정 */
+      .dsc {
         display: none;
         margin: 30px 0;
         padding: 30px 0;
@@ -54,39 +59,41 @@
         color: #333;
         border-bottom: 4px solid #d4d4d4;
       }
-      .description.active {
+      .dsc.active {
         display: block;
       }
     </style>
     <script>
       window.addEventListener("load", function () {
-        let container = document.getElementsByClassName("container")[0];
-        let n = 0;
-        let infoArray = [];
-        let nav = document.getElementsByClassName("nav")[0];
+        var n = 0; // navLi[n]와 infoArrea[n]의 초기 인덱스값을 선언;
+        var container = document.getElementsByClassName("container")[0];
+        var infoArray = []; //container는 아래에 있는 div들을 대입해야 하기에 배열로 선언
 
-        for (let i = 0; i < container.children.length; i++) {
-          // nav와 div를 구분하여 div는 여러개이므로 배열을 활용하여 묶어서 객체화
+        for (var i = 0; i < container.children.length; i++) {
+          //nav와 div를 구분하여 div는 여러개이므로 배열을 활용하여 묶어서 객체화
           if (container.children[i].tagName == "NAV") {
-            let navs = container.children[i]; //nav태그를 변수nav에 대입
+            var nav = container.children[i]; //nav태그를 변수nav에 대입
           } else {
-            //배열명.push(container.children[i]);
             infoArray.push(container.children[i]);
           }
         }
 
         //nav태그내에 있는 버튼을 탭버튼으로 활용
-        let navLi = nav.children[0].children; // nav ul li 를 의미
+        var navLi = nav.children[0].children; //nav ul li를 의미
+        //console.log(navLi);
         //기본 클래스 적용
-        navLi[0].classList.add("on");
-        infoArray[0].classList.add("active");
+        navLi[n].classList.add("on");
+        infoArray[n].classList.add("active");
 
-        for (let i = 0; i < navLi.length; i++) {
+        for (var i = 0; i < navLi.length; i++) {
+          navLi[i].index = i; // 수업시간에 이부분이 빠졌음
+
           navLi[i].addEventListener("click", function (e) {
-            e.preventDefault;
-            let n = e.currentTarget.index; //현재 클릭한 대상의 인덱스
+            e.preventDefault();
+            n = e.currentTarget.index; // 현재 클릭한 대상의 인덱스
 
-            for (let j = 0; j < navLi.length; j++) {
+            //클래스를 적용하고 없애기를 할때 기본형식
+            for (var j = 0; j < navLi.length; j++) {
               if (j == n) {
                 navLi[j].classList.add("on");
                 infoArray[j].classList.add("active");
@@ -102,8 +109,8 @@
   </head>
   <body>
     <div class="container">
-      <!--상단에 탭메뉴-->
-      <nav class="nav">
+      <nav>
+        <!--상단에 탭메뉴-->
         <ul>
           <li class="tab1"><a href="#">HTML</a></li>
           <li class="tab2"><a href="#">CSS</a></li>
@@ -111,11 +118,10 @@
           <li class="tab4"><a href="#">JQUERY</a></li>
         </ul>
       </nav>
-
-      <div class="description html">HTML</div>
-      <div class="description css">CSS</div>
-      <div class="description js">JS</div>
-      <div class="description jquery">JQUERY</div>
+      <div class="dsc html">HTML</div>
+      <div class="dsc css">CSS</div>
+      <div class="dsc js">JAVASCRIPT</div>
+      <div class="dsc jquery">JQUERY</div>
     </div>
   </body>
 </html>
