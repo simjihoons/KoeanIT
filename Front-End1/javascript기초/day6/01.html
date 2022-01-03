@@ -88,25 +88,8 @@
         //버튼 영역
         //li를 반복해서 실행하기 위한 문장
         for (let i = 0; i < liList.length; i++) {
-          /*
-            liList[i].addEventListener("click", function (e) {
-            e.preventDefault();
-
-            //liList.classList.remove("on"); //모든 li에게 클래스(on) 삭제
-
-            //
-            for (var j = 0; j < liList.length; j++) {
-              liList[j].classList.remove("on");
-            }
-            e.currentTarget.classList.add("on");
-          });
-         */
-          //----------------------------------------------------------
           // 버튼영역
-          //위와 기능은 같은 코드
-
           liList[i].index = i;
-
           liList[i].addEventListener("click", function (e) {
             e.preventDefalut;
             n = e.currentTarget.index; //현재 클릭한 대상의 인덱스 값을 추출하는 변수
