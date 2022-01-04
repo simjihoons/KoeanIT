@@ -14,13 +14,12 @@
         text-decoration: none;
       }
       ul,
-      li,
-      ol {
+      li {
         list-style: none;
       }
 
       .container {
-        margin-top: 35px;
+        margin: 35px;
         height: 500px;
       }
       .box {
@@ -32,9 +31,9 @@
         margin-top: 30px;
       }
       .botton_group a {
-        display: inline;
+        display: inline-block;
         margin-right: 10px;
-        font-size: 0.875rem;
+        font-size: 0.875em;
         padding: 5px 20px;
         background-color: #666;
         color: #fff;
@@ -48,11 +47,11 @@
 
         var btn1 = document.getElementById("size_big");
         var btn2 = document.getElementById("opacity");
-        var btn3 = document.getElementById("reset");
+        var reset = document.getElementById("reset");
 
-        var currentW = 50; // 초기의 크기
-        var targetW = 400; // 이벤트에 의한 크기
-        var op = 1; //투명도
+        var currentW = 50; //초기의 크기
+        var targetW = 400; //이벤트에 의한 크기
+        var op = 1; // 투명도
 
         btn1.addEventListener("click", function (e) {
           e.preventDefault();
@@ -61,16 +60,15 @@
               currentW += 10;
             } else {
               currentW = targetW;
-              clearInterval(timer); //실행을 시켰으면 무조건 clear를 해줘야 한다.
+              clearInterval(timer);
             }
             box.style.width = currentW + "px";
             box.style.height = currentW + "px";
           }, 10);
-        }); //end of btn1
+        });
 
         btn2.addEventListener("click", function (e) {
           e.preventDefault();
-          //var timer = setInterval(function () {},10);
           var timer = setInterval(function () {
             if (op > 0.1) {
               op -= 0.1;
@@ -80,24 +78,24 @@
             }
             box.style.opacity = op;
           }, 10);
-        }); //end of btn2
+        });
 
-        btn3.addEventListener("click", function (e) {
+        reset.addEventListener("click", function (e) {
           e.preventDefault();
           box.removeAttribute("style");
           currentW = 50;
           op = 1;
         });
-      }); //end of window_listener_load
+      }); //window.addEventListener('load', function(){
     </script>
   </head>
   <body>
     <div class="container">
       <div class="box" id="box1"></div>
       <div class="botton_group">
-        <a href="#" id="size_big">size_big</a>
-        <a href="#" id="opactiy">opacity</a>
-        <a href="#" id="reset">reset</a>
+        <a href="" id="size_big">size big</a>
+        <a href="" id="opacity">opaicty 0</a>
+        <a href="" id="reset">reset</a>
       </div>
     </div>
   </body>
