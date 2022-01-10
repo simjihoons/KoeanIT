@@ -13,24 +13,18 @@
     -->
     <script>
       "use strcit";
-      const user = {
-        userid: "apple",
-        name: "김사과",
-        gender: "여자",
-        hp: "01011111111",
-        birthday: "20001011",
-        memberId: function () {
-          return "korea" + this.hp;
-        },
-      };
+      function Dog(name, color) {
+        this.name = name;
+        this.color = color;
+        this.sleep = function () {
+          return `${name} 이(가) 잠을 잡니다.`;
+        };
+      }
 
-      console.log(user.userid);
-      console.log(user.name);
-      console.log(user.gender);
-      console.log(user.hp);
-      console.log(user.birthday);
-      console.log(user.memberId());
-      console.log(user.memberId);
+      const Rusy = new Dog("루시", "흰색");
+      console.log(Rusy.name);
+      console.log(Rusy.color);
+      console.log(Rusy.sleep());
     </script>
   </body>
 </html>
