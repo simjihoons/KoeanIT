@@ -17,20 +17,28 @@
         this.color = color;
       }
 
-      const Rucy = new Dog("루시", 2, "흰색"); // 생성자
-      console.log(`이름 : ${Rucy.name}`);
-      console.log(`색상 : ${Rucy.color}`);
-      console.log(`나이 : ${Rucy.age}`);
-      console.log(Rucy);
-
-      //속성과 속성값을 이런 방법으로 추가(상속성)
-      Rucy.family = "포메";
-      Rucy.run = function () {
-        return `${this.name}는 달립니다.`;
+      Dog.prototype.family = "포메";
+      Dog.prototype.run = function () {
+        return `${this.name} 가 달립니다.`;
       };
 
-      console.log(`루시의 종 : ${Rucy.family}`);
-      console.log(Rucy.run());
+      const Rusy = new Dog("루시", 10, "흰색");
+      const pax = new Dog("팩스", 5, "흰색");
+
+      console.log(`이름 : ${Rusy.name}`);
+      console.log(`나이 : ${Rusy.age}`);
+      console.log(`색상 : ${Rusy.color}`);
+      console.log(`종 : ${Rusy.family}`);
+      console.log(Rusy.run());
+
+      console.log("------------------------");
+
+      console.log(`이름 : ${pax.name}`);
+      console.log(`나이 : ${pax.age}`);
+      console.log(`색상 : ${pax.color}`);
+      pax.family = "폼피츠"; // 종 변경
+      console.log(`종 : ${pax.family}`);
+      console.log(pax.run());
     </script>
   </body>
 </html>
