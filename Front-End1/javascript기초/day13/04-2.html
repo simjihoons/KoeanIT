@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String 객체</title>
+  </head>
+
+  <body>
+    <script>
+      "use strcit";
+      const str1 = "안녕하세요. JavaScript";
+      console.log("str1의 글자 수 :" + str1.length);
+
+      console.log("처음 등장하는 위치 :" + str1.indexOf("J"));
+      console.log("처음 등장하는 위치 :" + str1.indexOf("java")); // 대소문자를 구분하기 때문에 -1이 나온다. => 찾지 못했을경우
+      console.log("처음 등장하는 위치 :" + str1.indexOf("a")); // 같은 글자가 있을땐 제일 앞의 글자만 알려줌
+
+      console.log(str1.charAt(7));
+      console.log(str1.charAt(10));
+
+      console.log(str1.includes("Java")); // true 대소문자 구별하기 때문.
+      console.log(str1.includes("java")); // false 대소문자 구별하기 때문.
+
+      console.log(str1.substring(7));
+      // JavaScript 매개변수가 1개일 경우 해당 인덱스부터 끝까지 문자열을 추출
+      console.log(str1.substring(7, 11));
+
+      console.log(str1.substr(7, 4)); // Java 7부터 4글자
+
+      const str2 = "드라이브, 영화감상, 게임 , 쇼핑, 잠자기, 여행";
+      const hobby = str2.split(",");
+
+      for (let h of hobby) {
+        console.log(h);
+      }
+
+      hobby.forEach(function (val, idx, arr) {
+        console.log(`값 : ${val}, 인덱스 : ${idx}, 배열 : ${arr}`);
+      });
+
+      console.log(str1.replace("안녕하세요", "Hello!")); //안녕하세요를 hello로 변경
+
+      const str3 = "            JavaScript           ";
+      console.log(`|${str3}|`);
+      console.log(`|${str3.trim()}|`); // 공백 제거
+    </script>
+  </body>
+</html>
