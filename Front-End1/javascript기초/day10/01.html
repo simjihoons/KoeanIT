@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const hi = function(){
+           // alert("Hi");
+           console.log("hi");
+        }
+
+        //setTimeout(실행함수,시간) 시간이 되었을때 한번만 실행
+        //const st = window.setTimeout(hi,2000);
+        
+        //clearTimeout() setTimeout() 실행 중지
+        //clearTimeout(st);
+
+
+        const clearInter = function(){
+            console.log("hi 함수 종료");
+            clearInterval(si);
+        }
+
+        //setInterval 3초마다 hi 함수 호출
+        const si = window.setInterval(hi,3000);
+       
+       
+    </script>
+
+    <button onclick="clearInter()">종료</button>
+</body>
+</html>
