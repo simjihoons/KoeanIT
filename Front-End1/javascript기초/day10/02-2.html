@@ -7,43 +7,35 @@
     <title>Document</title>
   </head>
   <body>
-    <h2>노드의 추가</h2>
-    <p id="item1">자바스크립트</p>
-    <p id="item2">PHP</p>
+    <h2>노드의 생성</h2>
+    <p id="el">새로운 문장이 이 문장 앞에 추가됩니다.</p>
+    <p id="attr">이 단락에 새료운 속성이 추가됩니다.</p>
+    <p id="text"></p>
 
-    <hr />
-
-    <div id="list">
-      <p id="js">node.js</p>
-      <p>react</p>
-    </div>
-
-    <hr />
-
-    <p id="text">지금은 오전 9시 30분입니다.</p>
-
-    <button onclick="appendNode()">노드추가1</button>
-    <button onclick="insertNode()">노드추가2</button>
-    <button onclick="appendText()">텍스트추가</button>
+    <button onclick="createNode()">노드추가1</button>
+    <button onclick="createAttr()">노드추가2</button>
+    <button onclick="createText()">텍스트추가</button>
 
     <script>
       "use strcit";
-      const appendNode = function () {
-        const parent = document.getElementById("list");
-        const newItem = document.getElementById("item1");
-        parent.appendChild(newItem);
+      const createNode = () => {
+        const elNode = document.getElementById("el");
+        const newNode = document.createElement("p"); //<p>
+        newNode.innerHTML = "<b>새로운 요소입니다.</b>";
+        document.body.insertBefore(newNode, elNode);
       };
 
-      const insertNode = function () {
-        const parent = document.getElementById("list");
-        const newItem = document.getElementById("item1");
-        const js = document.getElementById("js");
-        parent.insertBefore(newItem, js);
+      const createAttr = () => {
+        const attr = document.getElementById("attr");
+        const newAttr = document.createAttribute("style"); // style= ""
+        newAttr.value = "color:white; background-color:deeppink";
+        attr.setAttributeNode(newAttr);
       };
 
-      const appendText = () => {
-        const text = document.getElementById("text").firstChild;
-        text.insertData(7, "아주 외로운");
+      const createText = () => {
+        const textNode = document.getElementById("text");
+        const newText = document.createTextNode("새로운 텍스트 입니다.");
+        textNode.appendChild(newText);
       };
     </script>
   </body>
