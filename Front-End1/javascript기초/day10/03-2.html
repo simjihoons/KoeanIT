@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    * 동기와 비동기
+       프로그램이 동작하는 상태에서 완전히 해당 내용을 끝내고 다음으로 제어를 넘기는 방식을 동기식,
+       동작이 끝나지 않은 상태에서도 제어권을 넘긴 후 프로그램을 계속 진행하면 비동기식이라 한다.
+
+    * 예외 처리(Exception)
+       프로그램이 실행ㅇ되고 있는 런타임시에 에러가 발생할 경우 처리할 수 있는 프로그램 구간을 의미
+
+    try{
+        예외 상황이 발생할 수 있는 문장
+        ....
+        ....
+    }catch(e){
+        예외 사왕이 발생했을 경우 처리할 문장
+    }finally{
+        예외 상황이 발생하거나 발생하지 않아도 무조건 실행될 문장(생략 가능)
+    }
+     
+  -->
+    <h2>동기와 비 동기_사용자 정의 함수 동기식</h2>
+    <script>
+      "use strict";
+      //   console.log(0);
+
+      //setTimeout => 웹브라우저에서 제공하는 API
+      //   setTimeout(() => {
+      //     console.log("hello");
+      //   }, 0);
+      //   console.log(1);
+
+      //----------------------------------------------
+      function work(sec, callback) {
+        setTimeout(() => {
+          callback(new Date().toISOString());
+        }, sec * 1000);
+      }
+
+      work(1, function (result) {
+        console.log("First work", result);
+      });
+      work(2, function (result) {
+        console.log("Second work", result);
+      });
+      work(3, function (result) {
+        console.log("Third work", result);
+      });
+    </script>
+  </body>
+</html>
