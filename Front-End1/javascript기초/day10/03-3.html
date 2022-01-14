@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+      Call Back
+     -->
+    <script>
+      function workP(sec) {
+        //Promise 많은 콜백 함수를 하용하다 보면 코드가 복잡하게 되는 경우가 생심 ->콜백 함수 발생
+        //코드의 주업이 많아지는 콜백의 지옥에서 벗어나게 해주는 객체
+        //promise의 인스턴스를 리턴하고
+        //thean 에서 리턴한 것을 받는다.
+        return new Promise((resolve, reject) => {
+          //서버에 요청/응답
+          // resolve 동작 완료시 호출, reject 에러 났을 경우
+
+          setTimeout(() => {
+            resolve(new Date().toISOString());
+          }, sec * 1000);
+        });
+      }
+      workP(1)
+        .then((result) => {
+          console.log("첫번쨰 작업", result);
+          return workP(1);
+        })
+        .then((result) => {
+          console.log("두번째 작업", result);
+        });
+    </script>
+  </body>
+</html>
