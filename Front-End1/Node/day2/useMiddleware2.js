@@ -4,16 +4,16 @@ const bodyParser = require("body-parser"); // post 데이터를 전달받기 위
 const app = express();
 const port = 3000;
 
-//미들웨어 사용법1--------------------------------
-app.get("/", function (req, res) {
-  res.send("hello, World");
+//미들웨어 사용법2--------------------------------
+app.get("/", function (req, res, next) {
+  res.send("hello, World2");
+  next(); //다음 미들웨어로 이동하는 메소드
 });
 
 const myLogger = function (req, res, next) {
   console.log("LOGGED");
+  next();
 };
-
-//------------------------------------------------
 
 app.use(myLogger);
 
