@@ -1,0 +1,15 @@
+Nodemon
+서버 코드를 변경할때마다 서버를 재시작해주는 모듈
+npm install -g nodemon
+-g : 글로벌 설치
+
+npm start라고 실행하고 그 다음부터는 저장하기만해도 서버열지않고 업데이트 됨
+
+package.json 에서
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon bodyParser.js" // 이부분 추가
+  },
+
+body-parser(post 방식)
+    npm i body-parser
