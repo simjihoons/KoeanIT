@@ -13,3 +13,19 @@ package.json 에서
 
 body-parser(post 방식)
     npm i body-parser
+
+포스트맨 다운로드
+https://www.postman.com/downloads/
+
+Router 미들웨어
+사용자의 다양한 요청이 들어왔을때 user() 메소드로 설정한 미들웨어가 항상 호출되는 불편한점이 있다.
+이를 해결하고자 사용하는 미들웨어가 Router 미들웨어 이다.
+
+Router 객체 만들기
+    const  라우터객체 = express.Router();
+
+http://localhost:3000/member/login
+라우터객체.route(요청패스).get(실행할 함수);
+라우터객체.route(요청패스).post(실행할 함수);
+
+익스프레스에 Router 적용
