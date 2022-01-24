@@ -8,12 +8,13 @@ const port = 3000;
 
 const router = express.Router();
 
-// localhost:3000/ejstest
-router.route("/ejstest").post((req, res) => {
-  fs.readFile("./ejs1.ejs", "utf8", (err, data) => {
+// localhost:3000/login
+router.route("/login").post((req, res) => {
+  const useinfo = { userid: "apple", userpw: "1234" };
+  fs.readFile("./ejs2.ejs", "utf8", (err, data) => {
     if (!err) {
       res.writeHead(200, { "content-type": "text/html" });
-      res.end(ejs.render(data));
+      res.end(ejs.render(data, useinfo));
     } else {
       console.log(err);
     }
