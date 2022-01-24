@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon useMiddleware2.js"
+    "start": "nodemon ejs1.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.1",
+    "ejs": "^3.1.6",
     "express": "^4.17.2"
   }
 }
