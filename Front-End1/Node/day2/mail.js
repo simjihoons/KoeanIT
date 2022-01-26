@@ -41,7 +41,7 @@ router.route("/mail").get((req, res) => {
       service: "Gmail", //이메일 서버
       auth: {
         use: "wlgnsgit@gmail.com", //보내는 메일 주소
-        pass: "rhaxoddl12!@#A", //비밀번호
+        pass: "aaa", //비밀번호
       },
       host: "smtp.mail.com", //메일서버
       port: "465", //포트
