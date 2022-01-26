@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ejs3.js"
+    "start": "nodemon jade1.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "body-parser": "^1.19.1",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "jade": "^1.11.0",
     "nodemailer": "^6.7.2"
   }
 }
