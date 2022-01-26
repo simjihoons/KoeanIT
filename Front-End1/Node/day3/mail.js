@@ -1,6 +1,7 @@
 // npm i nodemailer
 const nodemailer = require("nodemailer");
 
+//nodemailer 설정
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
@@ -11,11 +12,12 @@ const transporter = nodemailer.createTransport({
   port: "465",
 });
 
+//메일 발송 옵션
 const mailOptions = {
   from: "심지훈<wlgnsgit@gmail.com>", // 보내는사람
   to: "심지훈<tlawlgns6305@naver.com>", //받는 사람
   subject: "node.js의 nodemailer 테스트중입니다.",
-  html: "<h2>안녕하세요. 메일이 잘 가나요?</h2><p style='color: deeppink'>정말 잘 가네요~~</p>",
+  html: "<h2>안녕하세요. 메일이 잘 가나요??</h2><p style='color: deeppink'>정말 잘 가네요~~</p>",
 };
 
 transporter.sendMail(mailOptions, (err, info) => {
