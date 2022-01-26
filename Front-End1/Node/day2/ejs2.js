@@ -11,10 +11,14 @@ const router = express.Router();
 // localhost:3000/login
 router.route("/login").post((req, res) => {
   const useinfo = { userid: "apple", userpw: "1234" };
+  //매개변수를 발생해서 직접 ejs파일에 변수에 입력
   fs.readFile("./ejs2.ejs", "utf8", (err, data) => {
     if (!err) {
       res.writeHead(200, { "content-type": "text/html" });
       res.end(ejs.render(data, useinfo));
+      //res.end(ejs.render(ejs파일,매개변수))
+      //ejs.render(ejs파일,매개변수)
+      //ejs파일에 미리 해당되는 변수를 선언 했다면 변수값이 자동으로 입력
     } else {
       console.log(err);
     }
