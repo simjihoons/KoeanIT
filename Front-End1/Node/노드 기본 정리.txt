@@ -7,3 +7,120 @@
 4. 작업 스레드는 작업을 마치면 이 콜백함수를 실행하고 싶다고 최고 감시작인 이벤트 루프에게 응답을 보냅니다.
    응답을 받은 이벤트 루프는 콜백함수의결과를 클라이언트에 전송하여 우리가 볼 수 있는 결과로 바꾸어 줍니다.
   
+
+Nodemon
+서버 코드를 변경할 때마다 서버를 재시작하도록 하는 모듈
+npm install -g nodemon
+-g: 글로벌 설치
+
+"scripts": {
+    "start": "nodemon 06-4.js"
+  },
+
+npm start 라고 실행하고 그다음부터는 저장하기만 해도 서버열지않고 업데이트됨
+
+
+body-parser(post방식)
+설치 npm i body-parser
+
+
+node.js
+const userid = req.query.userid;
+http://localhost:3000/?userid=apple
+
+query : 클라이언트에서 GET방식으로 전송한 요청 파라미터를 확인합니다.
+body : 클라이언트에서 POST방식으로 전송한 요청 파라미터를 확인합니다.
+(단, post방식을 통한 요청 파라미터를 확인하려면 body-parser와 같은 모듈을 사용해야합니다.)
+
+const userid = req.body.userid;
+
+
+포스트맨 다운로드
+https://www.postman.com/downloads/
+
+
+Router 미들웨어
+사용자의 다양한 요청이 들어왔을때 use() 메소드로 설정한 미들웨어가 항상 호출되는 불편한점이 있습니다. 
+이를 해결하고자 사용하는 미들웨어가 Router 미들웨어입니다.
+
+Router 객체 만들기
+const 라우터객체 = express.Router();
+
+http://localhost:3000/member/login
+라우터객체.route(요청패스).get(실행할 함수);
+라우터객체.route(요청패스).post(실행할 함수);
+
+익스프레스에 Router 객체 적용
+app.use('/', 라우터객체);
+
+
+
+Model View Controller
+
+Model: 데이터베이스
+View : 보이는 부분(html,자바스크립트)
+Controller : 로직,,,,연산결과 노드의 명령
+
+
+[EJS(Embedded JavaScript) 모듈]
+EJS 모듈은 템플릿 엔진 모듈입니다. 
+템플릿  엔진 모듈은 특정한 형식인 파일로 부터 HTML 페이지를 생성하는 모듈입니다.
+
+설치 npm i ejs
+
+EJS 파일 형식의 특수 코드
+<%~ ~~ code ~~~~ %> : 자바스크립트 코드를 입력하는 영역입니다.
+<%=변수 또는 값%> : 데이터를 출력합니다.
+<%-변수 또는 객체%> : ejs파일 전체를 전달합니다.
+
+EJS 데이터를 전달
+render() : 메소드의 매개 변수에 전달하고자 하는 데이터를 입력하여 전달합니다.
+ejs.render(data);
+
+
+[PUG(구 jade)]
+http://jade-lang.com/
+
+
+numjucks
+https://www.npmjs.com/package/nunjucks
+
+
+
+[Node.js에서 메일 보내기]
+nodemailer 모듈
+gmail 서버를 이용하여 메일을 보낼 수 있습니다
+
+
+1. 메일보내기하기전에 설정해야 하는부분
+
+보안 수준이 낮은 앱의 액세스
+https://myaccount.google.com/lesssecureapps
+
+계정 액세스 사용을 허용
+https://accounts.google.com/DisplayUnlockCaptcha
+
+2.
+onst nodemailer객체명 = nodemailer.createTransport({
+    service: 'Gmail',
+    auth:{
+        user: 'gmail 계정',
+        pass: '비밀번호'
+    },
+    host: 'smtp.mail.com',
+    port: '465'
+});
+
+
+메일 발송 옵션 설정
+
+const 메일발송옵션객체명 = {
+    from: "이름<메일주소>",
+    to: "이름<메일주소>",
+    subject: "제목",
+    text: "내용"
+    (html: "HTML코드")
+}
+
+
+
