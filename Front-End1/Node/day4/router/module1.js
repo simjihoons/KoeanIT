@@ -60,7 +60,7 @@ module.exports = (app, fs) => {
         return false;
       }
       console.log(req.body);
-      member[userid] = req.body;
+      member[userid] = req.body; //아이디 패스워드
       fs.writeFile(
         __dirname + "/../data/member.json",
         JSON.stringify(member, null, "\t"),
@@ -73,6 +73,69 @@ module.exports = (app, fs) => {
           } else {
             console.log(err);
           }
+        }
+      );
+    });
+  });
+
+  //수정
+  //127.0.0.1/3000/updateMember/:userid
+  app.put("/updateMember/:userid", (req, res) => {
+    const result = {};
+    const userid = req.params.userid;
+
+    //body에 입력이 안된 상태가 참이다.
+    if (!req.body["password"] || !req.body["name"]) {
+      result["success"] = 100; // 100 : 실패
+      result["msg"] = "매개변수 전달 x";
+      res.json(result);
+      return false;
+    }
+    fs.readFile(__dirname + "/../data/member.json", "utf-8", (err, data) => {
+      if (!err) {
+        const member = JSON.parse(data);
+        fs.writeFile(
+          __dirname + "/../data/member.json",
+          JSON.stringify(member, null, "\t"),
+          "utf-8",
+          (err, data) => {
+            if (!err) {
+              //todo
+              result["success"] = 200;
+              result["msg"] = "success";
+              res.json(result);
+            } else {
+              //todo
+              console.log(err);
+            }
+          }
+        );
+      } else {
+        console.log(err);
+      }
+    });
+  });
+
+  //삭제
+  app.delete("/deleteMember/:userid", () => {
+    let result = {};
+    fs.readFile(__dirname + "/../data/member.json", "utf8", (err, data) => {
+      const member = JSON.parse(data);
+      if (!member[req.params.userid]) {
+        result["success"] = 102;
+        result["msg"] = "사용자를 찾을수 없음";
+        res.json(result);
+        return false;
+      }
+      delete member[req.params.userid];
+      fs.writeFile(
+        __dirname + "/../data/member.json",
+        JSON.stringify(member, null, "\t"),
+        "utf8",
+        (err, data) => {
+          result["success"] = 200;
+          result["msg"] = "성공";
+          res.json(result);
         }
       );
     });
