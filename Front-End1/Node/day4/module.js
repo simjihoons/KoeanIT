@@ -9,7 +9,7 @@ app.engine("html", require("ejs").renderFile); //view 엔진 등록 => (views �
 app.use(bodyParser.urlencoded({ extended: false })); //post 방식
 
 //const 객체명 = require("파일명");
-const module1 = require("./router/module1")(app); //express()를 전달
+const module1 = require("./router/module1")(app, fs); //express()를 전달
 
 app.listen(port, () => {
   console.log(`${port}번 포트로 서버 실행중....`);
