@@ -4,6 +4,7 @@
   "description": "",
   "main": "1_mail.js",
   "scripts": {
+    "start": "nodemon module.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
