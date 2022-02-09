@@ -23,5 +23,9 @@
 		"password": "1234",
 		"name": "이배리\n",
 		"gender": "여자\n"
+	},
+	"ssu": {
+		"name": "김수",
+		"password": "1111"
 	}
 }

@@ -79,33 +79,30 @@ module.exports = (app, fs) => {
   });
 
   //수정
-  //127.0.0.1/3000/updateMember/:userid
+  // http://localhost:3000/updateMember/apple1
   app.put("/updateMember/:userid", (req, res) => {
     const result = {};
     const userid = req.params.userid;
-
-    //body에 입력이 안된 상태가 참이다.
     if (!req.body["password"] || !req.body["name"]) {
-      result["success"] = 100; // 100 : 실패
-      result["msg"] = "매개변수 전달 x";
+      result["success"] = 100;
+      result["msg"] = "매개변수가 전달되지 않음";
       res.json(result);
       return false;
     }
-    fs.readFile(__dirname + "/../data/member.json", "utf-8", (err, data) => {
+    fs.readFile(__dirname + "/../data/member.json", "utf8", (err, data) => {
       if (!err) {
-        const member = JSON.parse(data);
+        const member = JSON.parse(data); //JSON파일로 저장
+        member[userid] = req.body; //전달한 정보
         fs.writeFile(
           __dirname + "/../data/member.json",
           JSON.stringify(member, null, "\t"),
-          "utf-8",
+          "utf8",
           (err, data) => {
             if (!err) {
-              //todo
               result["success"] = 200;
-              result["msg"] = "success";
+              result["msg"] = "성공";
               res.json(result);
             } else {
-              //todo
               console.log(err);
             }
           }
