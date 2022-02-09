@@ -75,12 +75,8 @@ app.get("/fail", (req, res) => {
 
 //로그아웃했을때
 app.get("/logout", (req, res) => {
-  fs.readFile("login.html", "utf-8", (err, data) => {
-    if (!err) {
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(data);
-    }
-  });
+  res.clearCookie("userid");
+  res.redirect("/login");
 });
 
 app.listen(port, () => {
