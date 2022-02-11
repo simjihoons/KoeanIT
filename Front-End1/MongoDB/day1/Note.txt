@@ -1,3 +1,227 @@
-https://www.mongodb.com/try/download/community
+몽고디비 다운로드 설치
+ttps://www.mongodb.com/
+다운로드 위치
+Products -> Community Server -> 오른쪽에 다운로드에서(몽고디비 버전, OS버전, 설치버전(msi))
 
-https://cmder.net/ => download Full
+데이터베이스 사용순위
+https://db-engines.com/en/ranking
+
+
+MongoDB소개
+MongoDB는C++ 로작성된문서지향적NoSQL데이터베이스이다
+NoSQL데이터베이스중사용인지도 1위이다
+10gen 이란회사에서 2007년에처음개발했으며 2009년오픈소스로전향한 DB이다
+구글, 페이스북, 포스퀘어, 뉴욕타임즈, 이베이등주요대기업또는 SNS업체에서많이사용함
+Javascript의Json(BSON)형태의데이터구조를가진다
+
+
+NoSQL
+Not only SQL의 약자입니다. 
+기존의 RDBMS(관계형 데이터베이스)의 한계를 극복하기 위해 만들어진 새로운 형태의 데이터베이스입니다. 
+관계형 DB가 아니므로 RDBMS처럼 고정된 스키마 및 JOIN문이 존재하지 않습니다. 
+
+NoSQL을 사용하는 이유(속도차이점에서 사용)
+가장 큰 이유는 성능 때문입니다. 
+관계형 데이터베이스는 시스템의 신뢰도를 높이는데 필요한 장치를 많이 가지고 있습니다. 
+SQL문을 읽고 실행하는데 많은 리소스를 사용하며 성능이 떨어지는 경우가 많습니다. 
+반대로 NoSQL은 성능을 최우선으로 생각하여 
+실시간으로 처리해야 할 경우나 대용량 트래픽을 감당할 수 있는 메시징 시스템등에 활용됩니다
+
+
+몽고디비편집툴
+https://cmder.net/
+
+mongoDB 환경설정
+파일탐색기 -> 내 PC -> 마우스 오른쪽 버튼(속성) -> 고급 시스템 설정 -> 환경 변수 -> 
+시스템 변수 -> path -> 편집 -> 새로 만들기 -> C:\Program Files\MongoDB\Server\4.4\bin
+(mongoDB 실행파일 위치)
+
+
+
+MongoDB 문법
+mongoDB 특징
+- NoSQL이기 때문에 관계형 데이터베이스의 테이블 개념이 없습니다.
+- 데이터가 모인 하나의 단위를 컬렉션이라고 부릅니다.
+- 데이터를 정해 놓은 컬럼의 형태로 컬렉션에 넣어야 한다는 제약이 없습니다.
+- mongoDB의 데이터베이스는 컬렉션의 집합이라고 할 수 있습니다.
+- 컬렉션은 여러개의 문서 객체를 가질 수 있습니다. 
+문서 객체는 속성들의 집합으로서 한 사람의 이름과 나이등을 저장하고 있는 하나의 문서 객체를 만든 후 그 안에 자바스크립트 객체와 같이 속성들을 추가하여 저장할 수 있습니다.
+
+데이터베이스 확인
+mongo;
+show dbs;
+
+데이터베이스 생성 및 선택
+use 데이터베이스명;
+use frontenddb01;
+* 데이터베이스가 없으면 생성, 있으면 선택합니다.
+* 데이터베이스의 자료가 없을 경우 show dbs에서 나타나지 않습니다.
+
+컬렉션 생성
+db.createCollection('컬렉션명');
+db.createCollection('testCollection');
+
+컬렉션 확인
+show collections;
+
+컬렉션 삭제
+db.컬렉션명.drop();
+db.testCollection.drop();
+
+연습용 컬렉션 만들기
+db.createCollection("member");
+
+document 추가
+db.컬렉션명.insert(객체);
+db.member.insert();
+db.member.insert({'userid':'apple','userpw':'1111'});
+db.member.insert({'userid':'banana','userpw':'2222','username':'반하나'});
+
+db.member.insert({"userid":"orange","userpw":"3333","gender":"남자"});
+db.member.insert({"userid":"melon","userpw":"4444","gender":"남자", "username":"이메론"});
+
+db.member.insert({"userid":"cherry","userpw":"5555", "username":"채리","gender":"여자","point":2000});
+db.member.insert({"userid":"avocado","userpw":"6666", "username":"안카도","gender":"남자","point":1500});
+db.member.insert({"userid":"berry","userpw":"7777", "username":"배애리","gender":"여자","point":1800});
+db.member.insert({"userid":"coconut","userpw":"8888", "username":"고코넛","gender":"남자","point":1700});
+
+document 확인
+db.컬렉션명.find();
+db.member.find();
+
+db.member.find().pretty();// 코드 정리됨
+
+하나의 객체(document)
+db.컬렉션명.find(객체).pretty();
+db.member.find({"userid":"apple"}).pretty();
+
+* _id는 각 document의 유일한 키로 쓰이는 값입니다.
+-> document를 저장하고 확인
+
+cmder창을 닫고 다시 시작
+ 1. 새로운 cmder창에서 mongo입력
+ 2. show dbs;
+ 3. use frontenddb01;
+ 4. show collections; 입력후 컬렉션들이 나타나고
+ 5. db.member.find().pretty();
+ 6. 그중에서 하나만 선택하겠다 db.member.find(객체속성).pretty();
+
+document 비교연산 -> 값이 크다 작다의 의미가 아니라 하나의 변수값을 선언하는 것
+$eq : 주어진 값과 일치하는 값을 찾습니다.
+$gt : 주어진 값보다 큰 값을 찾습니다.
+$gte : 주어진 값보다 크거나 같은 값을 찾습니다.
+$lt : 주어진 값보다 작은 값을 찾습니다.
+$lte : 주어진 값보다 작거나 같은 값을 찾습니다.
+$ne : 주어진 값과 일치하지 않는 값을 찾습니다.
+$in : 주어진 배열 안에 속하는 값을 찾습니다.
+$nin : 주어진 배열 안에 속하지 않는 값을 찾습니다.
+
+문제:포인트가 1700점 이상인 멤버를 검색
+db.member.find({point:{$gte:1700}}).pretty();
+
+document 논리연산
+$or : 주어진 조건 중 하나라도 true일 때 true인 결과를 찾습니다.
+$and : 주어진 모든 조건이 true일 때 true인 결과를 찾습니다.
+$not : 주어진 조건이 false일 때 true, true일 때 false인 결과를 찾습니다.
+
+문제:아이디가 "melon"이고 이름이 "이메론"인 멤버를 검색합니다.
+db.member.find({$and:[{"userid":"melon"},{"username":"이메론"}]}).pretty();
+
+-> 조건이 2가지 이상이면 배열이기 때문에$and:[]로 표시
+-> 객체은 무조건 {}
+
+
+문제
+1. 이름이 "안카도"인 멤버를 검색합니다.
+db.member.find({"username":"안카도"}).pretty();
+
+2. 포인트가 1800보다 작거나 같은 멤버를 검색합니다.
+db.member.find({"point":{$lte:1800}}).pretty();
+
+3. 아이디가 "apple" 이거나 "banana"인 멤버를 검색합니다.
+db.member.find({$or:[{"userid":"apple"},{"userid":"banana"}]}).pretty();
+
+4. 성별이 "여자"이고 포인트가 1700이상인 멤버를 검색합니다.
+db.member.find({$and:[{"gender":"여자"},{"point":{$gte:1700}}]}).pretty();
+
+
+document 정렬
+db.컬렉션명.find().sort(객체)
+*객체
+{key:value} -> key는 데이터의 field이름,value의 값은 1(오름차순) 또는 -1(내림차순)
+여러 key를 입력할 수 있고, 먼저 입력한 key가 우선권을 갖음.
+
+db.member.find().sort({"_id":1}).pretty();
+db.member.find().sort({"userid":1}).pretty();
+db.member.find().sort({"userid":-1}).pretty();
+
+document의 개수 제한
+limit():출력할 데이터 개수를 제한할때 사용
+db.컬렉션명.find().limit(출력할 개수)
+ 
+ db.member.find().limit(3).pretty();
+
+
+document 데이터 생략 후 출력
+skip():출력할 데이터의 시작부분을 설정할 경우 사용
+db.컬렉션명r.find().skip(생략할 개수);
+
+db.member.find().skip(2).pretty();
+
+문제.
+member 컬렉션의 데이터를 아래와 같이 출력
+
+1.
+apple
+banana
+orange
+db.member.find().limit(3).pretty();
+
+2.  
+melon
+cherry
+avocado
+db.member.find().skip(3).limit(3).pretty();
+
+3.
+berry
+coconut
+db.member.find().skip(6).limit(2).pretty();
+
+4.
+coconut
+berry
+avocado
+db.member.find().sort({"_id": -1}).limit(3).pretty();
+
+
+document의 수정
+1. 특정 feild 업데이트
+db.컬렉션명.update(객체,{$set:바뀔객체})
+db.member.update({"userid":"avocado"},{$set:{"username":"안카도02"}});
+
+
+2.document replace
+db.컬렉션명.update(변경할 객체, 바뀔 객체);
+db.member.update({"userid":"avocado"},{"username":"안복도","age":"30","point":500})
+--->
+원래대로 복구
+db.member.update({"_id" : ObjectId("6205bd30272693538e42123f")},
+{"userid":"avocado","userpw":"6666", "username":"안카도","gender":"남자","age":30,"point":900});
+
+3. 특정 filed 제거
+db.컬렉션명.update(변경할 객체, {$unset:{제거할 객체}}); 
+db.member.update({username:"안복도"}, {$unset:{age:1}}); // 1 -> true의 의미
+
+
+--------------------------------------------------------------------------------------------
+4. 특정 document가 존재하지 않을 경우 새로 추가
+db.컬렉션명.update(추가할 객체, 추가할 객체...,{upsert:true}); 
+db.member.update({"userid":"avocado"},{"age":30,"kor":100,"eng":90,"math":70},{upsert:true});
+-------------------------------------------------------------------------------------------
+
+
+
+5. document의 삭제
+db.컬렉션명,remove(객체);
+db.member.remove({ "_id" : ObjectId("620579288623a4f3aae784bf")});
