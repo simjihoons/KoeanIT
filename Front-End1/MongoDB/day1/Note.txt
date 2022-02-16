@@ -225,3 +225,4 @@ db.member.update({"userid":"avocado"},{"age":30,"kor":100,"eng":90,"math":70},{u
 5. document의 삭제
 db.컬렉션명,remove(객체);
 db.member.remove({ "_id" : ObjectId("620579288623a4f3aae784bf")});
+
