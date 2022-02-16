@@ -161,6 +161,45 @@ router.route("/member/edit").post((req, res) => {
     res.writeHead(200, { "content-type": "text/html;charset=utf8" });
     res.write("<h2>데이터베이스 연결 실패</h2>");
     res.write("<p>mongodb 데이터베이스에 연결하지 못했습니다</p>");
+    res.end();
+  }
+});
+
+//회원삭제
+// http://localhost:3000/member/delete (post)
+router.route("/member/delete").delete((req, res) => {
+  console.log("Call /member/delete");
+
+  const userid = req.body.userid;
+  console.log(`userid : ${userid}`);
+
+  //db연결 여부
+  if (database) {
+    deleteMember(database, userid, (err, result) => {
+      if (!err) {
+        if (result.deletedCount > 0) {
+          res.writeHead(200, { "content-type": "text/html;charset=utf8" });
+          res.write("<h2>데이터베이스 삭제 성공</h2>");
+          res.write("<p>회원정보 삭제 성공</p>");
+          res.end();
+        } else {
+          res.writeHead(200, { "content-type": "text/html;charset=utf-8" });
+          res.write("<h2>회원정보 삭제 실패</h2>");
+          res.write("<p>삭제할 ID가 없습니다.</p>");
+          res.end();
+        }
+      } else {
+        res.writeHead(200, { "content-type": "text/html;charset=utf8" });
+        res.write("<h2>데이터베이스 삭제 실패</h2>");
+        res.write("<p>회원정보 삭제 실패</p>");
+        res.end();
+      }
+    });
+  } else {
+    res.writeHead(200, { "content-type": "text/html;charset=utf8" });
+    res.write("<h2>데이터베이스 연결 실패</h2>");
+    res.write("<p>mongodb 데이터베이스에 연결하지 못했습니다</p>");
+    res.end();
   }
 });
 
@@ -241,7 +280,6 @@ const editMember = (database, userid, userpw, username, age, callback) => {
           console.log("수정된 document 없음");
         }
         callback(null, result);
-        return;
       } else {
         console.log(err);
         callback(err, null);
@@ -250,6 +288,26 @@ const editMember = (database, userid, userpw, username, age, callback) => {
   );
 };
 
+//회원삭제
+const deleteMember = (database, uesrid, callback) => {
+  console.log("Call deleteMember!");
+
+  const members = database.collection("member"); // DB의 member 컬렉션을 객체로 가져오는것
+
+  members.deleteOne({ userid: uesrid }, (err, result) => {
+    if (!err) {
+      if (result.deletedCount > 0) {
+        console.log(`사용자 document ${result.deletedCount}명 삭제됨`);
+      } else {
+        console.log("삭제된 document 없음");
+      }
+      callback(null, result);
+    } else {
+      console.log(err);
+      callback(err, null);
+    }
+  });
+};
 //------------------------------------------------------------------------------------callback func
 
 app.use("/", router);
