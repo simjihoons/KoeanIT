@@ -3,13 +3,21 @@ mongodb
 |ongo
 show dbs;
 |d ..
-dir
+|ir
 |ongo
 c:
 |d ..
 |d ..
+|d ..
+|ongo
+|ongo
+|ongo
+|ongo
+|d ..
+|ir
+cd MongoDB\
+cd day2
+dir
+|ongo
 cd ..
-|ongo
-|ongo
-|ongo
 mongo
