@@ -1,0 +1,28 @@
+multer 모듈
+파일 업로드를 위한 익스프레스에 적용하는 미들웨어입니다.
+
+multer()
+생성자에 diskStorage 설정과 파일 크기를 설정합니다.
+
+destination : 저장될 폴더를 설정합니다.
+filename : 저장될 파일이름을 설정합니다.
+
+
+과제
+
+메일 보내기
+
+아이디 : 
+이메일 : email
+제목 : title
+내용 : content
+사진 :          [찾아보기]
+        [보내기]
+
+const mailOptions = {
+    from: "류정원 <ryuzy1011@gmail.com";
+    to: email,
+    subject: title,
+    text: content,
+    attachments: [{'filename': filename, 'content': data}]
+};
