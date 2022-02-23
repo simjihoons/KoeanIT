@@ -20,4 +20,5 @@ cd day2
 dir
 |ongo
 cd ..
+|ongo
 mongo
