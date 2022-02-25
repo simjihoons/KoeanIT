@@ -1,0 +1,28 @@
+npm init
+
+//리액트 설치
+npm i react react-dom
+
+
+//웹팩 설치
+//-D : 개발할때만 쓰겠다.
+npm i -D webpack webpack-cli
+
+//웹팩은 jsx를 모르기 때문에 설치
+npm i -D @babel/core @babel/preset-env @babel/preset-react @babel-loader
+
+babel/core : babel 의 기본적인 것이 들어가 있음
+babel/preset-env : 사용자의 브라우저 맞게 알아서 최신 문법을 옛날 문법으로 지원하게 바꿔줌
+babel/preset-react : 이게 있어야 jsx같은것을 지원할 수 있음
+babel-loader  : 바벨 이랑 웹팩을 연결해줌
+
+----------------------------------------------------------------------------------------------
+※npx webpack 오류날때(state = 오류)
+npm i -D @babel/plugin-proposal-class-properties
+
+[webpack.config.js]
+options:{//babel의 옵션
+                presets:["@babel/preset-env","@babel/preset-react"],
+                plugins:["@babel/plugin-proposal-class-properties"]   <<<<<<< 이 부분 추가
+            }
+-----------------------------------------------------------------------------------------------
