@@ -9,7 +9,7 @@ npm i react react-dom
 npm i -D webpack webpack-cli
 
 //웹팩은 jsx를 모르기 때문에 설치
-npm i -D @babel/core @babel/preset-env @babel/preset-react @babel-loader
+npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader
 
 babel/core : babel 의 기본적인 것이 들어가 있음
 babel/preset-env : 사용자의 브라우저 맞게 알아서 최신 문법을 옛날 문법으로 지원하게 바꿔줌
