@@ -14,37 +14,38 @@
         const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9));
         const [value, setValue] = React.useState("");
         const [result, setResult] = React.useState("");
-        const ref = React.useRef(null);
+        const inputRef = React.useRef(null);
 
 
-        const onChange = (e)=>{
+        const onChangeInput = (e)=>{
           setValue(e.target.value);
         }
         
-        const onSubmit = ()=>{
-          e.preventDafault();
+        const onSubmitForm = (e)=>{
+          e.preventDefault();
 
-          if (parseInt(this.state.value) === this.state.first * this.state.second ) {
+          if (parseInt(value) ===first *second ) {
             setResult(value + " 정답👍");
             setFirst(Math.ceil(Math.random() * 9));
             setSecond(Math.ceil(Math.random() * 9));
             setValue("");
           
             //Hooks 에서 ref는 current를 붙여야 한다.
-            ref.current.focus();
+            inputRef.current.focus();
           } else {
             setResult("❌땡❌");
             setValue("");
           }
             //Hooks 에서 ref는 current를 붙여야 한다.
-            ref.current.focus();
+            inputRef.current.focus();
         };
         return( 
         <React.Fragment>
           <div>{first} 곱하기 {second}는?</div>
-          <form onSubmit={onSubmit}>
-            <input ref = {ref} onChange = {onChange} value= {value} />  
+          <form onSubmit={onSubmitForm}>
+            <input ref = {inputRef} onChange = {onChangeInput} value= {value} />  
             <button>입력</button>
+            <div>{result}</div>
           </form>
         </React.Fragment>
         );
