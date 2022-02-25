@@ -1,0 +1,16 @@
+{
+  "name": "reactproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "nodeman": "^1.1.2",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}
