@@ -32,19 +32,25 @@
             parseInt(this.state.value) ===
             this.state.first * this.state.second
           ) {
-            this.setState({
-              result: this.state.first * this.state.second + " 정답",
-              first: Math.ceil(Math.random() * 9),
-              second: Math.ceil(Math.random() * 9),
-              value: "",
+            this.setState((prevState) => {
+              return {
+                result: prevState.value + " 정답👍",
+                first: Math.ceil(Math.random() * 9),
+                second: Math.ceil(Math.random() * 9),
+                value: "",
+              };
             });
+            this.input.focus();
           } else {
             this.setState({
-              result: "땡",
+              result: "❌땡❌",
               value: "",
             });
           }
+          this.input.focus();
         };
+
+        input;
 
         render() {
           return (
@@ -56,6 +62,9 @@
                     type="number"
                     value={this.state.value}
                     onChange={this.onChange}
+                    ref={(c) => {
+                      this.input = c;
+                    }}
                   />
                   <button>입력</button>
                 </form>
