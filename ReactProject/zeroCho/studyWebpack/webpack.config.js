@@ -21,9 +21,18 @@ module.exports = {
         test: /\.jsx?/, //정규 표현식 js와 jsx에 룰을 적용하겠다.
         loader: "babel-loader",
         options: {
-          //babel의 옵션
-          presets: ["@babel/preset-env", "@babel/preset-react"],
-          plugins: ["@babel/plugin-proposal-class-properties"],
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                target: {
+                  browsers: [">5% in KR", "last 2 chrome versions"], //한국에서 점유율이 5%이상인 브라우저에게만 적용 (browserslist)
+                },
+              },
+            ],
+            "@babel/preset-react",
+          ],
+          //plugins: ["@babel/plugin-proposal-class-properties"],
         },
       },
     ],

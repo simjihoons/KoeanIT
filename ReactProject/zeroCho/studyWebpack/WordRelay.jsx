@@ -3,7 +3,9 @@ const { Component } = React;
 
 class WordRelay extends Component {
   state = {
-    text: "hello, webpack",
+    word: "제로초",
+    value: "",
+    result: "",
   };
 
   render() {
