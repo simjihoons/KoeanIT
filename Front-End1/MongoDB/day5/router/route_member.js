@@ -1,6 +1,8 @@
-const { Router } = require("express");
+const { pass } = require("../config/passport/local_login");
+const express = require("express");
+const router = express.Router();
 
-module.exports = () => {
+module.exports = (router, passport) => {
   console.log("Call route_member!!");
 
   router.route("/").get((req, res) => {
@@ -12,7 +14,6 @@ module.exports = () => {
   router.route("/signup").get((req, res) => {
     res.render("signup.ejs");
   });
-
   router.route("/signup").post(passport.authenticate("local-signup"), {
     successRedirect: "/profile",
     failureRedirect: "/signup",
