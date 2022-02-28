@@ -16,6 +16,8 @@ const passport = require("passport");
 const app = express();
 const router = express.Router();
 
+const router_data = require("./router/route_member");
+
 //세션설정
 app.use(cookieParser());
 app.use(
@@ -57,9 +59,10 @@ const database = require("./database/database");
 const configPassport = require("./config/passport");
 configPassport(app, passport);
 
-const userPassport = require("./routes/route_member");
-userPassport(router, passport);
+const userPassport = require("./router/route_member");
+userPassport(router_data, passport);
 
+app.use("/", router_data);
 app.listen(config.server_port, () => {
   console.log(`${config.server_port}포트로 서버 실행중...`);
   database.init(app, config);
