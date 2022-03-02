@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <h2>Profile</h2>
+    <hr />
+    <p>ID : <%=user.usersid%></p>
+    <p>Name : <%=user.name%></p>
+
+    <% if(user.provider == 'facebook'){%>
+    <p>Email: <%=user.facebook.email%></p>
+    <%}else{%>
+    <p>Age: <%=user.age%></p>
+    <%}%>
+    <p><a href="/logout">Logout</a></p>
+  </body>
+</html>
