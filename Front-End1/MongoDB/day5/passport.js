@@ -16,8 +16,6 @@ const passport = require("passport");
 const app = express();
 const router = express.Router();
 
-const router_data = require("./router/route_member");
-
 //세션설정
 app.use(cookieParser());
 app.use(
@@ -35,6 +33,8 @@ app.use(passport.session()); //섹션 객체 생성
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/public", static(path.join(__dirname, "public"))); //퍼블릭파일에 직접 연결
 
+app.use("/", router);
+
 //페이지 연결이 오류일때 뜰 404 페이지 설정----------------------------------
 
 //객체를 먼저 생성
@@ -49,7 +49,7 @@ app.use(ErrorHandle); //여기로 연결
 //------------------------------------------------------------------------
 
 //뷰 템플릿 설정
-app.set("view", __dirname + "/view");
+app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
 //사용자 정의 모듈 연결
@@ -59,10 +59,9 @@ const database = require("./database/database");
 const configPassport = require("./config/passport");
 configPassport(app, passport);
 
-const userPassport = require("./router/route_member");
-userPassport(router_data, passport);
+const userPassport = require("./routers/route_member");
+userPassport(router, passport);
 
-app.use("/", router_data);
 app.listen(config.server_port, () => {
   console.log(`${config.server_port}포트로 서버 실행중...`);
   database.init(app, config);
