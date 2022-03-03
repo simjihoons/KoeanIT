@@ -25,7 +25,7 @@ function Detail() {
               className="btn btn-danger"
               onClick={() => {
                 // history.goBack();
-                //        or
+                //         or
                 history.push("/");
               }}
             >
