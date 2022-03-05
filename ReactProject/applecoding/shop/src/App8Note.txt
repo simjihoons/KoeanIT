@@ -1,0 +1,32 @@
+yarn add styled-components 
+
+
+styled-components : 라이브러리
+컴포넌트를 많이 만들다보면 css짜기 굉장히 난감한 경우가 있다.
+컴포넌트가 많고 다양한 파일로 나누어져있을때, 예를들어 class명을 중복으로 작성했을때 등등
+class 선언없이 컴포넌트에 css를 직접 장착하는 방법이다.
+
+Css in JS라고도 한다.
+
+즉, 컴포넌트를 만드는데 CSS를 미리 입힌 컴포넌트를 만드는것!
+
+단점도 많기때문에 선택사항이며, 가장 큰 장점은 컴포넌트가 많아지면  class겹칠 일이 줄어들기 때문
+
+[Detail3.js]
+import styled from "styled-components"
+
+let 박스 = styled.div`
+  padding: 20px;
+`;
+
+let 제목 = styled.h4`
+  font-size: 30px;
+  color: ${(props) => props.색상};
+`;
+
+function ~~~{
+        <박스>
+          <제목>Detail Page</제목>
+          <제목 색상={"blue"}>Detail Page</제목> or 색상 = "red"
+        </박스>
+}
