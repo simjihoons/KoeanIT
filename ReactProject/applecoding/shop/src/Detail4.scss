@@ -1,0 +1,47 @@
+@import "./Detail4Reset.scss";
+
+$메인컬러: #ff0000;
+
+.red {
+  color: $메인컬러;
+}
+
+div.container {
+  h4 {
+    color: red;
+  }
+  p {
+    color: green;
+  }
+}
+
+.my-alert {
+  background-color: #eeeeee;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.my-alert-red {
+  @extend .my-alert;
+  background-color: red;
+}
+
+@mixin 함수() {
+  background-color: grey;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.my-alert3 {
+  @include 함수();
+}
+
+.my-alert p {
+  margin-bottom: 0;
+}

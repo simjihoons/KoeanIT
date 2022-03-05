@@ -14,7 +14,7 @@ import data from "./data";
 
 import { Link, Route, Switch } from "react-router-dom";
 
-import Detail from "./Detail3";
+import Detail from "./Detail4";
 
 function App() {
   let [shoes, setShoes] = useState(data);
