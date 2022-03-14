@@ -8,17 +8,57 @@ import { BrowserRouter } from "react-router-dom";
 // -----------------------------------------------------
 //redux
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 
-let store = createStore(() => {
-  return [
-    {
-      id: 0,
-      name: "멋진신발",
-      quan: 2,
-    },
-  ];
-});
+// -----------------------------------------------------
+let alert초기값 = true;
+
+function reducer2(state = alert초기값, 액션) {
+  if (액션.type === "close") {
+    return (state = false);
+  } else {
+    return state;
+  }
+}
+// -----------------------------------------------------
+let 초기값 = [
+  {
+    id: 0,
+    name: "멋진신발",
+    quan: 2,
+  },
+  {
+    id: 1,
+    name: "멋진신발",
+    quan: 1,
+  },
+];
+
+function reducer(state = 초기값, 액션) {
+  if (액션.type === "수량증가") {
+    console.log("++");
+    let copy = [...state];
+    copy[0].quan++;
+    return copy;
+  } else if (액션.type === "수량감소") {
+    console.log("--");
+    let copy = [...state];
+    if (copy[0].quan !== 0) {
+      console.log("0이상");
+      copy[0].quan--;
+      return copy;
+    } else {
+      console.log("0이하");
+      copy[0].quan = 0;
+      return copy;
+    }
+  } else {
+    console.log("default");
+    return state;
+  }
+}
+
+let store = createStore(combineReducers({ reducer, reducer2 }));
 // -----------------------------------------------------
 
 ReactDOM.render(
