@@ -1,14 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App10";
+import App from "./App12";
 
 import { BrowserRouter } from "react-router-dom";
+
+// -----------------------------------------------------
+//redux
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
+let store = createStore(() => {
+  return [
+    {
+      id: 0,
+      name: "멋진신발",
+      quan: 2,
+    },
+  ];
+});
+// -----------------------------------------------------
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      {/* redux0---------------------- */}
+      <Provider store={store}>
+        <App />
+      </Provider>
+      {/* -------------------------- */}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

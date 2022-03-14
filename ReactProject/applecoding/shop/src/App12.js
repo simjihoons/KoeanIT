@@ -14,8 +14,10 @@ import data from "./data";
 
 import { Link, Route, Switch } from "react-router-dom";
 
-import Detail from "./Detail7";
+import Detail from "./Detail8";
 import axios from "axios";
+
+import Cart from "./Cart";
 
 // -------------------------------------------------------
 // createContext로 범위 생성 (같은 별수값을 공유할 범위 생성)
@@ -127,6 +129,10 @@ function App() {
           <재고context.Provider value={재고}>
             <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
           </재고context.Provider>
+        </Route>
+
+        <Route path="/cart">
+          <Cart />
         </Route>
 
         <Route path="/:id">
