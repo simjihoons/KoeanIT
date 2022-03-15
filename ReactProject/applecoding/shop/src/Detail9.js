@@ -4,7 +4,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 import "./Detail5.scss";
-import { 재고context } from "./App13";
+import { 재고context } from "./App14";
 // ----------------------------------------------
 import { Nav } from "react-bootstrap";
 import { CSSTransition } from "react-transition-group";
@@ -118,7 +118,7 @@ function Detail(props) {
                 props.재고변경([9, 11, 12]);
                 props.dispatch({
                   type: "항목추가",
-                  payload: { id: 2, name: "새로운상품", quan: 3 },
+                  데이터: { id: 찾은상품.id, name: 찾은상품.title, quan: 1 },
                 });
                 history.push("/cart");
               }}

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App13";
+import App from "./App14";
 
 import { BrowserRouter } from "react-router-dom";
 
@@ -36,24 +36,32 @@ let 초기값 = [
 
 function reducer(state = 초기값, 액션) {
   if (액션.type === "항목추가") {
-    let copy = [...state];
-    copy.push(액션.payload);
-    return copy;
-  } else if (액션.type === "수량증가") {
-    console.log("++");
-    let copy = [...state];
-    copy[0].quan++;
-    return copy;
-  } else if (액션.type === "수량감소") {
-    console.log("--");
-    let copy = [...state];
-    if (copy[0].quan !== 0) {
-      console.log("0이상");
-      copy[0].quan--;
+    let found = state.findIndex((a) => {
+      return a.id === 액션.데이터.id;
+    });
+
+    if (found >= 0) {
+      let copy = [...state];
+      copy[found].quan++;
       return copy;
     } else {
-      console.log("0이하");
-      copy[0].quan = 0;
+      let copy = [...state];
+      copy.push(액션.데이터);
+      return copy;
+    }
+  } else if (액션.type === "수량증가") {
+    //
+    let copy = [...state];
+    copy[액션.데이터].quan++;
+    return copy;
+    //
+  } else if (액션.type === "수량감소") {
+    let copy = [...state];
+    if (copy[액션.데이터].quan !== 0) {
+      copy[액션.데이터].quan--;
+      return copy;
+    } else {
+      copy[액션.데이터].quan = 0;
       return copy;
     }
   } else {
