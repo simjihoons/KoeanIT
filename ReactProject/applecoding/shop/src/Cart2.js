@@ -68,4 +68,4 @@ function state를props화(state) {
 
 export default connect(state를props화)(Cart);
 
-//export default Cart;
+//export default Cart;.

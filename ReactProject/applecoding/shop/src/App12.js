@@ -21,7 +21,7 @@ import Cart from "./Cart2";
 
 // -------------------------------------------------------
 // createContext로 범위 생성 (같은 별수값을 공유할 범위 생성)
-// detail에서도 쓸수 있게 export
+// detail에서도 쓸수 있게 export.
 export let 재고context = React.createContext();
 // -------------------------------------------------------
 
