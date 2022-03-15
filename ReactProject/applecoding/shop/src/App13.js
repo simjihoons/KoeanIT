@@ -17,7 +17,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import Detail from "./Detail9";
 import axios from "axios";
 
-import Cart from "./Cart3";
+import Cart from "./Cart4";
 
 // -------------------------------------------------------
 // createContext로 범위 생성 (같은 별수값을 공유할 범위 생성)
