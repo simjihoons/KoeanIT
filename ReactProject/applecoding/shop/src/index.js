@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App12";
+import App from "./App13";
 
 import { BrowserRouter } from "react-router-dom";
 
@@ -35,7 +35,11 @@ let 초기값 = [
 ];
 
 function reducer(state = 초기값, 액션) {
-  if (액션.type === "수량증가") {
+  if (액션.type === "항목추가") {
+    let copy = [...state];
+    copy.push(액션.payload);
+    return copy;
+  } else if (액션.type === "수량증가") {
     console.log("++");
     let copy = [...state];
     copy[0].quan++;
