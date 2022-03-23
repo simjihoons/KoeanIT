@@ -1,0 +1,5 @@
+영화 api 연결
+
+https://yts.mx/api#list_movies
+
+https://yts-proxy.now.sh/list_movies.json
