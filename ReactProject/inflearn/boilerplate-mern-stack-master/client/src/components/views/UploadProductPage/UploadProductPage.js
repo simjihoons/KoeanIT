@@ -51,7 +51,7 @@ function UploadProductPage() {
           <Title level={2}>여행 상품 업로드</Title>
         </div>
 
-        <from>
+        <form>
           {/* DropZone */}
           <FileUpload />
           <br />
@@ -79,7 +79,7 @@ function UploadProductPage() {
           <br />
           <br />
           <Button>확인</Button>
-        </from>
+        </form>
       </div>
     </>
   );
