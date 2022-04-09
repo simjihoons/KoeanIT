@@ -64,7 +64,7 @@ router.post("/products", (req, res) => {
       return res.status(200).json({ success: true, productInfo });
     });
 
-  //==> 랜딩 페이지 response.data.success
+  //==> 랜딩 페이지 response.data.success/
 });
 
 module.exports = router;
