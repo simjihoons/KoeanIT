@@ -13,9 +13,16 @@ import ImageSlider from "../../utils/ImageSlider";
 
 function LandingPage() {
   const [Products, setProducts] = useState([]);
+  const [Skip, setSkip] = useState(0);
+  const [Limit, setLimit] = useState(8); //화면에 8개만 보여주기
 
   useEffect(() => {
-    axios.post("/api/product/products").then((response) => {
+    let body = {
+      skip: Skip,
+      limit: Limit,
+    };
+
+    axios.post("/api/product/products", body).then((response) => {
       if (response.data.success) {
         console.log(response.data);
         setProducts(response.data.productInfo);
@@ -24,6 +31,10 @@ function LandingPage() {
       }
     });
   }, []);
+
+  const loadMoreHandler = () => {
+    //   skip 과 limit은 state로 관리
+  };
 
   const renderCards = Products.map((product, index) => {
     return (
@@ -56,7 +67,7 @@ function LandingPage() {
         <Row gutter={[16, 16]}>{renderCards}</Row>
 
         <div style={{ justifyContent: "center" }}>
-          <button>더보기</button>
+          <button onClick={loadMoreHandler}>더보기</button>
         </div>
       </div>
     </>

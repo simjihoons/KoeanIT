@@ -52,11 +52,17 @@ router.post("/", (req, res) => {
 
 // 상품 리스트 랜딩 페이지=====================================================================
 router.post("/products", (req, res) => {
+  //랜딩 페이지 body 안에 limit , skip 이름과 동일하게
+  let limit = req.body.limit ? parseInt(req.body.limit) : 20;
+  let skip = req.body.skip ? parseInt(req.body.skip) : 0;
+
   // product collection에 들어있는 모든 상품 정보 가져오기
   // 조건이 들어갈때는 오브젝트 형식으로 작성 {price} ---
   // .populate => writer(사람)에 대한 모든 정보를  가져올수 있다.
   Product.find()
     .populate("writer")
+    .skip(skip)
+    .limit(limit)
     .exec((err, productInfo) => {
       if (err) {
         return res.status(400).json({ success: false, err });
