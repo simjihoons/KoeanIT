@@ -3,7 +3,7 @@ import Dropzone from "react-dropzone";
 import { Icon } from "antd";
 import axios from "axios";
 
-function FileUpload() {
+function FileUpload(props) {
   const [Images, setImages] = useState([]);
 
   const dropHandler = (files) => {
@@ -22,10 +22,27 @@ function FileUpload() {
       if (response.data.success) {
         console.log(response.data);
         setImages([...Images, response.data.filePath]);
+
+        // 이미지 올렸을때 부모컨포넌트로 보내주기
+        props.refreshFunction([...Images, response.data.filePath]);
       } else {
         alert("파일을 저장하는데 실패했습니다.");
       }
     });
+  };
+
+  const deleteHandler = (image) => {
+    const currentIndex = Images.indexOf(image); // index를 뽑아줌
+
+    let newImages = [...Images];
+
+    //splice => (a,b) a부터 시작해서 b까지 지움
+    //선택한것만 지울것. 즉 a번째부터 1개만 지운다 라는 뜻
+    newImages.splice(currentIndex, 1);
+    setImages(newImages);
+
+    // 이미지 지웠을때 부모컨포넌트로 보내주기
+    props.refreshFunction(newImages);
   };
 
   return (
@@ -65,7 +82,12 @@ function FileUpload() {
         }}
       >
         {Images.map((image, i) => (
-          <div key={i}>
+          <div
+            onClick={() => {
+              deleteHandler(image);
+            }}
+            key={i}
+          >
             <img
               style={{ minWidth: "300px", width: "300px", height: "240px" }}
               src={`http://localhost:5000/${image}`}
