@@ -8,6 +8,9 @@ import axios from "axios";
 import { Icon, Col, Card, Row } from "antd";
 import Meta from "antd/lib/card/Meta";
 
+//이미지 슬라이더
+import ImageSlider from "../../utils/ImageSlider";
+
 function LandingPage() {
   const [Products, setProducts] = useState([]);
 
@@ -28,14 +31,7 @@ function LandingPage() {
       // 중간정도 화면일때 3개 나오게 하기 위해 md={8}
       // 모바일용으로 하나당 24사이즈
       <Col lg={6} md={8} xs={24} key={index}>
-        <Card
-          cover={
-            <img
-              style={{ width: "100%", maxHeight: "150px" }}
-              src={`http://localhost:5000/${product.images[0]}`}
-            />
-          }
-        >
+        <Card cover={<ImageSlider images={product.images} />}>
           <Meta title={product.title} description={`${product.price}`} />
         </Card>
       </Col>
