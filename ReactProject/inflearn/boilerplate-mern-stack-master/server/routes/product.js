@@ -84,7 +84,7 @@ router.post("/products", (req, res) => {
 
   if (term) {
     Product.find(findArgs)
-      .find({ $text: { $search: term } })
+      .find({ title: { $regex: term } })
       .populate("writer")
       .skip(skip)
       .limit(limit)
