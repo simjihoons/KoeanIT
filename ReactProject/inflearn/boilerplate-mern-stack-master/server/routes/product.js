@@ -62,7 +62,20 @@ router.post("/products", (req, res) => {
   for (let key in req.body.filters) {
     //체크박스가 여러개 선택됬다면~
     if (req.body.filters[key].length > 0) {
-      findArgs[key] = req.body.filters[key];
+      // console.log("key", key);
+      if (key === "price") {
+        findArgs[key] = {
+          //$get , $lte는 몽고DB에서 사용하는 것
+          //$0 to 199 => 0보다 크고 199보다 작고 이것들 때문에 하는것
+          //[0][1] 은 [0,199] => 0 = 0 , 1 = 199 즉, 인덱스 번호
+
+          $gte: req.body.filters[key][0], //$gte 이것보다 크거나 같고
+          $lte: req.body.filters[key][1], //$lte 이것보다 작거나 같고
+        };
+      } else {
+        findArgs[key] = req.body.filters[key];
+      }
+      // =======================
     }
   }
 

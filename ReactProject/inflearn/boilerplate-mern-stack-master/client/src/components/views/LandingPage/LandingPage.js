@@ -15,6 +15,11 @@ import ImageSlider from "../../utils/ImageSlider";
 import Checkbox from "./Sections/CheckBox";
 import { continents } from "./Sections/Datas";
 
+//라디오 버튼(가격대별)
+import { price } from "./Sections/Datas";
+import Radiobox from "./Sections/RadioBox";
+import { formatTimeStr } from "antd/lib/statistic/utils";
+
 function LandingPage() {
   const [Products, setProducts] = useState([]);
   const [Skip, setSkip] = useState(0);
@@ -92,12 +97,32 @@ function LandingPage() {
     setSkip(0);
   };
 
+  const handlePrice = (value) => {
+    const data = price; //price 의 전체 데이터를 data변수에 넣음
+    let array = [];
+
+    for (let key in data) {
+      //key means index
+      if (data[key]._id === parseInt(value, 10)) {
+        array = data[key].array;
+      }
+    }
+    return array;
+  };
+
+  //filters == 각각의 _id
   const handleFilters = (filters, category) => {
     const newFilters = { ...Filters };
 
     newFilters[category] = filters;
 
+    if (category === "price") {
+      let priceValues = handlePrice(filters);
+      newFilters[category] = priceValues;
+    }
+
     showFilteredResults(newFilters);
+    setFilters(newFilters);
   };
 
   return (
@@ -110,12 +135,22 @@ function LandingPage() {
         </div>
 
         {/* Filter start=============*/}
-        {/* checkBox */}
-        <Checkbox
-          list={continents}
-          handleFilters={(filters) => handleFilters(filters, "continents")}
-        />
-        {/* radioBox */}
+        <Row gutter={[16, 16]}>
+          <Col lg={12} xs={24}>
+            {/* checkBox */}
+            <Checkbox
+              list={continents}
+              handleFilters={(filters) => handleFilters(filters, "continents")}
+            />
+          </Col>
+          <Col lg={12} xs={24}>
+            {/* radioBox */}
+            <Radiobox
+              list={price}
+              handleFilters={(filters) => handleFilters(filters, "price")}
+            />
+          </Col>
+        </Row>
         {/* Filter end=============*/}
         {/* Search */}
 
