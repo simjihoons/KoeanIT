@@ -56,10 +56,20 @@ router.post("/products", (req, res) => {
   let limit = req.body.limit ? parseInt(req.body.limit) : 20;
   let skip = req.body.skip ? parseInt(req.body.skip) : 0;
 
+  //체크박스 만들기
+  let findArgs = {};
+
+  for (let key in req.body.filters) {
+    //체크박스가 여러개 선택됬다면~
+    if (req.body.filters[key].length > 0) {
+      findArgs[key] = req.body.filters[key];
+    }
+  }
+
   // product collection에 들어있는 모든 상품 정보 가져오기
   // 조건이 들어갈때는 오브젝트 형식으로 작성 {price} ---
   // .populate => writer(사람)에 대한 모든 정보를  가져올수 있다.
-  Product.find()
+  Product.find(findArgs)
     .populate("writer")
     .skip(skip)
     .limit(limit)
@@ -67,7 +77,11 @@ router.post("/products", (req, res) => {
       if (err) {
         return res.status(400).json({ success: false, err });
       }
-      return res.status(200).json({ success: true, productInfo });
+      return res.status(200).json({
+        success: true,
+        productInfo,
+        postSize: productInfo.length,
+      });
     });
 
   //==> 랜딩 페이지 response.data.success/
