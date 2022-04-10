@@ -20,6 +20,9 @@ import { price } from "./Sections/Datas";
 import Radiobox from "./Sections/RadioBox";
 import { formatTimeStr } from "antd/lib/statistic/utils";
 
+//검색기능
+import SearchFeature from "./Sections/SearchFeature";
+
 function LandingPage() {
   const [Products, setProducts] = useState([]);
   const [Skip, setSkip] = useState(0);
@@ -31,6 +34,8 @@ function LandingPage() {
     continents: [],
     price: [],
   });
+
+  const [SearchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     let body = {
@@ -125,6 +130,19 @@ function LandingPage() {
     setFilters(newFilters);
   };
 
+  const updateSearchTerm = (newSearchTerm) => {
+    let body = {
+      skip: 0, // DB에서 처음부터 긁어와야하기 때문
+      limit: Limit,
+      filters: Filters,
+      searchTerm: newSearchTerm,
+    };
+
+    setSkip(0);
+    setSearchTerm(newSearchTerm);
+    getProducts(body);
+  };
+
   return (
     <>
       <div style={{ width: "75%", margin: "3rem auto" }}>
@@ -152,7 +170,9 @@ function LandingPage() {
           </Col>
         </Row>
         {/* Filter end=============*/}
+
         {/* Search */}
+        <SearchFeature refreshFunction={updateSearchTerm} />
 
         {/* Card */}
         {/* gutter =>이미지들  사이에 여백을  주기위해 */}

@@ -59,6 +59,9 @@ router.post("/products", (req, res) => {
   //체크박스 만들기
   let findArgs = {};
 
+  //검색기능
+  let term = req.body.searchTerm;
+
   for (let key in req.body.filters) {
     //체크박스가 여러개 선택됬다면~
     if (req.body.filters[key].length > 0) {
@@ -79,25 +82,43 @@ router.post("/products", (req, res) => {
     }
   }
 
-  // product collection에 들어있는 모든 상품 정보 가져오기
-  // 조건이 들어갈때는 오브젝트 형식으로 작성 {price} ---
-  // .populate => writer(사람)에 대한 모든 정보를  가져올수 있다.
-  Product.find(findArgs)
-    .populate("writer")
-    .skip(skip)
-    .limit(limit)
-    .exec((err, productInfo) => {
-      if (err) {
-        return res.status(400).json({ success: false, err });
-      }
-      return res.status(200).json({
-        success: true,
-        productInfo,
-        postSize: productInfo.length,
+  if (term) {
+    Product.find(findArgs)
+      .find({ $text: { $search: term } })
+      .populate("writer")
+      .skip(skip)
+      .limit(limit)
+      .exec((err, productInfo) => {
+        if (err) {
+          return res.status(400).json({ success: false, err });
+        }
+        return res.status(200).json({
+          success: true,
+          productInfo,
+          postSize: productInfo.length,
+        });
       });
-    });
+  } else {
+    // product collection에 들어있는 모든 상품 정보 가져오기
+    // 조건이 들어갈때는 오브젝트 형식으로 작성 {price} ---
+    // .populate => writer(사람)에 대한 모든 정보를  가져올수 있다.
+    Product.find(findArgs)
+      .populate("writer")
+      .skip(skip)
+      .limit(limit)
+      .exec((err, productInfo) => {
+        if (err) {
+          return res.status(400).json({ success: false, err });
+        }
+        return res.status(200).json({
+          success: true,
+          productInfo,
+          postSize: productInfo.length,
+        });
+      });
 
-  //==> 랜딩 페이지 response.data.success/
+    //==> 랜딩 페이지 response.data.success/
+  }
 });
 
 module.exports = router;
