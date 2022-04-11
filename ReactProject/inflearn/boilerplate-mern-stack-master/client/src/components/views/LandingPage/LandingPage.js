@@ -84,7 +84,13 @@ function LandingPage() {
       // 중간정도 화면일때 3개 나오게 하기 위해 md={8}
       // 모바일용으로 하나당 24사이즈
       <Col lg={6} md={8} xs={24} key={index}>
-        <Card cover={<ImageSlider images={product.images} />}>
+        <Card
+          cover={
+            <a href={`/product/${product._id}`}>
+              <ImageSlider images={product.images} />
+            </a>
+          }
+        >
           <Meta title={product.title} description={`${product.price}`} />
         </Card>
       </Col>
