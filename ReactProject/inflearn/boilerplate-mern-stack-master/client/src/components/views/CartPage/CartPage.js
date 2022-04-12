@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getCartItems } from "../../../_actions/user_actions";
+import {
+  getCartItems,
+  removeCartItem,
+  onSuccessBuy,
+} from "../../../_actions/user_actions";
 import UserCardBlock from "./Sections/UserCardBlock";
+import { Empty, Result } from "antd";
+import Paypal from "../../utils/Paypal";
 function CartPage(props) {
   const dispatch = useDispatch();
 
   const [Total, setTotal] = useState(0);
+  const [ShowTotal, setShowTotal] = useState(false);
+  const [ShowSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
     let cartItems = [];
@@ -33,17 +41,59 @@ function CartPage(props) {
     });
 
     setTotal(total);
+    setShowTotal(true);
+  };
+
+  let removeFromCart = (productId) => {
+    dispatch(removeCartItem(productId)).then((response) => {
+      console.log(response);
+
+      if (response.payload.productInfo.length <= 0) {
+        setShowTotal(false);
+      }
+    });
+  };
+
+  const transactionSuccess = (data) => {
+    dispatch(
+      onSuccessBuy({
+        //결제 성공 하면 보내주는 paypal 에서 payment정보들을 전달
+        paymentData: data,
+
+        //CartDetail 정보
+        cartDetail: props.user.cartDetail,
+      })
+    ).then((response) => {
+      if (response.payload.success) {
+        setShowTotal(false);
+        setShowSuccess(true);
+      }
+    });
   };
 
   return (
     <div style={{ width: "50%", margin: "3rem auto" }}>
       <h1>My Cart</h1>
       <div>
-        <UserCardBlock products={props.user.cartDetail} />
+        <UserCardBlock
+          products={props.user.cartDetail}
+          removeItem={removeFromCart}
+        />
       </div>
-      <div style={{ marginTop: "3rem" }}>
-        <h2>Total Amount: ${Total}</h2>
-      </div>
+      {ShowTotal ? (
+        <div style={{ marginTop: "3rem" }}>
+          <h2>Total Amount: ${Total}</h2>
+        </div>
+      ) : ShowSuccess ? (
+        <Result status="success" title="Successfully Purchased Items" />
+      ) : (
+        <>
+          <br />
+          <Empty description={false} />
+        </>
+      )}
+
+      {ShowTotal && <Paypal total={Total} onSuccess={transactionSuccess} />}
     </div>
   );
 }

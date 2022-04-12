@@ -35,11 +35,16 @@ function RightMenu(props) {
     //로그인 된산태
     return (
       <Menu mode={props.mode}>
+        <Menu.Item key="history">
+          <a href="/history">History</a>
+        </Menu.Item>
+
         <Menu.Item key="upload">
           <a href="/product/upload">Upload</a>
         </Menu.Item>
+
         <Menu.Item key="cart" style={{ paddingBottom: 3 }}>
-          <Badge count={5}>
+          <Badge count={user.userData && user.userData.cart.length}>
             <a
               href="/user/cart"
               className=""
@@ -52,6 +57,7 @@ function RightMenu(props) {
             </a>
           </Badge>
         </Menu.Item>
+
         <Menu.Item key="logout">
           <a onClick={logoutHandler}>Logout</a>
         </Menu.Item>

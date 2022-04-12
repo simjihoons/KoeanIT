@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import Dropzone from "react-dropzone";
 import { Icon } from "antd";

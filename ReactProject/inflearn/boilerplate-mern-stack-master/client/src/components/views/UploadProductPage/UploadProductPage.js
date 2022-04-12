@@ -20,7 +20,7 @@ function UploadProductPage(props) {
   // 업로드 상품 이름
   const [uploadTitle, setUploadTitle] = useState("");
   // 업로드 상품 설명
-  const [discription, setdiscription] = useState("");
+  const [description, setdescription] = useState("");
   // 업로드 상품 가격
   const [price, setprice] = useState(0);
   //select
@@ -33,8 +33,8 @@ function UploadProductPage(props) {
     setUploadTitle(e.currentTarget.value);
   };
 
-  const discriptionChangeHandler = (e) => {
-    setdiscription(e.currentTarget.value);
+  const descriptionChangeHandler = (e) => {
+    setdescription(e.currentTarget.value);
   };
 
   const priceChangeHandler = (e) => {
@@ -52,7 +52,7 @@ function UploadProductPage(props) {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (!uploadTitle || !discription || !price || !continent || !images) {
+    if (!uploadTitle || !description || !price || !continent || !images) {
       // 상품 업로드 페이지의 모든 칸이 채워지지않으면 실패
       return alert("모든 정보를 입력하셔야 합니다.");
     }
@@ -63,7 +63,7 @@ function UploadProductPage(props) {
       // hoc => auth.js(부모) 로 만들기 위해 props를 사용
       writer: props.user.userData._id,
       title: uploadTitle,
-      discription: discription,
+      description: description,
       price: price,
       images: images,
       continents: continent,
@@ -105,7 +105,7 @@ function UploadProductPage(props) {
           <br />
           <br />
           <label>설명</label>
-          <TextArea onChange={discriptionChangeHandler} value={discription} />
+          <TextArea onChange={descriptionChangeHandler} value={description} />
           <br />
           <br />
           <label>가격($)</label>

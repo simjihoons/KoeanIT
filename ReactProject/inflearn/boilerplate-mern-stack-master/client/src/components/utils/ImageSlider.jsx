@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { Icon, Col, Card, Row, Carousel } from "antd";
 
