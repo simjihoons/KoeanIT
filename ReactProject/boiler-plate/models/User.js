@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const saltRounds = 10; // salt가 몇글자 인지 정함
 
 const userSchema = mongoose.Schema({
   name: {
@@ -33,6 +35,25 @@ const userSchema = mongoose.Schema({
     //토튼 사용할수 있는 기간
     type: Number,
   },
+});
+
+//index.js에서 save하기 전에 Func을 실행하고 save 실행한다~
+userSchema.pre("save", function (next) {
+  var user = this;
+
+  //암호만 변경할때만 암호화 할수있게
+  if (user.isModified("password")) {
+    //비밀번호 암호화 시킨다. bcrypt 사이트에 있음
+    bcrypt.genSalt(saltRounds, function (err, salt) {
+      if (err) return next(err);
+
+      bcrypt.hash(user.password, salt, function (err, hash) {
+        if (err) return next(err);
+        user.password = hash;
+        next();
+      });
+    });
+  }
 });
 
 const User = mongoose.model("User", userSchema); // 스키마를 모델로 감싸줌
