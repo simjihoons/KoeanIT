@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const saltRounds = 10; // salt가 몇글자 인지 정함
 
+const jwt = require("jsonwebtoken");
+
 const userSchema = mongoose.Schema({
   name: {
     type: String,
@@ -57,6 +59,29 @@ userSchema.pre("save", function (next) {
     next();
   }
 });
+
+//애로우 func 쓰면 에러남
+userSchema.methods.comparePassword = function (plainPassword, callback) {
+  //plainPassword => 1234567  HashedPassword => !@#!@#!@# 가 같은지 체크
+  bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
+    if (err) return callback(err); //비밀번호가 다를때
+    callback(null, isMatch);
+  });
+};
+
+userSchema.methods.generateToken = function (callback) {
+  var user = this;
+
+  //jsonwebtoken을 이용해 토큰 생성
+  //user._id + secretToken = token
+  var token = jwt.sign(user._id.toHexString(), "secretToken");
+
+  user.token = token;
+  user.save(function (err, user) {
+    if (err) return callback(err);
+    callback(null, user);
+  });
+};
 
 const User = mongoose.model("User", userSchema); // 스키마를 모델로 감싸줌
 
