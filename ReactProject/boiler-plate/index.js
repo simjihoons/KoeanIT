@@ -16,6 +16,10 @@ app.use(cookieParser());
 const config = require("./config/key");
 
 const mongoose = require("mongoose");
+
+//auth.js
+const { auth } = require("./middleware/auth");
+
 mongoose
   .connect(config.mongoURI)
   //연결 확인
@@ -28,7 +32,7 @@ app.get("/", (req, res) => {
 });
 
 // 회원가입 라우터 start==============================================================
-app.post("/register", (req, res) => {
+app.post("/api/users/register", (req, res) => {
   //회원가입할때 필요한 정보들을 client에서 가져오면
   //그 정보를 DB에 보내준다.
   // 이를 위해 User 모델을 가져와야한다.
@@ -45,7 +49,7 @@ app.post("/register", (req, res) => {
 // 회원가입 라우터 end==============================================================
 
 // 로그인 라우터 start==========================
-app.post("/login", (req, res) => {
+app.post("/api/users/login", (req, res) => {
   //1. 요청된 이메일을 데이터베이스에서 있는지 확인
   //findOne() => 몽고DB 메서드
   User.findOne({ email: req.body.email }, (err, user) => {
@@ -83,6 +87,25 @@ app.post("/login", (req, res) => {
   });
 });
 // 로그인 라우터 end============================
+
+// Auth 기능
+//auth라는 middleware 추가한다.
+//middleware는 엔드포인트에서 req를 받고 콜백함수를 받기전에 어떤것을 하는것.
+app.get("/api/users/auth", auth, (req, res) => {
+  //여기까지 미들웨어를 통과해 왔다는 말은 Authentication이 true라는 말이다.
+  //true인것을 프론트에 전달
+  req.status(200).json({
+    _id: req.user._id, // auth에서 user에 넣었기때문에 가능
+    isAdmin: req.user.role === 0 ? false : true, // role이 0이면 일반유저
+    isAuth: true,
+    email: req.user.email,
+    name: req.user.name,
+    lastname: req.user.lastname,
+    role: req.user.role,
+    image: req.user.image,
+  });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
