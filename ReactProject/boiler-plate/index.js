@@ -3,7 +3,7 @@ const app = express();
 const port = 5000;
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const { User } = require("./models/User");
+const { User } = require("./server/models/User");
 
 //⬇application/x-www-form-urlencoded 이런 파일을 분석 ⬇
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,12 +13,12 @@ app.use(bodyParser.json({ extended: true }));
 app.use(cookieParser());
 
 //key.js 가져오기
-const config = require("./config/key");
+const config = require("./server/config/key");
 
 const mongoose = require("mongoose");
 
 //auth.js
-const { auth } = require("./middleware/auth");
+const { auth } = require("./server/middleware/auth");
 
 mongoose
   .connect(config.mongoURI)
