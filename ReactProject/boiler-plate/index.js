@@ -94,7 +94,7 @@ app.post("/api/users/login", (req, res) => {
 app.get("/api/users/auth", auth, (req, res) => {
   //여기까지 미들웨어를 통과해 왔다는 말은 Authentication이 true라는 말이다.
   //true인것을 프론트에 전달
-  req.status(200).json({
+  res.status(200).json({
     _id: req.user._id, // auth에서 user에 넣었기때문에 가능
     isAdmin: req.user.role === 0 ? false : true, // role이 0이면 일반유저
     isAuth: true,

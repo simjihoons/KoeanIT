@@ -1,7 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
-
 //유저 리듀서
-import { LOGIN_USER, REGISTER_USER } from "../_actions/types";
+import { LOGIN_USER, REGISTER_USER, AUTH_USER } from "../_actions/types";
 
 export default function (state = {}, action) {
   switch (action.type) {
@@ -10,6 +9,9 @@ export default function (state = {}, action) {
 
     case REGISTER_USER:
       return { ...state, registerUser: action.payload };
+
+    case AUTH_USER:
+      return { ...state, userData: action.payload };
 
     default:
       return state;
