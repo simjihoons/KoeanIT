@@ -1,4 +1,4 @@
-import { Axios } from "axios";
+//import { Axios } from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
@@ -57,7 +57,7 @@ function LoginPage(props) {
           />
           <br />
 
-          <button onClick>Login</button>
+          <button tpye="submit">Login</button>
         </form>
       </div>
     </>
